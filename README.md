@@ -19,7 +19,9 @@ Click an image to play the video.
 
 A 3D globe on the dashboard colors each supplier country by the risk level of its open cases.
 
-[![Global risk view](media/thumbs/01_global_risk_view.jpg)](media/01_global_risk_view.mp4)
+
+Uploading 01_global_risk_view.mp4…
+
 
 ### 2. Risk heatmap
 
