@@ -1,0 +1,12 @@
+---
+applications:
+  - name: sentra-api
+    path: .cf/deploy
+    memory: 512M
+    instances: 1
+    buildpacks:
+      - python_buildpack
+    command: "PYTHONPATH=apps/sentra-api:apps/mock-s4${PYTHONPATH:+:$PYTHONPATH} uvicorn sentra_api.main:app --host 0.0.0.0 --port $PORT"
+    env:
+      TZ: Asia/Jakarta
+      AWS_REGION: ap-southeast-2

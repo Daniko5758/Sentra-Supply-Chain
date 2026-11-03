@@ -1,0 +1,49 @@
+{
+  "site_id": "S11",
+  "supplier_name": "PT Tembaga Kabel",
+  "tier": "2",
+  "kabupaten": "Purwakarta",
+  "kecamatan": "Jatiluhur",
+  "country": "ID",
+  "hazard_zone_flood": false,
+  "ttr_days": 5,
+  "otd_12m": null,
+  "backup_site": "Subang",
+  "bcp": {
+    "score": 75,
+    "band": "MEDIUM_RISK",
+    "categories": {
+      "governance": 50,
+      "resilience": 75,
+      "supply_chain": 75,
+      "testing": 87.5
+    },
+    "answers": {
+      "G1": 2,
+      "G2": 4,
+      "R1": 4,
+      "R2": 4,
+      "S1": 4,
+      "S2": 4,
+      "T1": 4,
+      "T2": 5
+    },
+    "stated_rto_days": 5,
+    "backup_site": true,
+    "emergency_plan": false,
+    "safety_stock": true,
+    "insurance": true
+  },
+  "parts_supplied": [
+    "HRN-1",
+    "HRN-2"
+  ],
+  "tier2_suppliers": [],
+  "alternate_sources_for_parts": [],
+  "messages": [],
+  "backup": {
+    "site": "Subang",
+    "ramp_days": 3,
+    "surcharge_pct": 3
+  }
+}

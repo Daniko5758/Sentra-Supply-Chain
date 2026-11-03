@@ -1,0 +1,16 @@
+{
+  "case_id": "CASE-0001",
+  "title": "Flood – Karawang",
+  "risk_type": "FLOOD",
+  "scope": "LOCATION",
+  "location": "Karawang",
+  "country": "ID",
+  "mode": "DEMO",
+  "simulated": true,
+  "status": "CLOSED",
+  "score": 79.7,
+  "level": "HIGH",
+  "units_at_risk": 75,
+  "revenue_at_risk": 3286000000,
+  "updated_at": "2026-10-31T10:42:40+07:00"
+}

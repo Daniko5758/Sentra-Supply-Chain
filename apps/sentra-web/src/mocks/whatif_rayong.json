@@ -1,0 +1,113 @@
+{
+  "location": "Rayong",
+  "banner": "What-if only — no case, no email, no ERP change.",
+  "sites_t1": [
+    "S15"
+  ],
+  "sites_t2": [],
+  "kpi": {
+    "parts_affected": 1,
+    "pos_affected": 1,
+    "po_lines_affected": 1,
+    "products_affected": [
+      "LX1"
+    ],
+    "units_blocked": 15,
+    "orders_blocked": 1,
+    "max_delay_days": 12,
+    "max_po_slip_days": 4,
+    "output_value": 360000000,
+    "po_value": 44200000,
+    "rar": 404200000
+  },
+  "impact": {
+    "version": 1,
+    "scope": "LOCATION",
+    "part_delays": [
+      {
+        "part_id": "HSW-ST",
+        "days": 12,
+        "cause_site": "S15",
+        "via_site": null
+      }
+    ],
+    "po_lines": [
+      {
+        "po_id": "4500001018",
+        "item_no": 10,
+        "material_id": "HSW-ST",
+        "supplier_id": "S15",
+        "qty": 130,
+        "confirmed_date": "2026-11-08",
+        "new_eta": "2026-11-12",
+        "slip_days": 4,
+        "value": 44200000,
+        "cause_site": "S15",
+        "via_site": null
+      }
+    ],
+    "production_orders": [
+      {
+        "order_id": "PRD-03",
+        "product_id": "LX1",
+        "qty": 40,
+        "start_date": "2026-11-10",
+        "units_blocked": 15,
+        "blocking_parts": [
+          "HSW-ST"
+        ],
+        "ready_date": "2026-11-12",
+        "output_value": 360000000,
+        "sales_order_id": "SO-03"
+      }
+    ],
+    "sales_orders": [
+      {
+        "so_id": "SO-03",
+        "customer": "PT Armada Kurir (fiktif)",
+        "old_date": "2026-11-13",
+        "new_date": "2026-11-15",
+        "units_at_risk": 15
+      }
+    ],
+    "totals": {
+      "units_blocked": 15,
+      "output_value": 360000000,
+      "po_value": 44200000,
+      "rar": 404200000,
+      "parts_affected": 1,
+      "pos_affected": 1,
+      "po_lines_affected": 1,
+      "products_affected": [
+        "LX1"
+      ],
+      "orders_blocked": 1,
+      "max_delay_days": 12,
+      "max_po_slip_days": 4
+    },
+    "tariff": null,
+    "exposure": null,
+    "baseline_short": [],
+    "disruption": null
+  },
+  "charts": {
+    "rar_by_site": [
+      {
+        "site_id": "S15",
+        "rar": 404200000
+      }
+    ],
+    "delay_by_part": [
+      {
+        "part_id": "HSW-ST",
+        "days": 12
+      }
+    ],
+    "units_by_product": [
+      {
+        "product_id": "LX1",
+        "units": 15
+      }
+    ]
+  }
+}

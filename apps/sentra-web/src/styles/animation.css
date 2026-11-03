@@ -1,0 +1,374 @@
+/* Gerak SENTRA — sesuai apps/sentra-web/animation.md.
+   CSS saja; logika tidak bergantung pada animationend. Animasi lanjutan (alert, network,
+   agent activity, chat) ditambahkan di task halamannya. */
+
+/* §3 Token gerak */
+:root {
+  --dur-instant: 100ms;
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 400ms;
+  --dur-enter: 600ms;
+  --dur-highlight: 1200ms;
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  --stagger: 60ms;
+  --rise: 12px;
+}
+
+/* §4.1 Masuk: fade-in-up + stagger (pakai style={{ '--i': n }}) */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(var(--rise)); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.enter {
+  opacity: 0;
+  animation: fade-in-up var(--dur-enter) var(--ease-out) forwards;
+  animation-delay: calc(var(--i, 0) * var(--stagger));
+}
+
+/* §4.12 Ganti halaman: fade saja, tanpa geser */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.page-fade {
+  animation: fade-in var(--dur-fast) var(--ease-standard);
+}
+
+/* §4.3 Data berubah: sorotan sekali */
+@keyframes highlight {
+  0% { background-color: var(--accent-soft); }
+  100% { background-color: transparent; }
+}
+.updated {
+  border-radius: 4px;
+  animation: highlight var(--dur-highlight) var(--ease-standard);
+}
+
+/* §4.3 Titik status hidup */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.25); opacity: 0.7; }
+}
+.status-dot--live {
+  animation: breathe 2.4s var(--ease-standard) infinite;
+}
+
+/* §4.5 Spinner tombol yang menjalankan run */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.ring-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  animation: spin 0.8s linear infinite;
+}
+.btn--secondary .ring-spinner,
+.btn--ghost .ring-spinner,
+.btn--danger .ring-spinner {
+  border-color: rgba(24, 24, 27, 0.15);
+  border-top-color: var(--ink);
+}
+
+/* §4.11 Panel chat terbuka */
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.panel-in {
+  animation: panel-in var(--dur-base) var(--ease-out);
+}
+
+/* §4.11 Skeleton loading */
+@keyframes pulse {
+  50% { opacity: 0.5; }
+}
+.skeleton {
+  border-radius: var(--radius-sm, 8px);
+  background: var(--surface-raised);
+  animation: pulse 1.6s var(--ease-standard) infinite;
+}
+
+/* ===================== §4.14 Shell dan dekorasi ===================== */
+
+/* Transisi halaman: naik + blur ke tajam */
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(10px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.page-transition {
+  animation: page-in var(--dur-slow) var(--ease-out);
+}
+
+/* Latar aurora melayang */
+@keyframes drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(120px, 80px) scale(1.12); }
+}
+@keyframes drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-140px, -60px) scale(0.92); }
+}
+@keyframes drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(90px, -100px) scale(1.08); }
+}
+.blob--1 { animation: drift-1 26s ease-in-out infinite; }
+.blob--2 { animation: drift-2 32s ease-in-out infinite; }
+.blob--3 { animation: drift-3 29s ease-in-out infinite; }
+
+/* Header turun saat pertama dimuat */
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.app-header {
+  animation: slide-down 500ms var(--ease-out);
+}
+
+/* Logo: simbol S berputar masuk sekali, lalu berputar penuh saat hover (mengikuti orbit di logo) */
+@keyframes logo-in {
+  from { opacity: 0; transform: rotate(-120deg) scale(0.6); }
+  to { opacity: 1; transform: rotate(0) scale(1); }
+}
+.logo-mark {
+  /* backwards: tidak mengunci transform setelah selesai, agar rotasi hover tetap jalan */
+  animation: logo-in 900ms var(--ease-out) 200ms backwards;
+  transition: transform 700ms var(--ease-out);
+}
+.app-header__brand:hover .logo-mark {
+  transform: rotate(360deg);
+}
+
+/* Sidebar: penanda aktif meluncur, ikon bergeser saat hover */
+.nav-indicator {
+  transition:
+    transform var(--dur-slow) var(--ease-out),
+    height var(--dur-slow) var(--ease-out);
+}
+.nav-link__icon {
+  transition:
+    transform var(--dur-base) var(--ease-out),
+    color var(--dur-fast) var(--ease-standard);
+}
+.nav-link:hover .nav-link__icon {
+  transform: translateX(2px) scale(1.1);
+}
+
+/* Lonceng bergoyang sekali bila ada alert belum dibaca; angka muncul memantul */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-12deg); }
+  45% { transform: rotate(8deg); }
+  60% { transform: rotate(-6deg); }
+  75% { transform: rotate(3deg); }
+}
+.alert-bell--unread .alert-bell__icon {
+  transform-origin: 50% 10%;
+  animation: wiggle 900ms var(--ease-standard) 900ms 2;
+}
+@keyframes pop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+.alert-bell__count {
+  animation: pop 400ms var(--ease-out) 700ms both;
+}
+
+/* Tombol primary: kilau menyapu saat hover */
+.btn--primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(110deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s var(--ease-out);
+  pointer-events: none;
+}
+.btn--primary:hover:not(:disabled)::after {
+  left: 130%;
+}
+
+/* Tombol chat: cincin cahaya berdenyut + ikon berkelip */
+@keyframes ring-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(10, 110, 209, 0.45); }
+  100% { box-shadow: 0 0 0 16px rgba(10, 110, 209, 0); }
+}
+.chat-launcher {
+  animation: ring-pulse 2.6s var(--ease-out) 1.2s infinite;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.chat-launcher:hover {
+  transform: translateY(-3px);
+}
+@keyframes twinkle {
+  0%, 100% { transform: scale(1) rotate(0); }
+  50% { transform: scale(1.2) rotate(18deg); }
+}
+.chat-launcher__icon {
+  animation: twinkle 2.6s var(--ease-standard) infinite;
+}
+
+/* Panel chat muncul dari pojok kanan bawah */
+@keyframes panel-pop {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.panel-pop {
+  transform-origin: bottom right;
+  animation: panel-pop var(--dur-base) var(--ease-out);
+}
+
+/* Indikator orbit (agen berpikir) */
+@keyframes orbit {
+  to { transform: rotate(360deg); }
+}
+.orbit {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  animation: orbit 1.6s linear infinite;
+}
+.orbit::before,
+.orbit::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.orbit::before { left: 0; }
+.orbit::after { right: 0; background: #0f766e; opacity: 0.7; }
+
+/* Spotlight mengikuti kursor */
+.spotlight::before {
+  transition: opacity 0.5s var(--ease-standard);
+}
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Skeleton berkilau */
+@keyframes shimmer {
+  from { background-position: 150% 0; }
+  to { background-position: -150% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, var(--surface-raised) 0%, #ffffff 45%, var(--surface-raised) 90%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s linear infinite;
+}
+
+/* Kartu skeleton terangkat saat hover */
+.skeleton-tile {
+  transition:
+    transform var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-standard),
+    box-shadow var(--dur-base) var(--ease-standard);
+}
+.skeleton-tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: 0 10px 24px rgba(24, 24, 27, 0.06);
+}
+
+/* Login: aurora hero bergeser, orb melayang, marquee teks */
+@keyframes aurora-drift {
+  0%, 100% { background-position: 0% 0%, 100% 0%, 50% 100%; }
+  50% { background-position: 12% 10%, 88% 8%, 44% 90%; }
+}
+.hero-card--animated::after {
+  background-size: 140% 140%;
+  animation: aurora-drift 18s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+.orb--1 { animation: float 7s ease-in-out infinite; }
+.orb--2 { animation: float 9s ease-in-out 1.5s infinite; }
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee__track {
+  animation: marquee 32s linear infinite;
+}
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+/* ===================== §4.15 Muncul saat di-scroll ===================== */
+/* Dipasang oleh src/lib/useScrollReveal.ts. Varian: data-reveal="up" (default) | "left" | "right" | "zoom".
+   Jeda bertingkat lewat style --reveal-i. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out),
+    filter 700ms var(--ease-out);
+  transition-delay: calc(var(--reveal-i, 0) * 70ms);
+  filter: blur(3px);
+}
+[data-reveal='left'] { transform: translateX(-32px); }
+[data-reveal='right'] { transform: translateX(32px); }
+[data-reveal='zoom'] { transform: scale(0.94); }
+[data-reveal][data-revealed='true'] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* §6 Reduced motion dan cetak */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .enter {
+    opacity: 1;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

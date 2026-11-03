@@ -1,0 +1,77 @@
+{
+  "site_id": "S10",
+  "supplier_name": "CV Cetak Plastik",
+  "tier": "2",
+  "kabupaten": "Karawang",
+  "kecamatan": "Cikampek",
+  "country": "ID",
+  "hazard_zone_flood": false,
+  "ttr_days": 12,
+  "otd_12m": null,
+  "backup_site": null,
+  "bcp": {
+    "score": 25,
+    "band": "HIGH_RISK",
+    "categories": {
+      "governance": 25,
+      "resilience": 25,
+      "supply_chain": 25,
+      "testing": 25
+    },
+    "answers": {
+      "G1": 3,
+      "G2": 1,
+      "R1": 2,
+      "R2": 2,
+      "S1": 2,
+      "S2": 2,
+      "T1": 2,
+      "T2": 2
+    },
+    "stated_rto_days": 30,
+    "backup_site": false,
+    "emergency_plan": true,
+    "safety_stock": false,
+    "insurance": false
+  },
+  "parts_supplied": [
+    "LMP-HD"
+  ],
+  "tier2_suppliers": [],
+  "alternate_sources_for_parts": [],
+  "messages": [
+    {
+      "message_id": "MSG-0007",
+      "case_id": "CASE-0001",
+      "site_id": "S10",
+      "direction": "OUT",
+      "body": "Flood – Karawang (SIMULATED). Please confirm whether the component supply is affected, the expected delay in days, and any notes. Affected? (YES / PARTIAL / NO) Expected delay (days) Notes",
+      "structured": null,
+      "created_at": "2026-10-31T10:42:35+07:00",
+      "simulated": true,
+      "request_id": null,
+      "request_type": "IMPACT"
+    },
+    {
+      "message_id": "MSG-0008",
+      "case_id": "CASE-0001",
+      "site_id": "S10",
+      "direction": "IN",
+      "body": "The warehouse is safe, but road access is closed. Earliest shipment D+3.",
+      "structured": {
+        "affected": "PARTIAL",
+        "delay_days": 3,
+        "notes": "The warehouse is safe, but road access is closed."
+      },
+      "created_at": "2026-10-31T10:43:50+07:00",
+      "simulated": true,
+      "request_id": null,
+      "request_type": "IMPACT"
+    }
+  ],
+  "backup": {
+    "site": null,
+    "ramp_days": null,
+    "surcharge_pct": null
+  }
+}

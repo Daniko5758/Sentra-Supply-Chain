@@ -1,0 +1,117 @@
+{
+  "seed": {
+    "file": "sentra_v2_2_test_seed.json",
+    "version": "2.2",
+    "dataset": "TEST"
+  },
+  "scenarios": [
+    {
+      "key": "flood_karawang",
+      "risk_type": "FLOOD",
+      "scope": "LOCATION",
+      "country": "ID",
+      "location": "Karawang",
+      "downtime_days": null,
+      "summary": "SIMULATED: Citarum river overflow floods several districts of Karawang; access roads to industrial areas are cut."
+    },
+    {
+      "key": "tariff_cn",
+      "risk_type": "TARIFF",
+      "scope": "COUNTRY",
+      "country": "CN",
+      "location": "China",
+      "downtime_days": null,
+      "summary": "SIMULATED: Import duty on electronic components from China rises by 10 percentage points from D+14."
+    },
+    {
+      "key": "fire_tangerang",
+      "risk_type": "FIRE",
+      "scope": "LOCATION",
+      "country": "ID",
+      "location": "Tangerang",
+      "downtime_days": 21,
+      "summary": "SIMULATED: Fire at a motor plant in Cikupa, Tangerang; operations halted for about three weeks."
+    },
+    {
+      "key": "road_closure_bogor",
+      "risk_type": "LOGISTICS",
+      "scope": "LOCATION",
+      "country": "ID",
+      "location": "Bogor",
+      "downtime_days": 12,
+      "summary": "SIMULATED: Bridge collapse closes the truck route out of Gunung Putri, Bogor, for about 12 days."
+    },
+    {
+      "key": "quake_hsinchu",
+      "risk_type": "EARTHQUAKE",
+      "scope": "LOCATION",
+      "country": "TW",
+      "location": "Hsinchu",
+      "downtime_days": 21,
+      "summary": "SIMULATED: M6.4 earthquake near Hsinchu; chip plants stop about three weeks for tool requalification."
+    },
+    {
+      "key": "typhoon_ningbo",
+      "risk_type": "FLOOD",
+      "scope": "LOCATION",
+      "country": "CN",
+      "location": "Ningbo",
+      "downtime_days": null,
+      "summary": "SIMULATED: Typhoon-driven flooding in Ningbo; port and factories closed."
+    },
+    {
+      "key": "quake_hamamatsu",
+      "risk_type": "EARTHQUAKE",
+      "scope": "LOCATION",
+      "country": "JP",
+      "location": "Hamamatsu",
+      "downtime_days": 14,
+      "summary": "SIMULATED: Strong earthquake in western Shizuoka; plants in Hamamatsu stop for inspection."
+    },
+    {
+      "key": "typhoon_haiphong",
+      "risk_type": "FLOOD",
+      "scope": "LOCATION",
+      "country": "VN",
+      "location": "Hai Phong",
+      "downtime_days": null,
+      "summary": "SIMULATED: Typhoon floods industrial zones in Hai Phong; power and roads cut."
+    },
+    {
+      "key": "flood_rayong",
+      "risk_type": "FLOOD",
+      "scope": "LOCATION",
+      "country": "TH",
+      "location": "Rayong",
+      "downtime_days": null,
+      "summary": "SIMULATED: Flooding in Rayong industrial estates."
+    },
+    {
+      "key": "export_control_cn",
+      "risk_type": "POLITICAL",
+      "scope": "COUNTRY",
+      "country": "CN",
+      "location": "China",
+      "downtime_days": 45,
+      "summary": "SIMULATED: China suspends export licences for rare-earth permanent magnets; reviews take about 45 days."
+    },
+    {
+      "key": "port_strike_th",
+      "risk_type": "LOGISTICS",
+      "scope": "COUNTRY",
+      "country": "TH",
+      "location": "Thailand",
+      "downtime_days": 14,
+      "summary": "SIMULATED: Strike at Laem Chabang port stops sea exports from Thailand for about two weeks."
+    },
+    {
+      "key": "truck_strike_kr",
+      "risk_type": "LOGISTICS",
+      "scope": "COUNTRY",
+      "country": "KR",
+      "location": "South Korea",
+      "downtime_days": 10,
+      "summary": "SIMULATED: Nationwide cargo truckers' strike in South Korea halts container trucking."
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "case_id": "CASE-0003",
+  "title": "Fire ? Tangerang",
+  "risk_type": "FIRE",
+  "scope": "LOCATION",
+  "location": "Tangerang",
+  "country": "ID",
+  "mode": "DEMO",
+  "simulated": true,
+  "status": "READY_FOR_DECISION",
+  "d0_date": "2026-10-31",
+  "created_at": "2026-10-31T10:40:00+07:00",
+  "updated_at": "2026-10-31T10:52:00+07:00",
+  "version": 2,
+  "versions": [
+    {
+      "version": 1,
+      "trigger": "initial",
+      "created_at": "2026-10-31T10:40:00+07:00"
+    },
+    {
+      "version": 2,
+      "trigger": "supplier_reply",
+      "created_at": "2026-10-31T10:52:00+07:00"
+    }
+  ],
+  "signal": {
+    "signal_id": "SIG-0003",
+    "summary": "SIMULATED: Fire at a motor plant in Cikupa, Tangerang; operations halted for about three weeks.",
+    "severity": 5,
+    "source_urls": [],
+    "source_label": "SENTRA demo scenario (SIMULATED)"
+  },
+  "kpi": {
+    "units_at_risk": 0,
+    "delayed_output_value": 0,
+    "affected_po_value": 0,
+    "revenue_at_risk": 0,
+    "priority_score": 27.8,
+    "level": "LOW",
+    "status": "READY_FOR_DECISION"
+  },
+  "impact": {
+    "version": 2,
+    "scope": "LOCATION",
+    "part_delays": [],
+    "po_lines": [],
+    "production_orders": [],
+    "sales_orders": [],
+    "totals": {
+      "units_blocked": 0,
+      "output_value": 0,
+      "po_value": 0,
+      "rar": 0,
+      "parts_affected": 0,
+      "pos_affected": 0,
+      "po_lines_affected": 0,
+      "products_affected": [],
+      "orders_blocked": 0,
+      "max_delay_days": 7,
+      "max_po_slip_days": 0
+    },
+    "tariff": null,
+    "exposure": null,
+    "disruption": null,
+    "baseline_short": []
+  },
+  "sites": [
+    {
+      "site_id": "S06",
+      "supplier_name": "PT Dinamo Presisi",
+      "tier": "1",
+      "path": "S06 ? ",
+      "recovery_days": 7,
+      "k_a_formula": null,
+      "p_rpt_a": null,
+      "k_a": null,
+      "k_b_formula": null,
+      "p_rpt_b": null,
+      "k_b": null,
+      "rpt_status": "UNAVAILABLE",
+      "verification_status": "REQUESTED",
+      "delay_override_days": null,
+      "backup_ramp_confirmed": 7,
+      "backup_declined": false,
+      "backup_site": "Serang",
+      "requests": [
+        {
+          "request_id": "REQ-0004",
+          "request_type": "BACKUP_ACTIVATION",
+          "status": "ANSWERED",
+          "answer": "YES"
+        }
+      ],
+      "excluded": false
+    }
+  ],
+  "priority": [
+    {
+      "site_id": "S06",
+      "supplier_name": "PT Dinamo Presisi",
+      "tier": "1",
+      "recovery_days": 7,
+      "rar": 0,
+      "output_value": 0,
+      "po_value": 0,
+      "bcp_score": 65,
+      "bcp_band": "MEDIUM_RISK",
+      "components": {
+        "n_rar": 0,
+        "n_ttr": 23.3,
+        "n_bcp": 35,
+        "n_tier": 100
+      },
+      "score": 27.8
+    }
+  ],
+  "preliminary": false,
+  "escalation": {
+    "case_id": "CASE-0003",
+    "version": 2,
+    "tier": 0,
+    "kind": null,
+    "reasons": [],
+    "participants": [],
+    "required_approvers": [],
+    "recommended_option": null,
+    "premium": null,
+    "extra_duty": null,
+    "limits": {
+      "scm_approval_limit": 100000000,
+      "tariff_escalation_duty": 250000000,
+      "close_call_band_pp": 2,
+      "premium_max_pct": 10
+    },
+    "meeting_tier": 0,
+    "needs_meeting": false,
+    "decision_required": false,
+    "meeting": null,
+    "decision": null
+  }
+}

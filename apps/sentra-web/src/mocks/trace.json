@@ -1,0 +1,16 @@
+[
+  {
+    "trace_id": "TR-0042",
+    "run_id": "RUN-20261031-0008",
+    "task": "analyze_case",
+    "case_id": "CASE-0001",
+    "step": "assess_confidence",
+    "tool": "assess_confidence",
+    "input_summary": "4 candidate sites",
+    "output_summary": "K_A(S10)=34.5, K_B(S01)=28.6",
+    "decision": "K_A(S10)=34.5 < 50 → request supplier confirmation",
+    "duration_ms": 1830,
+    "status": "OK",
+    "created_at": "2026-10-31T10:42:31+07:00"
+  }
+]

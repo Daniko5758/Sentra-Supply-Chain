@@ -1,0 +1,38 @@
+{
+  "run_id": "RUN-20261031-0007",
+  "task": "scan_external",
+  "trigger": "manual",
+  "case_id": null,
+  "status": "OK",
+  "started_at": "2026-10-31T10:40:01+07:00",
+  "finished_at": "2026-10-31T10:41:12+07:00",
+  "summary": "Scan completed: 0 signals saved.",
+  "error": null,
+  "data": {
+    "signals_saved": 0,
+    "signals_dropped": 1,
+    "unverified": [
+      {
+        "risk_type": "FLOOD",
+        "location": "Example location",
+        "urls": ["https://example.com/unverified-report"],
+        "reason": "single source (after syndication check)"
+      }
+    ],
+    "cases": [],
+    "sources_used": ["BRAVE", "SONAR"],
+    "evidence_stats": {
+      "candidates": 2,
+      "screened": 1,
+      "in_window": 1,
+      "stale": 0,
+      "not_found": 0,
+      "fetch_failed": 0,
+      "skipped_budget": 2
+    },
+    "skipped_targets": [
+      {"source": "BRAVE", "target": "CN:policy", "reason": "TIME_BUDGET"}
+    ],
+    "partition": {"index": 0, "count": 1, "locations": [], "countries": ["CN"]}
+  }
+}

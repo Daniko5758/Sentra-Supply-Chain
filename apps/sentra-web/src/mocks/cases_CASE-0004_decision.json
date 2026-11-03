@@ -1,0 +1,16 @@
+{
+  "decision_id": "DCN-0001",
+  "case_id": "CASE-0004",
+  "meeting_id": "MTG-0004",
+  "case_version": 1,
+  "option": "A",
+  "budget_approved": true,
+  "approved_by": [
+    "CFO",
+    "CEO",
+    "LEGAL"
+  ],
+  "notes": "CFO approved the air-freight budget; Legal confirmed the export-control scope.",
+  "decided_by": "scm",
+  "decided_at": "2026-10-31T11:20:00+07:00"
+}

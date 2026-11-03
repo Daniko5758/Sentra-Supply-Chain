@@ -1,0 +1,237 @@
+.supplier-portal-page {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.supplier-portal-page .page-description {
+  margin: -6px 0 0;
+}
+
+.supplier-portal__heading {
+  align-items: center;
+  gap: 12px;
+}
+
+.supplier-portal__cases {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.supplier-portal__case {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.supplier-portal__case-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px 24px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.supplier-portal__case-header h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.supplier-portal__case-header p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 6px 0 0;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.supplier-portal__case-link {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.supplier-portal__case-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.supplier-portal__sites {
+  display: grid;
+  gap: 18px;
+  padding: 20px 22px;
+}
+
+.supplier-portal__site {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.supplier-portal__site + .supplier-portal__site {
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+}
+
+.supplier-portal__site h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.supplier-portal__thread {
+  display: grid;
+  gap: 10px;
+}
+
+.supplier-portal__request-group {
+  display: grid;
+  gap: 9px;
+}
+
+.supplier-portal__request-group + .supplier-portal__request-group {
+  margin-top: 13px;
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+}
+
+.supplier-portal__request-group h4 {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.supplier-message {
+  min-width: 0;
+  padding: 15px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.supplier-message--incoming {
+  border-left: 3px solid var(--accent);
+}
+
+.supplier-message--outgoing {
+  border-left: 3px solid var(--line-strong);
+}
+
+.supplier-message__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.supplier-message__header h5 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.supplier-message__header time {
+  display: block;
+  margin-top: 4px;
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.supplier-message__body {
+  margin: 13px 0;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.supplier-message__details {
+  display: grid;
+  grid-template-columns: minmax(105px, 0.6fr) minmax(105px, 0.6fr) minmax(220px, 2fr);
+  gap: 9px 16px;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.supplier-message__details div {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.supplier-message__details dt {
+  color: var(--ink-muted);
+  font-size: 11px;
+}
+
+.supplier-message__details dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.supplier-message__unstructured {
+  margin: 0;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.supplier-portal__state,
+.supplier-portal__empty {
+  margin: 0;
+  padding: 22px;
+  color: var(--ink-muted);
+}
+
+.supplier-portal__state[role='alert'] {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+}
+
+.supplier-portal__state p {
+  margin: 0;
+  color: var(--ink);
+}
+
+.supplier-portal__empty-message {
+  margin: 0;
+  padding: 20px 22px;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .supplier-portal__case-header {
+    flex-direction: column;
+    padding: 17px 16px;
+  }
+
+  .supplier-portal__sites {
+    padding: 17px 16px;
+  }
+
+  .supplier-message__details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .supplier-message__notes {
+    grid-column: 1 / -1;
+  }
+}

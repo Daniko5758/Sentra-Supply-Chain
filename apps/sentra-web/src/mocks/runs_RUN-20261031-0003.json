@@ -1,0 +1,11 @@
+{
+  "run_id": "RUN-20261031-0003",
+  "task": "scan_external",
+  "trigger": "auto",
+  "case_id": null,
+  "status": "OK",
+  "started_at": "2026-10-31T10:00:02+07:00",
+  "finished_at": "2026-10-31T10:01:12+07:00",
+  "summary": "Live news scan completed in mock mode.",
+  "error": null
+}

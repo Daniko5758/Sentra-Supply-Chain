@@ -1,0 +1,20 @@
+{
+  "action_id": "ACT-0001",
+  "seq": 1,
+  "type": "CREATE_PR_PO",
+  "object": "BAT-48 @ S12",
+  "payload": {
+    "material_id": "BAT-48",
+    "supplier_id": "S12",
+    "qty": 35,
+    "price": 7100000,
+    "delivery_date": "2026-11-05",
+    "shipping_condition": "ROAD",
+    "incoterms": "FCA",
+    "freight_per_unit": 0
+  },
+  "status": "REJECTED",
+  "idempotency_key": "CASE-0001:A:1:v2",
+  "erp_result": null,
+  "error": null
+}

@@ -1,0 +1,199 @@
+{
+  "case_id": "CASE-0001",
+  "title": "Flood – Karawang",
+  "simulated": true,
+  "score": 79.7,
+  "level": "HIGH",
+  "status": "AWAITING_SUPPLIER",
+  "updated_at": "2026-10-31T10:42:40+07:00",
+  "notification": {
+    "status": "FAILED",
+    "kind": "MEETING_ROOM",
+    "meeting_id": "MTG-0001",
+    "recipients": [
+      "BUYER",
+      "PPIC",
+      "SALES",
+      "SCM_MANAGER"
+    ],
+    "sent_at": null,
+    "error": "Zoom meeting could not be scheduled in this demo fixture."
+  },
+  "sites": [
+    {
+      "site_id": "S01",
+      "supplier_name": "PT Karya Baterai Karawang",
+      "tier": "1",
+      "recovery_days": 14,
+      "rar": 2740000000,
+      "output_value": 1615000000,
+      "po_value": 1125000000,
+      "bcp_score": 35,
+      "components": {
+        "n_rar": 100,
+        "n_ttr": 46.7,
+        "n_bcp": 65,
+        "n_tier": 100
+      },
+      "score": 79.7,
+      "verification_status": "REQUESTED",
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "site_id": "S10",
+      "supplier_name": "CV Cetak Plastik",
+      "tier": "2",
+      "recovery_days": 12,
+      "rar": 487800000,
+      "output_value": 465000000,
+      "po_value": 22800000,
+      "bcp_score": 25,
+      "components": {
+        "n_rar": 48.8,
+        "n_ttr": 40,
+        "n_bcp": 75,
+        "n_tier": 60
+      },
+      "score": 53.5,
+      "verification_status": "REQUESTED",
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "site_id": "S09",
+      "supplier_name": "PT Sel Energi",
+      "tier": "2",
+      "recovery_days": 10,
+      "rar": 530000000,
+      "output_value": 0,
+      "po_value": 530000000,
+      "bcp_score": 35,
+      "components": {
+        "n_rar": 53,
+        "n_ttr": 33.3,
+        "n_bcp": 65,
+        "n_tier": 60
+      },
+      "score": 51.5,
+      "verification_status": "NOT_NEEDED",
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "site_id": "S02",
+      "supplier_name": "PT Harness Prima",
+      "tier": "1",
+      "recovery_days": 4,
+      "rar": 58200000,
+      "output_value": 0,
+      "po_value": 58200000,
+      "bcp_score": 80,
+      "components": {
+        "n_rar": 5.8,
+        "n_ttr": 13.3,
+        "n_bcp": 20,
+        "n_tier": 100
+      },
+      "score": 24.7,
+      "verification_status": "REQUESTED",
+      "bcp_band": "MEDIUM_RISK"
+    }
+  ],
+  "latest_recommendation": {
+    "recommended_option": "B",
+    "preliminary": true,
+    "rule_reason": null
+  },
+  "escalation": {
+    "case_id": "CASE-0001",
+    "version": 1,
+    "tier": 1,
+    "kind": "MEETING_ROOM",
+    "reasons": [
+      {
+        "code": "M1",
+        "text": "Score 79.7 is HIGH and the recommended Option B delays 3 sales order(s)"
+      }
+    ],
+    "participants": [
+      "BUYER",
+      "PPIC",
+      "SALES",
+      "SCM_MANAGER"
+    ],
+    "required_approvers": [],
+    "recommended_option": "B",
+    "premium": null,
+    "extra_duty": null,
+    "limits": {
+      "scm_approval_limit": 100000000,
+      "tariff_escalation_duty": 250000000,
+      "close_call_band_pp": 2,
+      "premium_max_pct": 10
+    },
+    "meeting_tier": 0,
+    "needs_meeting": true,
+    "decision_required": false,
+    "meeting": {
+      "meeting_id": "MTG-0001",
+      "case_id": "CASE-0001",
+      "tier": 1,
+      "kind": "MEETING_ROOM",
+      "provider": "ZOOM",
+      "status": "FAILED",
+      "join_url": null,
+      "start_time": null,
+      "duration_min": 30,
+      "topic": "SENTRA Meeting Room ? Flood ? Karawang (CASE-0001)",
+      "agenda": "Review the supplier impact, recovery timing, and next actions.",
+      "agenda_source": "template",
+      "participants": [
+        "BUYER",
+        "PPIC",
+        "SALES",
+        "SCM_MANAGER"
+      ],
+      "required_approvers": [],
+      "reasons": [
+        {
+          "code": "M1",
+          "text": "Score 79.7 is HIGH and the recommended Option B delays 3 sales order(s)"
+        }
+      ],
+      "case_version": 1,
+      "error": "Zoom meeting could not be scheduled in this demo fixture.",
+      "created_at": "2026-10-31T10:42:41+07:00"
+    },
+    "decision": null
+  },
+  "meetings": [
+    {
+      "meeting_id": "MTG-0001",
+      "case_id": "CASE-0001",
+      "tier": 1,
+      "kind": "MEETING_ROOM",
+      "provider": "ZOOM",
+      "status": "FAILED",
+      "join_url": null,
+      "start_time": null,
+      "duration_min": 30,
+      "topic": "SENTRA Meeting Room ? Flood ? Karawang (CASE-0001)",
+      "agenda": "Review the supplier impact, recovery timing, and next actions.",
+      "agenda_source": "template",
+      "participants": [
+        "BUYER",
+        "PPIC",
+        "SALES",
+        "SCM_MANAGER"
+      ],
+      "required_approvers": [],
+      "reasons": [
+        {
+          "code": "M1",
+          "text": "Score 79.7 is HIGH and the recommended Option B delays 3 sales order(s)"
+        }
+      ],
+      "case_version": 1,
+      "error": "Zoom meeting could not be scheduled in this demo fixture.",
+      "created_at": "2026-10-31T10:42:41+07:00"
+    }
+  ]
+}

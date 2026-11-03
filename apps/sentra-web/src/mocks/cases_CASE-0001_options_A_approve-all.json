@@ -1,0 +1,254 @@
+[
+  {
+    "action_id": "ACT-0001",
+    "seq": 1,
+    "type": "CREATE_PR_PO",
+    "object": "BAT-48 @ S12",
+    "payload": {
+      "material_id": "BAT-48",
+      "supplier_id": "S12",
+      "qty": 35,
+      "price": 7100000,
+      "delivery_date": "2026-11-05",
+      "shipping_condition": "ROAD",
+      "incoterms": "FCA",
+      "freight_per_unit": 0
+    },
+    "status": "EXECUTED",
+    "idempotency_key": "CASE-0001:A:1:v2",
+    "erp_result": {
+      "document": "PR 0010000001 / PO 4500000001 (released)",
+      "messages": [
+        {
+          "type": "S",
+          "id": "06",
+          "number": "402",
+          "message": "Purchase requisition number 0010000001 created"
+        },
+        {
+          "type": "S",
+          "id": "06",
+          "number": "017",
+          "message": "Standard PO created under the number 4500000001"
+        },
+        {
+          "type": "W",
+          "id": "ZMOCK_S4",
+          "number": "010",
+          "message": "Purchase order 4500000001 is subject to approval (net value 248,500,000 IDR)"
+        },
+        {
+          "type": "S",
+          "id": "ZMOCK_S4",
+          "number": "011",
+          "message": "Purchase order 4500000001 released by SCM"
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "action_id": "ACT-0002",
+    "seq": 2,
+    "type": "CREATE_PR_PO",
+    "object": "BAT-60 @ S12",
+    "payload": {
+      "material_id": "BAT-60",
+      "supplier_id": "S12",
+      "qty": 25,
+      "price": 9800000,
+      "delivery_date": "2026-11-05",
+      "shipping_condition": "ROAD",
+      "incoterms": "FCA",
+      "freight_per_unit": 0
+    },
+    "status": "EXECUTED",
+    "idempotency_key": "CASE-0001:A:2:v2",
+    "erp_result": {
+      "document": "PR 0010000002 / PO 4500000002 (released)",
+      "messages": [
+        {
+          "type": "S",
+          "id": "06",
+          "number": "402",
+          "message": "Purchase requisition number 0010000002 created"
+        },
+        {
+          "type": "S",
+          "id": "06",
+          "number": "017",
+          "message": "Standard PO created under the number 4500000002"
+        },
+        {
+          "type": "W",
+          "id": "ZMOCK_S4",
+          "number": "010",
+          "message": "Purchase order 4500000002 is subject to approval (net value 245,000,000 IDR)"
+        },
+        {
+          "type": "S",
+          "id": "ZMOCK_S4",
+          "number": "011",
+          "message": "Purchase order 4500000002 released by SCM"
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "action_id": "ACT-0003",
+    "seq": 3,
+    "type": "REDUCE_OR_CANCEL_PO",
+    "object": "4500001001/10",
+    "payload": {
+      "po_id": "4500001001",
+      "item_no": 10,
+      "old_qty": 40,
+      "new_qty": 5
+    },
+    "status": "EXECUTED",
+    "idempotency_key": "CASE-0001:A:3:v2",
+    "erp_result": {
+      "document": "PO 4500001001/10 quantity 40→5",
+      "messages": [
+        {
+          "type": "S",
+          "id": "06",
+          "number": "023",
+          "message": "Standard PO 4500001001 changed"
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "action_id": "ACT-0004",
+    "seq": 4,
+    "type": "REDUCE_OR_CANCEL_PO",
+    "object": "4500001002/10",
+    "payload": {
+      "po_id": "4500001002",
+      "item_no": 10,
+      "old_qty": 30,
+      "new_qty": 5
+    },
+    "status": "EXECUTED",
+    "idempotency_key": "CASE-0001:A:4:v2",
+    "erp_result": {
+      "document": "PO 4500001002/10 quantity 30→5",
+      "messages": [
+        {
+          "type": "S",
+          "id": "06",
+          "number": "023",
+          "message": "Standard PO 4500001002 changed"
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "action_id": "ACT-0005",
+    "seq": 5,
+    "type": "CHANGE_PO_DATE",
+    "object": "4500001001/10",
+    "payload": {
+      "po_id": "4500001001",
+      "item_no": 10,
+      "old_date": "2026-11-04",
+      "new_date": "2026-11-14"
+    },
+    "status": "EXECUTED",
+    "idempotency_key": "CASE-0001:A:5:v2",
+    "erp_result": {
+      "document": "PO 4500001001/10 delivery 2026-11-04→2026-11-14",
+      "messages": [
+        {
+          "type": "S",
+          "id": "06",
+          "number": "023",
+          "message": "Standard PO 4500001001 changed"
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "action_id": "ACT-0006",
+    "seq": 6,
+    "type": "CHANGE_PO_DATE",
+    "object": "4500001001/20",
+    "payload": {
+      "po_id": "4500001001",
+      "item_no": 20,
+      "old_date": "2026-11-09",
+      "new_date": "2026-11-14"
+    },
+    "status": "EXECUTED",
+    "idempotency_key": "CASE-0001:A:6:v2",
+    "erp_result": {
+      "document": "PO 4500001001/20 delivery 2026-11-09→2026-11-14",
+      "messages": [
+        {
+          "type": "S",
+          "id": "06",
+          "number": "023",
+          "message": "Standard PO 4500001001 changed"
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "action_id": "ACT-0007",
+    "seq": 7,
+    "type": "CHANGE_PO_DATE",
+    "object": "4500001002/10",
+    "payload": {
+      "po_id": "4500001002",
+      "item_no": 10,
+      "old_date": "2026-11-03",
+      "new_date": "2026-11-14"
+    },
+    "status": "EXECUTED",
+    "idempotency_key": "CASE-0001:A:7:v2",
+    "erp_result": {
+      "document": "PO 4500001002/10 delivery 2026-11-03→2026-11-14",
+      "messages": [
+        {
+          "type": "S",
+          "id": "06",
+          "number": "023",
+          "message": "Standard PO 4500001002 changed"
+        }
+      ]
+    },
+    "error": null
+  },
+  {
+    "action_id": "ACT-0008",
+    "seq": 8,
+    "type": "CHANGE_PO_DATE",
+    "object": "4500001002/20",
+    "payload": {
+      "po_id": "4500001002",
+      "item_no": 20,
+      "old_date": "2026-11-11",
+      "new_date": "2026-11-14"
+    },
+    "status": "EXECUTED",
+    "idempotency_key": "CASE-0001:A:8:v2",
+    "erp_result": {
+      "document": "PO 4500001002/20 delivery 2026-11-11→2026-11-14",
+      "messages": [
+        {
+          "type": "S",
+          "id": "06",
+          "number": "023",
+          "message": "Standard PO 4500001002 changed"
+        }
+      ]
+    },
+    "error": null
+  }
+]

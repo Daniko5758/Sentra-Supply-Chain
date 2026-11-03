@@ -1,0 +1,86 @@
+[
+  {
+    "message_id": "MSG-0003",
+    "case_id": "CASE-0001",
+    "site_id": "S01",
+    "direction": "OUT",
+    "body": "Flood – Karawang (SIMULATED). Please confirm whether production is affected, the expected delay in days, and any notes. Affected? (YES / PARTIAL / NO) Expected delay (days) Notes",
+    "structured": null,
+    "created_at": "2026-10-31T10:42:35+07:00",
+    "simulated": true,
+    "request_id": null,
+    "request_type": "IMPACT"
+  },
+  {
+    "message_id": "MSG-0004",
+    "case_id": "CASE-0001",
+    "site_id": "S01",
+    "direction": "IN",
+    "body": "Production floor flooded; machines are being dried. Earliest shipment D+14.",
+    "structured": {
+      "affected": "YES",
+      "delay_days": 14,
+      "notes": "Production floor flooded; machines are being dried. Earliest shipment D+14."
+    },
+    "created_at": "2026-10-31T10:43:50+07:00",
+    "simulated": true,
+    "request_id": null,
+    "request_type": "IMPACT"
+  },
+  {
+    "message_id": "MSG-0005",
+    "case_id": "CASE-0001",
+    "site_id": "S02",
+    "direction": "OUT",
+    "body": "Flood – Karawang (SIMULATED). Please confirm whether production is affected, the expected delay in days, and any notes. Affected? (YES / PARTIAL / NO) Expected delay (days) Notes",
+    "structured": null,
+    "created_at": "2026-10-31T10:42:35+07:00",
+    "simulated": true,
+    "request_id": null,
+    "request_type": "IMPACT"
+  },
+  {
+    "message_id": "MSG-0006",
+    "case_id": "CASE-0001",
+    "site_id": "S02",
+    "direction": "IN",
+    "body": "Production is partially affected; supply is moving to the backup site in Purwakarta. Earliest shipment D+2.",
+    "structured": {
+      "affected": "PARTIAL",
+      "delay_days": 2,
+      "notes": "Production is partially affected; supply is moving to the backup site in Purwakarta."
+    },
+    "created_at": "2026-10-31T10:43:50+07:00",
+    "simulated": true,
+    "request_id": null,
+    "request_type": "IMPACT"
+  },
+  {
+    "message_id": "MSG-0007",
+    "case_id": "CASE-0001",
+    "site_id": "S10",
+    "direction": "OUT",
+    "body": "Flood – Karawang (SIMULATED). Please confirm whether the component supply is affected, the expected delay in days, and any notes. Affected? (YES / PARTIAL / NO) Expected delay (days) Notes",
+    "structured": null,
+    "created_at": "2026-10-31T10:42:35+07:00",
+    "simulated": true,
+    "request_id": null,
+    "request_type": "IMPACT"
+  },
+  {
+    "message_id": "MSG-0008",
+    "case_id": "CASE-0001",
+    "site_id": "S10",
+    "direction": "IN",
+    "body": "The warehouse is safe, but road access is closed. Earliest shipment D+3.",
+    "structured": {
+      "affected": "PARTIAL",
+      "delay_days": 3,
+      "notes": "The warehouse is safe, but road access is closed."
+    },
+    "created_at": "2026-10-31T10:43:50+07:00",
+    "simulated": true,
+    "request_id": null,
+    "request_type": "IMPACT"
+  }
+]

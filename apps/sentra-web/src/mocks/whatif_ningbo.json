@@ -1,0 +1,82 @@
+{
+  "location": "Ningbo",
+  "banner": "What-if only — no case, no email, no ERP change.",
+  "sites_t1": [
+    "S13"
+  ],
+  "sites_t2": [],
+  "kpi": {
+    "parts_affected": 1,
+    "pos_affected": 1,
+    "po_lines_affected": 1,
+    "products_affected": [],
+    "units_blocked": 0,
+    "orders_blocked": 0,
+    "max_delay_days": 10,
+    "max_po_slip_days": 2,
+    "output_value": 0,
+    "po_value": 112500000,
+    "rar": 112500000
+  },
+  "impact": {
+    "version": 1,
+    "scope": "LOCATION",
+    "part_delays": [
+      {
+        "part_id": "SHK-R",
+        "days": 10,
+        "cause_site": "S13",
+        "via_site": null
+      }
+    ],
+    "po_lines": [
+      {
+        "po_id": "4500001016",
+        "item_no": 10,
+        "material_id": "SHK-R",
+        "supplier_id": "S13",
+        "qty": 150,
+        "confirmed_date": "2026-11-08",
+        "new_eta": "2026-11-10",
+        "slip_days": 2,
+        "value": 112500000,
+        "cause_site": "S13",
+        "via_site": null
+      }
+    ],
+    "production_orders": [],
+    "sales_orders": [],
+    "totals": {
+      "units_blocked": 0,
+      "output_value": 0,
+      "po_value": 112500000,
+      "rar": 112500000,
+      "parts_affected": 1,
+      "pos_affected": 1,
+      "po_lines_affected": 1,
+      "products_affected": [],
+      "orders_blocked": 0,
+      "max_delay_days": 10,
+      "max_po_slip_days": 2
+    },
+    "tariff": null,
+    "exposure": null,
+    "baseline_short": [],
+    "disruption": null
+  },
+  "charts": {
+    "rar_by_site": [
+      {
+        "site_id": "S13",
+        "rar": 112500000
+      }
+    ],
+    "delay_by_part": [
+      {
+        "part_id": "SHK-R",
+        "days": 10
+      }
+    ],
+    "units_by_product": []
+  }
+}

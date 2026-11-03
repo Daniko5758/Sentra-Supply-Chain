@@ -1,0 +1,156 @@
+/* C-51: gaya SAP Fiori hanya di dalam .erp-shell (ERP log, Approvals, hasil eksekusi).
+   Jangan menulis selektor tanpa awalan .erp-shell di berkas ini (dicek tes c47_erp_shell_styles_are_scoped). */
+.erp-shell {
+  /* Token lokal; nilainya dari styles/theme.css. Nilai tema SAP UI5 asli belum dicek (DOKUMEN_EDIT_C-51 bagian 4.6). */
+  --erp-bar-bg: var(--accent-strong);
+  --erp-bar-ink: var(--surface);
+  --erp-header-bg: var(--surface-raised);
+  --erp-line: var(--line);
+  --erp-success: var(--status-ok);
+  --erp-warning: var(--badge-medium);
+  --erp-error: var(--status-failed);
+  --erp-information: var(--accent);
+  --erp-neutral: var(--badge-low);
+  --erp-message-warning: #946200; /* sudah dipakai approvals.css untuk ikon W (C-50) */
+  display: grid;
+  min-width: 0;
+  border: 1px solid var(--erp-line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.erp-shell .erp-shell__bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 16px;
+  background: var(--erp-bar-bg);
+  color: var(--erp-bar-ink);
+}
+
+.erp-shell .erp-shell__brand {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.erp-shell .erp-shell__title {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.erp-shell .erp-shell__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 40px;
+  padding: 6px 16px;
+  border-bottom: 1px solid var(--erp-line);
+  background: var(--surface);
+  color: var(--ink-muted);
+  font-size: 14px;
+}
+
+.erp-shell .erp-shell__content {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+  padding: 16px;
+  background: var(--canvas);
+}
+
+/* Kartu di dalam bingkai: datar seperti Fiori. */
+.erp-shell .card {
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+}
+
+/* Tabel gaya Fiori: header abu-abu muda, garis tipis, teks isi 14 px. */
+.erp-shell table th {
+  background: var(--erp-header-bg);
+  color: var(--ink-muted);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  border-bottom: 1px solid var(--erp-line);
+}
+
+.erp-shell table td {
+  font-size: 14px;
+  border-bottom: 1px solid var(--erp-line);
+}
+
+.erp-shell table tbody tr:hover td {
+  background: var(--surface-hover);
+}
+
+/* Judul kelompok ERP log (C-50) tetap biru muda di atas aturan header tabel. */
+.erp-shell .erp-log__group-title th {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+/* P7: status semantik (ObjectStatus), selalu dengan teks. */
+.erp-shell .erp-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.erp-shell .erp-status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.erp-shell .erp-status--success { color: var(--erp-success); }
+.erp-shell .erp-status--warning { color: var(--erp-warning); }
+.erp-shell .erp-status--error { color: var(--erp-error); }
+.erp-shell .erp-status--information { color: var(--erp-information); }
+.erp-shell .erp-status--neutral { color: var(--erp-neutral); }
+
+/* P8: strip pesan SAP per tipe (5B.2: S hijau, W kuning, E merah, I abu). Teks pesan dari API apa adanya. */
+.erp-shell .erp-messages__list {
+  display: grid;
+  gap: 4px;
+}
+
+.erp-shell .erp-message {
+  padding: 8px 12px;
+  border-left: 4px solid var(--erp-neutral);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--erp-neutral) 8%, var(--surface));
+}
+
+.erp-shell .erp-message--S {
+  border-left-color: var(--erp-success);
+  background: color-mix(in srgb, var(--erp-success) 8%, var(--surface));
+}
+
+.erp-shell .erp-message--W {
+  border-left-color: var(--erp-message-warning);
+  background: color-mix(in srgb, var(--erp-message-warning) 10%, var(--surface));
+}
+
+.erp-shell .erp-message--E {
+  border-left-color: var(--erp-error);
+  background: color-mix(in srgb, var(--erp-error) 8%, var(--surface));
+}
+
+/* P8: satu strip per hasil eksekusi; garis kiri mengikuti status. */
+.erp-shell .approval-result--success { border-left: 4px solid var(--erp-success); }
+.erp-shell .approval-result--error { border-left: 4px solid var(--erp-error); }
+.erp-shell .approval-result--warning { border-left: 4px solid var(--erp-warning); }
+.erp-shell .approval-result--information { border-left: 4px solid var(--erp-information); }
+.erp-shell .approval-result--neutral { border-left: 4px solid var(--erp-neutral); }
+
+.erp-shell .approval-results__document {
+  font-weight: 650;
+}

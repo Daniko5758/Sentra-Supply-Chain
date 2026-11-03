@@ -1,0 +1,160 @@
+{
+  "total_po_exposure": 4370100000,
+  "simulated_cases_present": true,
+  "countries": [
+    {
+      "country": "ID",
+      "name": "Indonesia",
+      "sites_t1": 7,
+      "sites_t2": 3,
+      "open_po_lines": 26,
+      "po_exposure": 3624700000,
+      "share": 82.9,
+      "exposure_tier": 4,
+      "highest_level": "HIGH",
+      "open_cases": [
+        {
+          "case_id": "CASE-0001",
+          "title": "Flood – Karawang",
+          "level": "HIGH",
+          "score": 79.7
+        }
+      ],
+      "sites": [
+        {
+          "site_id": "S01",
+          "supplier_name": "PT Karya Baterai Karawang",
+          "tier": "1",
+          "kabupaten": "Karawang"
+        },
+        {
+          "site_id": "S02",
+          "supplier_name": "PT Harness Prima",
+          "tier": "1",
+          "kabupaten": "Karawang"
+        },
+        {
+          "site_id": "S03",
+          "supplier_name": "PT Rangka Baja Bekasi",
+          "tier": "1",
+          "kabupaten": "Bekasi"
+        },
+        {
+          "site_id": "S04",
+          "supplier_name": "PT Roda Cakra",
+          "tier": "1",
+          "kabupaten": "Bogor"
+        },
+        {
+          "site_id": "S06",
+          "supplier_name": "PT Dinamo Presisi",
+          "tier": "1",
+          "kabupaten": "Tangerang"
+        },
+        {
+          "site_id": "S07",
+          "supplier_name": "PT Sinar Lampu",
+          "tier": "1",
+          "kabupaten": "Bekasi"
+        },
+        {
+          "site_id": "S08",
+          "supplier_name": "PT Plastindo Body",
+          "tier": "1",
+          "kabupaten": "Purwakarta"
+        },
+        {
+          "site_id": "S09",
+          "supplier_name": "PT Sel Energi",
+          "tier": "2",
+          "kabupaten": "Karawang"
+        },
+        {
+          "site_id": "S10",
+          "supplier_name": "CV Cetak Plastik",
+          "tier": "2",
+          "kabupaten": "Karawang"
+        },
+        {
+          "site_id": "S11",
+          "supplier_name": "PT Tembaga Kabel",
+          "tier": "2",
+          "kabupaten": "Purwakarta"
+        }
+      ]
+    },
+    {
+      "country": "CN",
+      "name": "China",
+      "sites_t1": 2,
+      "sites_t2": 0,
+      "open_po_lines": 6,
+      "po_exposure": 632000000,
+      "share": 14.5,
+      "exposure_tier": 2,
+      "highest_level": "LOW",
+      "open_cases": [
+        {
+          "case_id": "CASE-0002",
+          "title": "Tariff – China",
+          "level": "LOW",
+          "score": 33.4
+        }
+      ],
+      "sites": [
+        {
+          "site_id": "S05",
+          "supplier_name": "Shenzhen VoltChip Co. (fiktif)",
+          "tier": "1",
+          "kabupaten": "Shenzhen"
+        },
+        {
+          "site_id": "S13",
+          "supplier_name": "Ningbo Suspension Co., Ltd. (fiktif)",
+          "tier": "1",
+          "kabupaten": "Ningbo"
+        }
+      ]
+    },
+    {
+      "country": "TH",
+      "name": "Thailand",
+      "sites_t1": 1,
+      "sites_t2": 0,
+      "open_po_lines": 2,
+      "po_exposure": 71400000,
+      "share": 1.6,
+      "exposure_tier": 1,
+      "highest_level": null,
+      "open_cases": [],
+      "sites": [
+        {
+          "site_id": "S15",
+          "supplier_name": "Rayong Switch Co., Ltd. (fiktif)",
+          "tier": "1",
+          "kabupaten": "Rayong"
+        }
+      ]
+    },
+    {
+      "country": "JP",
+      "name": "Japan",
+      "sites_t1": 1,
+      "sites_t2": 0,
+      "open_po_lines": 2,
+      "po_exposure": 42000000,
+      "share": 1,
+      "exposure_tier": 1,
+      "highest_level": null,
+      "open_cases": [],
+      "sites": [
+        {
+          "site_id": "S14",
+          "supplier_name": "Hamamatsu Bearing K.K. (fiktif)",
+          "tier": "1",
+          "kabupaten": "Hamamatsu"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "case_id": "CASE-0004",
+  "title": "Export control ? China",
+  "simulated": true,
+  "score": 87.4,
+  "level": "HIGH",
+  "status": "READY_FOR_DECISION",
+  "updated_at": "2026-10-31T10:52:00+07:00",
+  "escalation": {
+    "case_id": "CASE-0004",
+    "version": 1,
+    "tier": 2,
+    "kind": "EXECUTIVE_MEETING_ROOM",
+    "reasons": [
+      {
+        "code": "W1",
+        "text": "Extra cost of Option A IDR 117.6M is above the SCM Manager approval limit IDR 100.0M"
+      },
+      {
+        "code": "W3",
+        "text": "Geopolitical or compliance event with revenue at risk"
+      }
+    ],
+    "participants": [
+      "BUYER",
+      "PPIC",
+      "SALES",
+      "SCM_MANAGER",
+      "CFO",
+      "CEO",
+      "LEGAL"
+    ],
+    "required_approvers": [
+      "CFO",
+      "CEO",
+      "LEGAL"
+    ],
+    "recommended_option": "A",
+    "premium": 117600000,
+    "extra_duty": null,
+    "limits": {
+      "scm_approval_limit": 100000000,
+      "tariff_escalation_duty": 250000000,
+      "close_call_band_pp": 2,
+      "premium_max_pct": 10
+    },
+    "meeting_tier": 0,
+    "needs_meeting": true,
+    "decision_required": true,
+    "meeting": {
+      "meeting_id": "MTG-0004",
+      "case_id": "CASE-0004",
+      "tier": 2,
+      "kind": "EXECUTIVE_MEETING_ROOM",
+      "provider": "ZOOM",
+      "status": "FAILED",
+      "join_url": null,
+      "start_time": null,
+      "duration_min": 40,
+      "topic": "SENTRA Executive Meeting Room ? CASE-0004",
+      "agenda": "Review the disruption, options, supplier recovery, and required decision.",
+      "agenda_source": "template",
+      "participants": [
+        "BUYER",
+        "PPIC",
+        "SALES",
+        "SCM_MANAGER",
+        "CFO",
+        "CEO",
+        "LEGAL"
+      ],
+      "required_approvers": [
+        "CFO",
+        "CEO",
+        "LEGAL"
+      ],
+      "reasons": [
+        {
+          "code": "W1",
+          "text": "Extra cost of Option A IDR 117.6M is above the SCM Manager approval limit IDR 100.0M"
+        },
+        {
+          "code": "W3",
+          "text": "Geopolitical or compliance event with revenue at risk"
+        }
+      ],
+      "case_version": 1,
+      "error": "Zoom meeting was not created in this fixture.",
+      "created_at": "2026-10-31T10:52:00+07:00"
+    },
+    "decision": null
+  },
+  "meetings": [
+    {
+      "meeting_id": "MTG-0004",
+      "case_id": "CASE-0004",
+      "tier": 2,
+      "kind": "EXECUTIVE_MEETING_ROOM",
+      "provider": "ZOOM",
+      "status": "FAILED",
+      "join_url": null,
+      "start_time": null,
+      "duration_min": 40,
+      "topic": "SENTRA Executive Meeting Room ? CASE-0004",
+      "agenda": "Review the disruption, options, supplier recovery, and required decision.",
+      "agenda_source": "template",
+      "participants": [
+        "BUYER",
+        "PPIC",
+        "SALES",
+        "SCM_MANAGER",
+        "CFO",
+        "CEO",
+        "LEGAL"
+      ],
+      "required_approvers": [
+        "CFO",
+        "CEO",
+        "LEGAL"
+      ],
+      "reasons": [
+        {
+          "code": "W1",
+          "text": "Extra cost of Option A IDR 117.6M is above the SCM Manager approval limit IDR 100.0M"
+        },
+        {
+          "code": "W3",
+          "text": "Geopolitical or compliance event with revenue at risk"
+        }
+      ],
+      "case_version": 1,
+      "error": "Zoom meeting was not created in this fixture.",
+      "created_at": "2026-10-31T10:52:00+07:00"
+    }
+  ],
+  "notification": {
+    "status": "FAILED",
+    "kind": "EXECUTIVE_MEETING_ROOM",
+    "recipients": [
+      "BUYER",
+      "PPIC",
+      "SALES",
+      "SCM_MANAGER",
+      "CFO",
+      "CEO",
+      "LEGAL"
+    ],
+    "sent_at": null,
+    "error": "Zoom meeting was not created in this fixture.",
+    "meeting_id": "MTG-0004"
+  },
+  "sites": [
+    {
+      "site_id": "S18",
+      "supplier_name": "Ganzhou RE Magnet Co., Ltd. (fiktif)",
+      "tier": "2",
+      "recovery_days": 45,
+      "rar": 5957000000,
+      "output_value": 5957000000,
+      "po_value": 0,
+      "bcp_score": 33,
+      "bcp_band": "HIGH_RISK",
+      "components": {
+        "n_rar": 100,
+        "n_ttr": 100,
+        "n_bcp": 67,
+        "n_tier": 60
+      },
+      "score": 87.4,
+      "verification_status": "REQUESTED"
+    }
+  ],
+  "latest_recommendation": {
+    "recommended_option": "A",
+    "preliminary": false,
+    "rule_reason": "Option A: premium IDR 117.6M = 2.3% of protected output (≤ 10%)"
+  }
+}

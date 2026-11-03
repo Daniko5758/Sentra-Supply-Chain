@@ -1,0 +1,51 @@
+{
+  "sites_t1": [
+    "S05"
+  ],
+  "sites_t2": [],
+  "kpi": {
+    "parts_affected": 0,
+    "pos_affected": 0,
+    "po_lines_affected": 0,
+    "products_affected": [],
+    "units_blocked": 0,
+    "orders_blocked": 0,
+    "max_delay_days": 0,
+    "max_po_slip_days": 0,
+    "output_value": 0,
+    "po_value": 0,
+    "rar": 0
+  },
+  "impact": {
+    "version": 1,
+    "scope": "LOCATION",
+    "part_delays": [],
+    "po_lines": [],
+    "production_orders": [],
+    "sales_orders": [],
+    "totals": {
+      "units_blocked": 0,
+      "output_value": 0,
+      "po_value": 0,
+      "rar": 0,
+      "parts_affected": 0,
+      "pos_affected": 0,
+      "po_lines_affected": 0,
+      "products_affected": [],
+      "orders_blocked": 0,
+      "max_delay_days": 0,
+      "max_po_slip_days": 0
+    },
+    "tariff": null,
+    "exposure": null,
+    "baseline_short": [],
+    "disruption": null
+  },
+  "charts": {
+    "rar_by_site": [],
+    "delay_by_part": [],
+    "units_by_product": []
+  },
+  "location": "Shenzhen",
+  "banner": "What-if only — no case, no email, no ERP change."
+}

@@ -1,0 +1,127 @@
+{
+  "case_id": "CASE-0001",
+  "option": "A",
+  "status": "AWAITING_APPROVAL",
+  "actions": [
+    {
+      "action_id": "ACT-0001",
+      "seq": 1,
+      "type": "CREATE_PR_PO",
+      "object": "BAT-48 @ S12",
+      "payload": {
+        "material_id": "BAT-48",
+        "supplier_id": "S12",
+        "qty": 35,
+        "price": 7100000,
+        "delivery_date": "2026-11-05",
+        "shipping_condition": "ROAD",
+        "incoterms": "FCA",
+        "freight_per_unit": 0
+      },
+      "status": "PROPOSED",
+      "idempotency_key": "CASE-0001:A:1:v2"
+    },
+    {
+      "action_id": "ACT-0002",
+      "seq": 2,
+      "type": "CREATE_PR_PO",
+      "object": "BAT-60 @ S12",
+      "payload": {
+        "material_id": "BAT-60",
+        "supplier_id": "S12",
+        "qty": 25,
+        "price": 9800000,
+        "delivery_date": "2026-11-05",
+        "shipping_condition": "ROAD",
+        "incoterms": "FCA",
+        "freight_per_unit": 0
+      },
+      "status": "PROPOSED",
+      "idempotency_key": "CASE-0001:A:2:v2"
+    },
+    {
+      "action_id": "ACT-0003",
+      "seq": 3,
+      "type": "REDUCE_OR_CANCEL_PO",
+      "object": "4500001001/10",
+      "payload": {
+        "po_id": "4500001001",
+        "item_no": 10,
+        "old_qty": 40,
+        "new_qty": 5
+      },
+      "status": "PROPOSED",
+      "idempotency_key": "CASE-0001:A:3:v2"
+    },
+    {
+      "action_id": "ACT-0004",
+      "seq": 4,
+      "type": "REDUCE_OR_CANCEL_PO",
+      "object": "4500001002/10",
+      "payload": {
+        "po_id": "4500001002",
+        "item_no": 10,
+        "old_qty": 30,
+        "new_qty": 5
+      },
+      "status": "PROPOSED",
+      "idempotency_key": "CASE-0001:A:4:v2"
+    },
+    {
+      "action_id": "ACT-0005",
+      "seq": 5,
+      "type": "CHANGE_PO_DATE",
+      "object": "4500001001/10",
+      "payload": {
+        "po_id": "4500001001",
+        "item_no": 10,
+        "old_date": "2026-11-04",
+        "new_date": "2026-11-14"
+      },
+      "status": "PROPOSED",
+      "idempotency_key": "CASE-0001:A:5:v2"
+    },
+    {
+      "action_id": "ACT-0006",
+      "seq": 6,
+      "type": "CHANGE_PO_DATE",
+      "object": "4500001001/20",
+      "payload": {
+        "po_id": "4500001001",
+        "item_no": 20,
+        "old_date": "2026-11-09",
+        "new_date": "2026-11-14"
+      },
+      "status": "PROPOSED",
+      "idempotency_key": "CASE-0001:A:6:v2"
+    },
+    {
+      "action_id": "ACT-0007",
+      "seq": 7,
+      "type": "CHANGE_PO_DATE",
+      "object": "4500001002/10",
+      "payload": {
+        "po_id": "4500001002",
+        "item_no": 10,
+        "old_date": "2026-11-03",
+        "new_date": "2026-11-14"
+      },
+      "status": "PROPOSED",
+      "idempotency_key": "CASE-0001:A:7:v2"
+    },
+    {
+      "action_id": "ACT-0008",
+      "seq": 8,
+      "type": "CHANGE_PO_DATE",
+      "object": "4500001002/20",
+      "payload": {
+        "po_id": "4500001002",
+        "item_no": 20,
+        "old_date": "2026-11-11",
+        "new_date": "2026-11-14"
+      },
+      "status": "PROPOSED",
+      "idempotency_key": "CASE-0001:A:8:v2"
+    }
+  ]
+}

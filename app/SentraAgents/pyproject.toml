@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "SentraAgents"
+version = "0.1.0"
+description = "SENTRA agents (LangGraph) on AWS Bedrock AgentCore Runtime"
+readme = "README.md"
+requires-python = ">=3.11"
+# Hanya isi bagian ini yang ikut ter-build ke runtime. Semua dependensi runtime wajib ada di sini.
+dependencies = [
+    "aws-opentelemetry-distro ~= 0.18.0",
+    "opentelemetry-instrumentation-langchain >= 0.59.0",
+    "bedrock-agentcore >= 1.18.1",
+    "botocore[crt] >= 1.35.0",
+    "boto3 >= 1.35.0",
+    "langgraph >= 1.0.2",
+    "langchain >= 1.0.3",
+    "langchain-core >= 1.0.0",
+    # DEC-013: semua model (Claude, sonar) lewat SAP Cloud SDK for AI. Extra [all] wajib:
+    # modul gen_ai_hub.proxy.langchain memuat integrasi Amazon (Claude) DAN Google sekaligus.
+    "sap-ai-sdk-gen[all] == 7.4.1",
+    "requests >= 2.31.0",
+    "pydantic >= 2.7.0",
+    "pycountry>=26.2.16",
+]
+
+[dependency-groups]
+# Hanya untuk pengembangan lokal / CI; tidak ikut ke runtime.
+dev = [
+    "fastapi>=0.141.1",
+    "httpx>=0.27",  # spikes/sp18_zoom.py + tes MockTransport (I-07)
+    "pytest >= 8.0",
+    "uvicorn>=0.54.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "integration: memanggil layanan sungguhan (butuh kredensial); tidak jalan di CI biasa",
+]
+addopts = "-m 'not integration'"

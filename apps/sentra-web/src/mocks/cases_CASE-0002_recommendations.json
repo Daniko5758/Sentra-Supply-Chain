@@ -1,0 +1,114 @@
+{
+  "case_id": "CASE-0002",
+  "version": 1,
+  "preliminary": false,
+  "recommended_option": "E",
+  "rule_reason": "Option E: avoids extra duty IDR 18.5M — pending supplier confirmation",
+  "execution_enabled": true,
+  "options": [
+    {
+      "option": "E",
+      "title": "Pull in before effective date",
+      "available": true,
+      "unavailable_reason": null,
+      "label": "Pending supplier confirmation",
+      "before": {
+        "units_blocked": 0,
+        "output_value": 0,
+        "po_value": 185000000,
+        "rar": 185000000,
+        "so_delayed": 0,
+        "premium": 0,
+        "extra_duty": 18500000
+      },
+      "after": {
+        "units_blocked": 0,
+        "output_value": 0,
+        "po_value": 0,
+        "rar": 0,
+        "so_delayed": 0,
+        "premium": 0,
+        "extra_duty": 0
+      },
+      "actions": [
+        {
+          "seq": 1,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001009/10",
+          "payload": {
+            "po_id": "4500001009",
+            "item_no": 10,
+            "old_date": "2026-11-23",
+            "new_date": "2026-11-13"
+          }
+        },
+        {
+          "seq": 2,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001009/20",
+          "payload": {
+            "po_id": "4500001009",
+            "item_no": 20,
+            "old_date": "2026-11-23",
+            "new_date": "2026-11-13"
+          }
+        }
+      ],
+      "rationale": "Move both affected purchase order confirmations to one day before the tariff effective date, subject to supplier confirmation.",
+      "rationale_source": "template",
+      "pending_confirmation": true,
+      "confirmation": {
+        "request_type": "PULL_IN",
+        "sites": [
+          {
+            "site_id": "S05",
+            "status": "REQUESTED",
+            "answer": null
+          }
+        ]
+      },
+      "saving": 18500000
+    },
+    {
+      "option": "S",
+      "title": "Switch source outside tariff country",
+      "available": false,
+      "unavailable_reason": "No approved alternate outside CN for CTL-72",
+      "label": null,
+      "pending_confirmation": false,
+      "confirmation": null,
+      "saving": null,
+      "before": {
+        "units_blocked": 0,
+        "output_value": 0,
+        "po_value": 185000000,
+        "rar": 185000000,
+        "so_delayed": 0,
+        "premium": 0,
+        "extra_duty": 18500000
+      },
+      "after": {
+        "units_blocked": 0,
+        "output_value": 0,
+        "po_value": 185000000,
+        "rar": 185000000,
+        "so_delayed": 0,
+        "premium": 0,
+        "extra_duty": 18500000
+      },
+      "actions": [],
+      "rationale": "No approved source outside the tariff country is available for CTL-72.",
+      "rationale_source": "template"
+    }
+  ],
+  "non_erp_steps": [],
+  "confirmations_needed": [
+    {
+      "site_id": "S05",
+      "request_type": "PULL_IN"
+    }
+  ],
+  "escalation_tier": 0,
+  "executive_decision_required": false,
+  "decision": null
+}

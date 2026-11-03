@@ -1,0 +1,207 @@
+{
+  "case_id": "CASE-0002",
+  "title": "Tariff – China",
+  "risk_type": "TARIFF",
+  "scope": "COUNTRY",
+  "location": "China",
+  "country": "CN",
+  "mode": "DEMO",
+  "simulated": true,
+  "status": "READY_FOR_DECISION",
+  "d0_date": "2026-10-31",
+  "created_at": "2026-10-31T10:43:10+07:00",
+  "updated_at": "2026-10-31T10:43:10+07:00",
+  "version": 1,
+  "versions": [
+    {
+      "version": 1,
+      "trigger": "initial",
+      "created_at": "2026-10-31T10:43:10+07:00"
+    }
+  ],
+  "signal": {
+    "signal_id": "SIG-0002",
+    "summary": "SIMULATED: Import duty on electronic components from China rises by 10 percentage points from D+14.",
+    "severity": null,
+    "source_urls": [],
+    "source_label": "SENTRA demo scenario (SIMULATED)"
+  },
+  "kpi": {
+    "units_at_risk": 0,
+    "delayed_output_value": 0,
+    "affected_po_value": 185000000,
+    "revenue_at_risk": 185000000,
+    "priority_score": 33.4,
+    "level": "LOW",
+    "status": "READY_FOR_DECISION"
+  },
+  "impact": {
+    "version": 1,
+    "scope": "COUNTRY",
+    "part_delays": [],
+    "po_lines": [
+      {
+        "po_id": "4500001009",
+        "item_no": 10,
+        "material_id": "CTL-72",
+        "supplier_id": "S05",
+        "qty": 100,
+        "confirmed_date": "2026-11-23",
+        "new_eta": "2026-11-23",
+        "slip_days": 0,
+        "value": 120000000,
+        "cause_site": "S05",
+        "via_site": null
+      },
+      {
+        "po_id": "4500001009",
+        "item_no": 20,
+        "material_id": "CHG-5A",
+        "supplier_id": "S05",
+        "qty": 100,
+        "confirmed_date": "2026-11-23",
+        "new_eta": "2026-11-23",
+        "slip_days": 0,
+        "value": 65000000,
+        "cause_site": "S05",
+        "via_site": null
+      }
+    ],
+    "production_orders": [],
+    "sales_orders": [],
+    "totals": {
+      "units_blocked": 0,
+      "output_value": 0,
+      "po_value": 185000000,
+      "rar": 185000000,
+      "parts_affected": 2,
+      "pos_affected": 1,
+      "po_lines_affected": 2,
+      "products_affected": [
+        "LX1",
+        "LX2"
+      ],
+      "orders_blocked": 0,
+      "max_delay_days": 0,
+      "max_po_slip_days": 0
+    },
+    "tariff": {
+      "country": "CN",
+      "category": "electronic components",
+      "tariff_pp": 10,
+      "effective_date": "2026-11-14",
+      "affected_value": 185000000,
+      "extra_duty": 18500000,
+      "not_stated": []
+    },
+    "exposure": null,
+    "baseline_short": [],
+    "disruption": null
+  },
+  "sites": [
+    {
+      "site_id": "S05",
+      "supplier_name": "Shenzhen VoltChip Co. (fiktif)",
+      "tier": "1",
+      "path": "S05 → CTL-72, CHG-5A",
+      "recovery_days": 0,
+      "k_a_formula": null,
+      "p_rpt_a": null,
+      "k_a": null,
+      "k_b_formula": null,
+      "p_rpt_b": null,
+      "k_b": null,
+      "rpt_status": "UNAVAILABLE",
+      "verification_status": "NOT_NEEDED",
+      "delay_override_days": null,
+      "excluded": false,
+      "backup_ramp_confirmed": null,
+      "backup_declined": false,
+      "backup_site": null,
+      "requests": []
+    },
+    {
+      "site_id": "S13",
+      "supplier_name": "Ningbo Suspension Co., Ltd. (fiktif)",
+      "tier": "1",
+      "path": "S13 → SHK-R",
+      "recovery_days": 0,
+      "k_a_formula": null,
+      "p_rpt_a": null,
+      "k_a": null,
+      "k_b_formula": null,
+      "p_rpt_b": null,
+      "k_b": null,
+      "rpt_status": "UNAVAILABLE",
+      "verification_status": "NOT_NEEDED",
+      "delay_override_days": null,
+      "excluded": false,
+      "backup_ramp_confirmed": null,
+      "backup_declined": false,
+      "backup_site": null,
+      "requests": []
+    }
+  ],
+  "priority": [
+    {
+      "site_id": "S05",
+      "supplier_name": "Shenzhen VoltChip Co. (fiktif)",
+      "tier": "1",
+      "recovery_days": 0,
+      "rar": 185000000,
+      "output_value": 0,
+      "po_value": 185000000,
+      "bcp_score": 45,
+      "components": {
+        "n_rar": 18.5,
+        "n_ttr": 0,
+        "n_bcp": 55,
+        "n_tier": 100
+      },
+      "score": 33.4,
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "site_id": "S13",
+      "supplier_name": "Ningbo Suspension Co., Ltd. (fiktif)",
+      "tier": "1",
+      "recovery_days": 0,
+      "rar": 0,
+      "output_value": 0,
+      "po_value": 0,
+      "bcp_score": 45,
+      "components": {
+        "n_rar": 0,
+        "n_ttr": 0,
+        "n_bcp": 55,
+        "n_tier": 100
+      },
+      "score": 26,
+      "bcp_band": "HIGH_RISK"
+    }
+  ],
+  "preliminary": false,
+  "escalation": {
+    "case_id": "CASE-0002",
+    "version": 1,
+    "tier": 0,
+    "kind": null,
+    "reasons": [],
+    "participants": [],
+    "required_approvers": [],
+    "recommended_option": null,
+    "premium": null,
+    "extra_duty": null,
+    "limits": {
+      "scm_approval_limit": 100000000,
+      "tariff_escalation_duty": 250000000,
+      "close_call_band_pp": 2,
+      "premium_max_pct": 10
+    },
+    "meeting_tier": 0,
+    "needs_meeting": false,
+    "decision_required": false,
+    "meeting": null,
+    "decision": null
+  }
+}

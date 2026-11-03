@@ -1,0 +1,49 @@
+{
+  "site_id": "S12",
+  "supplier_name": "PT Daya Baterai Bandung",
+  "tier": "ALT",
+  "kabupaten": "Bandung",
+  "kecamatan": "Rancaekek",
+  "country": "ID",
+  "hazard_zone_flood": false,
+  "ttr_days": 5,
+  "otd_12m": 0.9,
+  "backup_site": null,
+  "bcp": {
+    "score": 60,
+    "band": "MEDIUM_RISK",
+    "categories": {
+      "governance": 50,
+      "resilience": 37.5,
+      "supply_chain": 75,
+      "testing": 75
+    },
+    "answers": {
+      "G1": 3,
+      "G2": 3,
+      "R1": 2,
+      "R2": 3,
+      "S1": 4,
+      "S2": 4,
+      "T1": 4,
+      "T2": 4
+    },
+    "stated_rto_days": 10,
+    "backup_site": false,
+    "emergency_plan": true,
+    "safety_stock": true,
+    "insurance": true
+  },
+  "parts_supplied": [
+    "BAT-48",
+    "BAT-60"
+  ],
+  "tier2_suppliers": [],
+  "alternate_sources_for_parts": [],
+  "messages": [],
+  "backup": {
+    "site": null,
+    "ramp_days": null,
+    "surcharge_pct": null
+  }
+}

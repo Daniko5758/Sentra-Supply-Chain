@@ -1,0 +1,30 @@
+[
+  {
+    "alert_id": "AL-0001",
+    "case_id": "CASE-0001",
+    "level": "HIGH",
+    "title": "Flood – Karawang",
+    "location": "Karawang",
+    "score": 79.7,
+    "units_at_risk": 75,
+    "revenue_at_risk": 3286000000,
+    "mode": "DEMO",
+    "simulated": true,
+    "created_at": "2026-10-31T10:42:05+07:00",
+    "read": false
+  },
+  {
+    "alert_id": "AL-0002",
+    "case_id": "CASE-0002",
+    "level": "LOW",
+    "title": "Tariff – China",
+    "location": "China",
+    "score": 33.4,
+    "units_at_risk": 0,
+    "revenue_at_risk": 185000000,
+    "mode": "DEMO",
+    "simulated": true,
+    "created_at": "2026-10-31T10:43:10+07:00",
+    "read": false
+  }
+]

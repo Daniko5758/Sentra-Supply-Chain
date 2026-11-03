@@ -1,0 +1,68 @@
+{
+  "site_id": "S09",
+  "supplier_name": "PT Sel Energi",
+  "tier": "2",
+  "kabupaten": "Karawang",
+  "kecamatan": "Karawang Barat",
+  "country": "ID",
+  "hazard_zone_flood": true,
+  "ttr_days": 10,
+  "otd_12m": null,
+  "backup_site": null,
+  "bcp": {
+    "score": 35,
+    "band": "HIGH_RISK",
+    "categories": {
+      "governance": 25,
+      "resilience": 37.5,
+      "supply_chain": 50,
+      "testing": 25
+    },
+    "answers": {
+      "G1": 2,
+      "G2": 2,
+      "R1": 2,
+      "R2": 3,
+      "S1": 3,
+      "S2": 3,
+      "T1": 2,
+      "T2": 2
+    },
+    "stated_rto_days": 21,
+    "backup_site": false,
+    "emergency_plan": false,
+    "safety_stock": true,
+    "insurance": true
+  },
+  "parts_supplied": [
+    "BAT-48",
+    "BAT-60"
+  ],
+  "tier2_suppliers": [],
+  "alternate_sources_for_parts": [
+    {
+      "part_id": "BAT-48",
+      "site_id": "S12",
+      "price": 7100000,
+      "lead_time_days": 5,
+      "max_qty": 60,
+      "air_lead_time_days": null,
+      "air_freight_per_unit": null
+    },
+    {
+      "part_id": "BAT-60",
+      "site_id": "S12",
+      "price": 9800000,
+      "lead_time_days": 5,
+      "max_qty": 40,
+      "air_lead_time_days": null,
+      "air_freight_per_unit": null
+    }
+  ],
+  "messages": [],
+  "backup": {
+    "site": null,
+    "ramp_days": null,
+    "surcharge_pct": null
+  }
+}

@@ -1,0 +1,287 @@
+/* Lapisan modern di atas theme.css: latar aurora, kaca, ikon, skeleton, hero Login.
+   Semua gerak ada di animation.css; file ini hanya bentuk. Lihat animation.md §4.14. */
+
+/* ---------- Latar aurora (di belakang shell) ---------- */
+.app-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+  will-change: transform;
+}
+.blob--1 {
+  top: -18%;
+  left: 18%;
+  width: clamp(500px, 30vw, 700px);
+  height: clamp(500px, 30vw, 700px);
+  background: radial-gradient(circle, rgba(10, 110, 209, 0.55), transparent 70%);
+}
+.blob--2 {
+  top: 30%;
+  right: -10%;
+  width: clamp(520px, 34vw, 760px);
+  height: clamp(520px, 34vw, 760px);
+  background: radial-gradient(circle, rgba(15, 118, 110, 0.4), transparent 70%);
+}
+.blob--3 {
+  bottom: -25%;
+  left: -8%;
+  width: clamp(440px, 28vw, 640px);
+  height: clamp(440px, 28vw, 640px);
+  background: radial-gradient(circle, rgba(56, 152, 236, 0.45), transparent 70%);
+}
+.app-header,
+.app-sidebar,
+.app-main {
+  position: relative;
+  z-index: 1;
+}
+.app-main > *,
+.page-transition {
+  min-width: 0;
+}
+.page-transition {
+  width: 100%;
+  max-width: 2400px;
+  margin-inline: auto;
+}
+.app-header {
+  position: sticky;
+  z-index: 10;
+}
+.app-sidebar {
+  position: sticky;
+}
+
+/* ---------- Brand dan avatar ---------- */
+.app-header__brand {
+  align-items: center;
+}
+.logo-mark {
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 6px rgba(26, 79, 156, 0.25));
+}
+.app-header__logo {
+  color: #0f2347; /* biru tua wordmark logo resmi */
+}
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0a6ed1, #0f766e);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Sidebar: ikon + penanda aktif meluncur ---------- */
+.sidebar-eyebrow {
+  padding: 0 12px;
+  margin-bottom: 10px;
+}
+.nav-list li {
+  position: relative;
+  z-index: 1;
+}
+.nav-indicator {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  right: 3px;
+  z-index: 0;
+  border: 1px solid rgba(10, 110, 209, 0.14);
+  border-radius: 999px;
+  background: linear-gradient(105deg, rgba(232, 241, 251, 0.98), rgba(255, 255, 255, 0.76));
+  box-shadow: inset 3px 0 0 var(--accent), 0 5px 14px rgba(10, 110, 209, 0.07);
+  pointer-events: none;
+}
+.nav-link__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.nav-link__icon {
+  flex-shrink: 0;
+  color: var(--ink-muted);
+}
+.nav-link.active .nav-link__icon {
+  color: var(--accent);
+}
+
+/* ---------- Kartu spotlight ---------- */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(10, 110, 209, 0.1), transparent 70%);
+}
+.spotlight > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Skeleton pratinjau halaman ---------- */
+.skeleton-preview {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 1.25vw, 24px);
+  padding: var(--card-padding);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.skeleton-preview__row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 1.25vw, 24px);
+  min-width: 0;
+}
+.skeleton-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: clamp(20px, 1.4vw, 28px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.skeleton-tile--wide {
+  min-height: clamp(180px, 14vw, 240px);
+}
+/* Latar gradasi + gerak kilau ada di animation.css */
+.shimmer {
+  display: block;
+  border-radius: 6px;
+}
+.shimmer--label { width: 38%; height: 10px; }
+.shimmer--value { width: 55%; height: 28px; }
+.shimmer--line { width: 72%; height: 10px; }
+.shimmer--block { flex: 1; min-height: 140px; border-radius: var(--radius-sm); }
+.skeleton-preview__caption {
+  margin: 4px 0 0;
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+  text-align: center;
+}
+
+/* ---------- Chat ---------- */
+.chat-panel__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0a6ed1, #0f766e);
+  color: #ffffff;
+}
+.chat-panel__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 6px;
+  text-align: center;
+}
+.chat-panel__empty p {
+  margin: 0;
+}
+.chat-panel__empty .orbit {
+  margin-bottom: 12px;
+}
+.chat-panel__hint {
+  color: var(--ink-subtle);
+}
+
+/* ---------- Login ---------- */
+.login-screen {
+  position: relative;
+}
+.login-screen > .hero-card {
+  z-index: 1;
+}
+.orb {
+  position: absolute;
+  z-index: 0 !important;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.orb--1 {
+  top: 12%;
+  left: 8%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(10, 110, 209, 0.35) 60%, transparent 72%);
+}
+.orb--2 {
+  right: 10%;
+  bottom: 22%;
+  width: 84px;
+  height: 84px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(15, 118, 110, 0.35) 60%, transparent 72%);
+}
+.marquee {
+  width: 100%;
+  max-width: 720px;
+  margin-top: 40px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+.marquee__track {
+  display: flex;
+  width: max-content;
+}
+.marquee__list {
+  display: flex;
+  gap: 48px;
+  margin: 0;
+  padding: 0 24px;
+  list-style: none;
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* ---------- Scrollbar tipis ---------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+/* ---------- Cetak: buang dekorasi ---------- */
+@media print {
+  .app-backdrop,
+  .orb,
+  .chat-launcher,
+  .chat-panel {
+    display: none !important;
+  }
+}

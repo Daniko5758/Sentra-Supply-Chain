@@ -1,0 +1,17 @@
+**/tests/
+**/*.db
+**/*.db-journal
+**/*.db-wal
+**/*.db-shm
+**/*.sqlite*
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/node_modules/
+**/.venv/
+**/*.egg-info/
+**/.env*
+**/*.map
+**/*.log
+**/*.tgz
+cookies.txt

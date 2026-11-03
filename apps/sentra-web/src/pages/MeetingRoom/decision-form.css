@@ -1,0 +1,570 @@
+/* Form keputusan Executive Meeting Room: kartu opsi, pembuat aksi ERP custom, hasil eksekusi. Tema SENTRA (bukan gaya SAP). */
+
+.decision-form__intro {
+  margin: 6px 0 0;
+  color: var(--ink-muted);
+  font-size: 14px;
+}
+
+.decision-form .meeting-room__decision-form {
+  gap: 18px;
+}
+
+.decision-form__step {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.decision-form__step--plain {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.decision-form__step legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 6px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.decision-form__step-number,
+.custom-action__number {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--surface);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.decision-form__label {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.decision-form__muted {
+  color: var(--ink-muted) !important;
+  font-weight: 500 !important;
+}
+
+/* --- option cards --- */
+
+.decision-form__options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.decision-option {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-standard), box-shadow var(--dur-fast) var(--ease-standard),
+    background var(--dur-fast) var(--ease-standard);
+}
+
+.decision-option:hover {
+  border-color: var(--accent);
+}
+
+.decision-option input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--accent);
+}
+
+.decision-option--checked {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 3px rgba(10, 110, 209, 0.14);
+}
+
+.decision-option--custom {
+  border-style: dashed;
+}
+
+.decision-option--custom.decision-option--checked {
+  border-style: solid;
+  border-color: var(--badge-simulated);
+  background: #f6effb;
+  box-shadow: 0 0 0 3px rgba(112, 48, 160, 0.14);
+}
+
+.decision-option__body {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.decision-option__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.decision-option__tag {
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--positive);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.decision-option__label {
+  color: var(--ink-muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.decision-option__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.decision-option__facts strong {
+  color: var(--ink);
+}
+
+/* --- approvers as chips --- */
+
+.decision-form .meeting-room__approvers {
+  padding: 0;
+  border: 0;
+}
+
+.decision-form .meeting-room__checkbox-list {
+  gap: 8px;
+}
+
+.decision-chip {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 6px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard);
+}
+
+.decision-chip input {
+  accent-color: var(--accent);
+}
+
+.decision-chip--on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 650;
+}
+
+/* --- custom actions --- */
+
+.custom-actions,
+.custom-results {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid #d9c6ea;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, #faf6fd 0%, var(--surface) 70%);
+}
+
+.custom-actions > .btn {
+  justify-self: start;
+}
+
+.custom-actions__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.custom-actions__header h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.custom-actions__header p {
+  margin: 4px 0 0;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.custom-actions__list,
+.custom-results__list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.custom-action,
+.custom-result {
+  display: grid;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(24, 24, 27, 0.04);
+}
+
+.custom-action--error {
+  border-color: var(--negative);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1);
+}
+
+.custom-action__top {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.custom-action__top .custom-action__number {
+  margin-bottom: 8px;
+}
+
+.custom-action__fields {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.custom-action__field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.custom-action__field--type {
+  flex: 1;
+  max-width: 420px;
+}
+
+.custom-action__field select,
+.custom-action__field input {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.custom-action__field select:focus,
+.custom-action__field input:focus {
+  border-color: var(--accent);
+  outline: 2px solid rgba(10, 110, 209, 0.18);
+}
+
+.custom-action__check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.custom-action__hint {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.custom-action__problem {
+  margin: 0;
+  color: var(--negative);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.custom-action__remove {
+  margin-left: auto;
+  margin-bottom: 6px;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--negative);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.custom-action__remove:hover {
+  background: #fdecec;
+}
+
+/* --- results --- */
+
+.custom-result--executed {
+  border-left: 4px solid var(--status-ok);
+}
+
+.custom-result--failed {
+  border-left: 4px solid var(--status-failed);
+}
+
+.custom-result--proposed,
+.custom-result--approved {
+  border-left: 4px solid var(--badge-medium);
+}
+
+.custom-result__heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-result__heading > div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.custom-result__object {
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.custom-result__status {
+  margin-left: auto;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.custom-result__status--executed {
+  background: #e6f4ea;
+  color: var(--status-ok);
+}
+
+.custom-result__status--failed {
+  background: #fdecec;
+  color: var(--status-failed);
+}
+
+.custom-result__status--proposed,
+.custom-result__status--approved,
+.custom-result__status--rejected {
+  background: var(--badge-neutral-bg);
+  color: var(--badge-neutral-text);
+}
+
+.custom-result__changes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 0;
+}
+
+.custom-result__changes div {
+  display: grid;
+  gap: 2px;
+}
+
+.custom-result__changes dt {
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.custom-result__changes dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.custom-result__document {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.custom-result__messages {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.custom-results__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.custom-results__links a {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.custom-results__links a:hover {
+  text-decoration: underline;
+}
+
+/* --- submit --- */
+
+.decision-form__submit {
+  display: grid;
+  gap: 10px;
+}
+
+.decision-form__warning {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid #e7c98f;
+  border-radius: var(--radius-sm);
+  background: #fff7e8;
+  color: #7a4b00;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .custom-action__fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.decision-form .meeting-room__field--budget .decision-chip {
+  justify-self: start;
+  width: auto;
+}
+
+.decision-form__note {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* --- scope of the ERP objects and the replace warning --- */
+
+.custom-actions__scope {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.custom-actions__scope .custom-action__check {
+  font-weight: 650;
+}
+
+.custom-actions__scope-text {
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.custom-action__scope-note {
+  font-style: italic;
+}
+
+.decision-form__warning--replace {
+  border-color: #f0b4b4;
+  background: #fdf1f1;
+  color: #8a1c1c;
+}
+
+.decision-form__warning--replace a {
+  color: inherit;
+  font-weight: 700;
+}
+
+/* --- empty or wrong fields after a save attempt --- */
+
+.custom-action__input--error,
+.custom-action__field input.custom-action__input--error {
+  border-color: var(--negative);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+}
+
+.decision-form .decision-form__error-list {
+  padding: 12px 14px;
+  border: 1px solid #f0b4b4;
+  border-left: 4px solid var(--negative);
+  border-radius: var(--radius-sm);
+  background: #fdf1f1;
+  color: #8a1c1c;
+  font-size: 14px;
+}
+
+.decision-form__error-list > p {
+  margin: 0;
+  font-weight: 700;
+}
+
+.decision-form__error-list ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.decision-form__error-list li {
+  font-weight: 600;
+}

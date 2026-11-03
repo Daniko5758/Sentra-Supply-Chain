@@ -1,0 +1,85 @@
+{
+  "site_id": "S02",
+  "supplier_name": "PT Harness Prima",
+  "tier": "1",
+  "kabupaten": "Karawang",
+  "kecamatan": "Klari",
+  "country": "ID",
+  "hazard_zone_flood": false,
+  "ttr_days": 4,
+  "otd_12m": 0.92,
+  "backup_site": "Purwakarta",
+  "bcp": {
+    "score": 80,
+    "band": "MEDIUM_RISK",
+    "categories": {
+      "governance": 87.5,
+      "resilience": 50,
+      "supply_chain": 87.5,
+      "testing": 100
+    },
+    "answers": {
+      "G1": 4,
+      "G2": 5,
+      "R1": 4,
+      "R2": 2,
+      "S1": 4,
+      "S2": 5,
+      "T1": 5,
+      "T2": 5
+    },
+    "stated_rto_days": 3,
+    "backup_site": true,
+    "emergency_plan": true,
+    "safety_stock": false,
+    "insurance": true
+  },
+  "parts_supplied": [
+    "HRN-1",
+    "HRN-2"
+  ],
+  "tier2_suppliers": [
+    {
+      "site_id": "S11",
+      "component": "Copper wire",
+      "buffer_days": 10,
+      "component_category": "copper wire"
+    }
+  ],
+  "alternate_sources_for_parts": [],
+  "messages": [
+    {
+      "message_id": "MSG-0005",
+      "case_id": "CASE-0001",
+      "site_id": "S02",
+      "direction": "OUT",
+      "body": "Flood – Karawang (SIMULATED). Please confirm whether production is affected, the expected delay in days, and any notes. Affected? (YES / PARTIAL / NO) Expected delay (days) Notes",
+      "structured": null,
+      "created_at": "2026-10-31T10:42:35+07:00",
+      "simulated": true,
+      "request_id": null,
+      "request_type": "IMPACT"
+    },
+    {
+      "message_id": "MSG-0006",
+      "case_id": "CASE-0001",
+      "site_id": "S02",
+      "direction": "IN",
+      "body": "Production is partially affected; supply is moving to the backup site in Purwakarta. Earliest shipment D+2.",
+      "structured": {
+        "affected": "PARTIAL",
+        "delay_days": 2,
+        "notes": "Production is partially affected; supply is moving to the backup site in Purwakarta."
+      },
+      "created_at": "2026-10-31T10:43:50+07:00",
+      "simulated": true,
+      "request_id": null,
+      "request_type": "IMPACT"
+    }
+  ],
+  "backup": {
+    "site": "Purwakarta",
+    "ramp_days": 2,
+    "surcharge_pct": 4
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "sites_t1": [
+    "S03",
+    "S07"
+  ],
+  "sites_t2": [],
+  "kpi": {
+    "parts_affected": 1,
+    "pos_affected": 1,
+    "po_lines_affected": 1,
+    "products_affected": [
+      "LX2"
+    ],
+    "units_blocked": 15,
+    "orders_blocked": 1,
+    "max_delay_days": 6,
+    "max_po_slip_days": 2,
+    "output_value": 465000000,
+    "po_value": 22800000,
+    "rar": 487800000
+  },
+  "impact": {
+    "version": 1,
+    "scope": "LOCATION",
+    "part_delays": [
+      {
+        "part_id": "LMP-HD",
+        "days": 6,
+        "cause_site": "S07",
+        "via_site": null
+      }
+    ],
+    "po_lines": [
+      {
+        "po_id": "4500001011",
+        "item_no": 10,
+        "material_id": "LMP-HD",
+        "supplier_id": "S07",
+        "qty": 60,
+        "confirmed_date": "2026-11-04",
+        "new_eta": "2026-11-06",
+        "slip_days": 2,
+        "value": 22800000,
+        "cause_site": "S07",
+        "via_site": null
+      }
+    ],
+    "production_orders": [
+      {
+        "order_id": "PRD-02",
+        "product_id": "LX2",
+        "qty": 25,
+        "start_date": "2026-11-05",
+        "units_blocked": 15,
+        "blocking_parts": [
+          "LMP-HD"
+        ],
+        "ready_date": "2026-11-06",
+        "output_value": 465000000,
+        "sales_order_id": "SO-02"
+      }
+    ],
+    "sales_orders": [
+      {
+        "so_id": "SO-02",
+        "customer": "PT Armada Kurir (fiktif)",
+        "old_date": "2026-11-08",
+        "new_date": "2026-11-09",
+        "units_at_risk": 15
+      }
+    ],
+    "totals": {
+      "units_blocked": 15,
+      "output_value": 465000000,
+      "po_value": 22800000,
+      "rar": 487800000,
+      "parts_affected": 1,
+      "pos_affected": 1,
+      "po_lines_affected": 1,
+      "products_affected": [
+        "LX2"
+      ],
+      "orders_blocked": 1,
+      "max_delay_days": 6,
+      "max_po_slip_days": 2
+    },
+    "tariff": null,
+    "exposure": null,
+    "baseline_short": [],
+    "disruption": null
+  },
+  "charts": {
+    "rar_by_site": [
+      {
+        "site_id": "S07",
+        "rar": 487800000
+      }
+    ],
+    "delay_by_part": [
+      {
+        "part_id": "LMP-HD",
+        "days": 6
+      }
+    ],
+    "units_by_product": [
+      {
+        "product_id": "LX2",
+        "units": 15
+      }
+    ]
+  },
+  "location": "Bekasi",
+  "banner": "What-if only — no case, no email, no ERP change."
+}

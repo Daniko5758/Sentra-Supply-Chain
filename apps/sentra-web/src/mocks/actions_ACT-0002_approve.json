@@ -1,0 +1,26 @@
+{
+  "action_id": "ACT-0002",
+  "seq": 2,
+  "type": "CHANGE_PO_DATE",
+  "object": "4500001001/10",
+  "payload": {
+    "po_id": "4500001001",
+    "item_no": 10,
+    "old_date": "2026-11-04",
+    "new_date": "2026-11-14"
+  },
+  "status": "FAILED",
+  "idempotency_key": "CASE-0001:A:2:v2",
+  "erp_result": {
+    "document": null,
+    "messages": [
+      {
+        "type": "E",
+        "id": "ZMOCK_S4",
+        "number": "004",
+        "message": "Item 00010 of purchase order 4500001001 is flagged for deletion"
+      }
+    ]
+  },
+  "error": "Item 00010 of purchase order 4500001001 is flagged for deletion"
+}

@@ -1,0 +1,48 @@
+{
+  "site_id": "S15",
+  "supplier_name": "Rayong Switch Co., Ltd. (fiktif)",
+  "tier": "1",
+  "kabupaten": "Rayong",
+  "kecamatan": null,
+  "country": "TH",
+  "hazard_zone_flood": false,
+  "ttr_days": 12,
+  "otd_12m": 0.88,
+  "backup_site": null,
+  "bcp": {
+    "score": 40,
+    "band": "HIGH_RISK",
+    "categories": {
+      "governance": 37.5,
+      "resilience": 25,
+      "supply_chain": 62.5,
+      "testing": 37.5
+    },
+    "answers": {
+      "G1": 3,
+      "G2": 2,
+      "R1": 2,
+      "R2": 2,
+      "S1": 3,
+      "S2": 4,
+      "T1": 2,
+      "T2": 3
+    },
+    "stated_rto_days": 21,
+    "backup_site": false,
+    "emergency_plan": true,
+    "safety_stock": false,
+    "insurance": true
+  },
+  "parts_supplied": [
+    "HSW-ST"
+  ],
+  "tier2_suppliers": [],
+  "alternate_sources_for_parts": [],
+  "messages": [],
+  "backup": {
+    "site": null,
+    "ramp_days": null,
+    "surcharge_pct": null
+  }
+}

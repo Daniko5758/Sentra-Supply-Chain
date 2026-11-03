@@ -1,0 +1,180 @@
+[
+  {
+    "action_id": "ACT-0001",
+    "case_id": "CASE-0001",
+    "case_title": "Flood – Karawang",
+    "option": "A",
+    "seq": 1,
+    "type": "CREATE_PR_PO",
+    "object": "BAT-48 @ S12",
+    "payload": {
+      "material_id": "BAT-48",
+      "supplier_id": "S12",
+      "qty": 35,
+      "price": 7100000,
+      "delivery_date": "2026-11-05",
+      "shipping_condition": "ROAD",
+      "incoterms": "FCA",
+      "freight_per_unit": 0
+    },
+    "status": "PROPOSED",
+    "proposed_by": "scm",
+    "created_at": "2026-10-31T10:43:50+07:00",
+    "erp_result": null,
+    "error": null
+  },
+  {
+    "action_id": "ACT-0002",
+    "case_id": "CASE-0001",
+    "case_title": "Flood – Karawang",
+    "option": "A",
+    "seq": 2,
+    "type": "CREATE_PR_PO",
+    "object": "BAT-60 @ S12",
+    "payload": {
+      "material_id": "BAT-60",
+      "supplier_id": "S12",
+      "qty": 25,
+      "price": 9800000,
+      "delivery_date": "2026-11-05",
+      "shipping_condition": "ROAD",
+      "incoterms": "FCA",
+      "freight_per_unit": 0
+    },
+    "status": "PROPOSED",
+    "proposed_by": "scm",
+    "created_at": "2026-10-31T10:43:50+07:00",
+    "erp_result": null,
+    "error": null
+  },
+  {
+    "action_id": "ACT-0003",
+    "case_id": "CASE-0001",
+    "case_title": "Flood – Karawang",
+    "option": "A",
+    "seq": 3,
+    "type": "REDUCE_OR_CANCEL_PO",
+    "object": "4500001001/10",
+    "payload": {
+      "po_id": "4500001001",
+      "item_no": 10,
+      "old_qty": 40,
+      "new_qty": 5
+    },
+    "status": "PROPOSED",
+    "proposed_by": "scm",
+    "created_at": "2026-10-31T10:43:50+07:00",
+    "erp_result": null,
+    "error": null
+  },
+  {
+    "action_id": "ACT-0004",
+    "case_id": "CASE-0001",
+    "case_title": "Flood – Karawang",
+    "option": "A",
+    "seq": 4,
+    "type": "REDUCE_OR_CANCEL_PO",
+    "object": "4500001002/10",
+    "payload": {
+      "po_id": "4500001002",
+      "item_no": 10,
+      "old_qty": 30,
+      "new_qty": 5
+    },
+    "status": "PROPOSED",
+    "proposed_by": "scm",
+    "created_at": "2026-10-31T10:43:50+07:00",
+    "erp_result": null,
+    "error": null
+  },
+  {
+    "action_id": "ACT-0005",
+    "case_id": "CASE-0001",
+    "case_title": "Flood – Karawang",
+    "option": "A",
+    "seq": 5,
+    "type": "CHANGE_PO_DATE",
+    "object": "4500001001/10",
+    "payload": {
+      "po_id": "4500001001",
+      "item_no": 10,
+      "old_date": "2026-11-04",
+      "new_date": "2026-11-14"
+    },
+    "status": "FAILED",
+    "proposed_by": "scm",
+    "created_at": "2026-10-31T10:43:50+07:00",
+    "erp_result": {
+      "document": null,
+      "messages": [
+        {
+          "type": "E",
+          "id": "ZMOCK_S4",
+          "number": "004",
+          "message": "Item 00010 of purchase order 4500001001 is flagged for deletion"
+        }
+      ]
+    },
+    "error": "Item 00010 of purchase order 4500001001 is flagged for deletion"
+  },
+  {
+    "action_id": "ACT-0006",
+    "case_id": "CASE-0001",
+    "case_title": "Flood – Karawang",
+    "option": "A",
+    "seq": 6,
+    "type": "CHANGE_PO_DATE",
+    "object": "4500001001/20",
+    "payload": {
+      "po_id": "4500001001",
+      "item_no": 20,
+      "old_date": "2026-11-09",
+      "new_date": "2026-11-14"
+    },
+    "status": "PROPOSED",
+    "proposed_by": "scm",
+    "created_at": "2026-10-31T10:43:50+07:00",
+    "erp_result": null,
+    "error": null
+  },
+  {
+    "action_id": "ACT-0007",
+    "case_id": "CASE-0001",
+    "case_title": "Flood – Karawang",
+    "option": "A",
+    "seq": 7,
+    "type": "CHANGE_PO_DATE",
+    "object": "4500001002/10",
+    "payload": {
+      "po_id": "4500001002",
+      "item_no": 10,
+      "old_date": "2026-11-03",
+      "new_date": "2026-11-14"
+    },
+    "status": "PROPOSED",
+    "proposed_by": "scm",
+    "created_at": "2026-10-31T10:43:50+07:00",
+    "erp_result": null,
+    "error": null
+  },
+  {
+    "action_id": "ACT-0008",
+    "case_id": "CASE-0001",
+    "case_title": "Flood – Karawang",
+    "option": "A",
+    "seq": 8,
+    "type": "CHANGE_PO_DATE",
+    "object": "4500001002/20",
+    "payload": {
+      "po_id": "4500001002",
+      "item_no": 20,
+      "old_date": "2026-11-11",
+      "new_date": "2026-11-14"
+    },
+    "status": "PROPOSED",
+    "proposed_by": "scm",
+    "created_at": "2026-10-31T10:43:50+07:00",
+    "erp_result": null,
+    "error": null
+  }
+]

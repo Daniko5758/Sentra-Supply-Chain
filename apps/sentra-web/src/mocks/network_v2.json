@@ -1,0 +1,684 @@
+{
+  "case_id": "CASE-0001",
+  "version": 2,
+  "nodes": [
+    {
+      "id": "S01",
+      "type": "site",
+      "label": "PT Karya Baterai Karawang",
+      "tier": "1",
+      "kabupaten": "Karawang",
+      "country": "ID",
+      "bcp_score": 35,
+      "highlight": "affected",
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "id": "S02",
+      "type": "site",
+      "label": "PT Harness Prima",
+      "tier": "1",
+      "kabupaten": "Karawang",
+      "country": "ID",
+      "bcp_score": 80,
+      "highlight": "confirmed_no_impact",
+      "bcp_band": "MEDIUM_RISK"
+    },
+    {
+      "id": "S03",
+      "type": "site",
+      "label": "PT Rangka Baja Bekasi",
+      "tier": "1",
+      "kabupaten": "Bekasi",
+      "country": "ID",
+      "bcp_score": 60,
+      "highlight": "none",
+      "bcp_band": "MEDIUM_RISK"
+    },
+    {
+      "id": "S04",
+      "type": "site",
+      "label": "PT Roda Cakra",
+      "tier": "1",
+      "kabupaten": "Bogor",
+      "country": "ID",
+      "bcp_score": 45,
+      "highlight": "none",
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "id": "S05",
+      "type": "site",
+      "label": "Shenzhen VoltChip Co. (fiktif)",
+      "tier": "1",
+      "kabupaten": "Shenzhen",
+      "country": "CN",
+      "bcp_score": 45,
+      "highlight": "none",
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "id": "S06",
+      "type": "site",
+      "label": "PT Dinamo Presisi",
+      "tier": "1",
+      "kabupaten": "Tangerang",
+      "country": "ID",
+      "bcp_score": 65,
+      "highlight": "none",
+      "bcp_band": "MEDIUM_RISK"
+    },
+    {
+      "id": "S07",
+      "type": "site",
+      "label": "PT Sinar Lampu",
+      "tier": "1",
+      "kabupaten": "Bekasi",
+      "country": "ID",
+      "bcp_score": 60,
+      "highlight": "none",
+      "bcp_band": "MEDIUM_RISK"
+    },
+    {
+      "id": "S08",
+      "type": "site",
+      "label": "PT Plastindo Body",
+      "tier": "1",
+      "kabupaten": "Purwakarta",
+      "country": "ID",
+      "bcp_score": 45,
+      "highlight": "none",
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "id": "S09",
+      "type": "site",
+      "label": "PT Sel Energi",
+      "tier": "2",
+      "kabupaten": "Karawang",
+      "country": "ID",
+      "bcp_score": 35,
+      "highlight": "affected",
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "id": "S10",
+      "type": "site",
+      "label": "CV Cetak Plastik",
+      "tier": "2",
+      "kabupaten": "Karawang",
+      "country": "ID",
+      "bcp_score": 25,
+      "highlight": "confirmed_no_impact",
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "id": "S11",
+      "type": "site",
+      "label": "PT Tembaga Kabel",
+      "tier": "2",
+      "kabupaten": "Purwakarta",
+      "country": "ID",
+      "bcp_score": 75,
+      "highlight": "none",
+      "bcp_band": "MEDIUM_RISK"
+    },
+    {
+      "id": "S13",
+      "type": "site",
+      "label": "Ningbo Suspension Co., Ltd. (fiktif)",
+      "tier": "1",
+      "kabupaten": "Ningbo",
+      "country": "CN",
+      "bcp_score": 45,
+      "highlight": "none",
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "id": "S14",
+      "type": "site",
+      "label": "Hamamatsu Bearing K.K. (fiktif)",
+      "tier": "1",
+      "kabupaten": "Hamamatsu",
+      "country": "JP",
+      "bcp_score": 100,
+      "highlight": "none",
+      "bcp_band": "LOW_RISK"
+    },
+    {
+      "id": "S15",
+      "type": "site",
+      "label": "Rayong Switch Co., Ltd. (fiktif)",
+      "tier": "1",
+      "kabupaten": "Rayong",
+      "country": "TH",
+      "bcp_score": 40,
+      "highlight": "none",
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "id": "BAT-48",
+      "type": "part",
+      "label": "Battery pack 48V 20Ah",
+      "highlight": true,
+      "category": "battery"
+    },
+    {
+      "id": "BAT-60",
+      "type": "part",
+      "label": "Battery pack 60V 30Ah",
+      "highlight": true,
+      "category": "battery"
+    },
+    {
+      "id": "BRG-W",
+      "type": "part",
+      "label": "Wheel bearing set",
+      "highlight": false,
+      "category": "bearing"
+    },
+    {
+      "id": "BRK-DS",
+      "type": "part",
+      "label": "Disc brake set",
+      "highlight": false,
+      "category": "brake"
+    },
+    {
+      "id": "CHG-5A",
+      "type": "part",
+      "label": "Charger 5A",
+      "highlight": false,
+      "category": "electronic components"
+    },
+    {
+      "id": "CTL-72",
+      "type": "part",
+      "label": "Motor controller 72V",
+      "highlight": false,
+      "category": "electronic components"
+    },
+    {
+      "id": "FRM-1",
+      "type": "part",
+      "label": "Frame LX-1",
+      "highlight": false,
+      "category": "frame"
+    },
+    {
+      "id": "FRM-2",
+      "type": "part",
+      "label": "Frame LX-2",
+      "highlight": false,
+      "category": "frame"
+    },
+    {
+      "id": "HRN-1",
+      "type": "part",
+      "label": "Wire harness LX-1",
+      "highlight": false,
+      "category": "wire harness"
+    },
+    {
+      "id": "HRN-2",
+      "type": "part",
+      "label": "Wire harness LX-2",
+      "highlight": false,
+      "category": "wire harness"
+    },
+    {
+      "id": "HSW-ST",
+      "type": "part",
+      "label": "Handlebar switch set",
+      "highlight": false,
+      "category": "handlebar controls"
+    },
+    {
+      "id": "HUB-15",
+      "type": "part",
+      "label": "Hub motor 1.5 kW",
+      "highlight": false,
+      "category": "electric motor"
+    },
+    {
+      "id": "HUB-30",
+      "type": "part",
+      "label": "Hub motor 3 kW",
+      "highlight": false,
+      "category": "electric motor"
+    },
+    {
+      "id": "LMP-HD",
+      "type": "part",
+      "label": "LED headlamp",
+      "highlight": false,
+      "category": "lighting"
+    },
+    {
+      "id": "MIR-ST",
+      "type": "part",
+      "label": "Mirror set",
+      "highlight": false,
+      "category": "body accessories"
+    },
+    {
+      "id": "PNL-1",
+      "type": "part",
+      "label": "Body panel set LX-1",
+      "highlight": false,
+      "category": "body panel"
+    },
+    {
+      "id": "PNL-2",
+      "type": "part",
+      "label": "Body panel set LX-2",
+      "highlight": false,
+      "category": "body panel"
+    },
+    {
+      "id": "SEAT",
+      "type": "part",
+      "label": "Seat",
+      "highlight": false,
+      "category": "body accessories"
+    },
+    {
+      "id": "SHK-R",
+      "type": "part",
+      "label": "Rear shock absorber",
+      "highlight": false,
+      "category": "suspension"
+    },
+    {
+      "id": "WHL-12",
+      "type": "part",
+      "label": "Wheel set 12-inch",
+      "highlight": false,
+      "category": "wheel"
+    },
+    {
+      "id": "WHL-14",
+      "type": "part",
+      "label": "Wheel set 14-inch",
+      "highlight": false,
+      "category": "wheel"
+    },
+    {
+      "id": "LX1",
+      "type": "product",
+      "label": "LX-1 Electric Motorcycle",
+      "highlight": true
+    },
+    {
+      "id": "LX2",
+      "type": "product",
+      "label": "LX-2 Pro Electric Motorcycle",
+      "highlight": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "S09",
+      "to": "S01",
+      "type": "tier2_to_tier1",
+      "component": "21700 battery cells",
+      "buffer_days": 5,
+      "highlight": true,
+      "component_category": "battery cells"
+    },
+    {
+      "from": "S10",
+      "to": "S07",
+      "type": "tier2_to_tier1",
+      "component": "Plastic lamp housing",
+      "buffer_days": 3,
+      "highlight": false,
+      "component_category": "plastic parts"
+    },
+    {
+      "from": "S11",
+      "to": "S02",
+      "type": "tier2_to_tier1",
+      "component": "Copper wire",
+      "buffer_days": 10,
+      "highlight": false,
+      "component_category": "copper wire"
+    },
+    {
+      "from": "S01",
+      "to": "BAT-48",
+      "type": "supplies",
+      "highlight": true
+    },
+    {
+      "from": "S01",
+      "to": "BAT-60",
+      "type": "supplies",
+      "highlight": true
+    },
+    {
+      "from": "S14",
+      "to": "BRG-W",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S06",
+      "to": "BRK-DS",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S05",
+      "to": "CHG-5A",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S05",
+      "to": "CTL-72",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S03",
+      "to": "FRM-1",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S03",
+      "to": "FRM-2",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S02",
+      "to": "HRN-1",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S02",
+      "to": "HRN-2",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S15",
+      "to": "HSW-ST",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S06",
+      "to": "HUB-15",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S06",
+      "to": "HUB-30",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S07",
+      "to": "LMP-HD",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S07",
+      "to": "MIR-ST",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S08",
+      "to": "PNL-1",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S08",
+      "to": "PNL-2",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S08",
+      "to": "SEAT",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S13",
+      "to": "SHK-R",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S04",
+      "to": "WHL-12",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "S04",
+      "to": "WHL-14",
+      "type": "supplies",
+      "highlight": false
+    },
+    {
+      "from": "BAT-48",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": true
+    },
+    {
+      "from": "BAT-60",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": true
+    },
+    {
+      "from": "HRN-1",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "HRN-2",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "FRM-1",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "FRM-2",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "WHL-12",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 2,
+      "highlight": false
+    },
+    {
+      "from": "WHL-14",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 2,
+      "highlight": false
+    },
+    {
+      "from": "CTL-72",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "CTL-72",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "CHG-5A",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "CHG-5A",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "HUB-15",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "HUB-30",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "LMP-HD",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "LMP-HD",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "MIR-ST",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "MIR-ST",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "PNL-1",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "PNL-2",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "SEAT",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "SEAT",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "BRK-DS",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "BRK-DS",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 2,
+      "highlight": false
+    },
+    {
+      "from": "SHK-R",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "SHK-R",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 2,
+      "highlight": false
+    },
+    {
+      "from": "BRG-W",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "BRG-W",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "HSW-ST",
+      "to": "LX1",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    },
+    {
+      "from": "HSW-ST",
+      "to": "LX2",
+      "type": "used_in",
+      "qty_per_unit": 1,
+      "highlight": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "answer": "The case score is 79.7 (HIGH) because S01 (PT Karya Baterai Karawang) has IDR 2,740,000,000 in standalone risk exposure. Supplier replies confirm a 14-day recovery, leaving 60 units and IDR 2,740,000,000 at risk in version 2.",
+  "citations": [
+    {
+      "type": "record",
+      "id": "S01"
+    },
+    {
+      "type": "record",
+      "id": "PO 4500001001/10"
+    }
+  ],
+  "chat_session_id": "3f0c2a7e-8a1d-4b8e-9c57-0d6c2f1b9a44",
+  "validated": true
+}

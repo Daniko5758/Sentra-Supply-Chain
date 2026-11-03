@@ -1,0 +1,915 @@
+/* Supplier network — struktur halaman (FR-05, C-09; design.md §5/§6):
+   1 header · 2 ringkasan per kolom · 3 cakupan & filter · 4 peta dampak (graf/tabel) · 5 laci profil. */
+.network-explorer {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* ---------- 1 · Header halaman ---------- */
+.network-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.network-header .eyebrow { margin-bottom: 6px; }
+
+.network-header h1 {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.network-header__description {
+  max-width: 720px;
+  margin: 8px 0 0;
+  color: var(--ink-muted);
+}
+
+.network-explorer__embedded-heading h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.network-explorer__embedded-heading p {
+  margin: 4px 0 0;
+  color: var(--ink-muted);
+  font-size: 14px;
+}
+
+/* ---------- 2 · Ringkasan: satu kartu per kolom graf ---------- */
+.network-overview {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.network-overview__tile {
+  --lane-accent: var(--accent);
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 4px 10px;
+  padding: 14px 16px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+/* Panah antar kartu: arah pasokan kiri → kanan, sama dengan graf di bawahnya */
+.network-overview__tile:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -17px;
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  transform: translateY(-50%);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.network-overview__step {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lane-accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.network-overview__label {
+  color: var(--ink-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.network-overview__value {
+  grid-column: 1 / -1;
+  color: var(--ink);
+  font-size: 34px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.network-overview__hint {
+  grid-column: 1 / -1;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.network-overview__tile--tier2,
+.network-lane--tier2 { --lane-accent: #0f766e; }
+.network-overview__tile--tier1,
+.network-lane--tier1 { --lane-accent: #0a6ed1; }
+.network-overview__tile--part,
+.network-lane--part { --lane-accent: #5f6b7a; }
+.network-overview__tile--product,
+.network-lane--product { --lane-accent: #1a4f9c; }
+
+/* ---------- 3 · Cakupan dan filter ---------- */
+.network-controls {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.network-toolbar {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.network-filter {
+  display: grid;
+  gap: 5px;
+  min-width: 170px;
+  color: var(--ink-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.network-filter--case {
+  min-width: 260px;
+}
+
+.network-filter--search {
+  flex: 1 1 220px;
+}
+
+.network-filter select,
+.network-filter input {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+}
+
+.network-filter select:focus-visible,
+.network-filter input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.network-view-toggle {
+  display: inline-flex;
+  min-height: 40px;
+  padding: 3px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+}
+
+.network-view-toggle button {
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.network-view-toggle button.is-active {
+  background: #fff;
+  color: var(--accent-strong);
+  box-shadow: 0 1px 3px rgba(24, 24, 27, 0.12);
+}
+
+.network-inline-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+/* ---------- 4 · Peta dampak ---------- */
+.network-graph-card {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.network-graph-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.network-graph-card__title {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.network-graph-card__title h2 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.network-graph-card__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.network-case-context {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.network-case-context .mono {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.network-case-context--empty {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.network-legend {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  color: var(--ink-muted);
+  font-size: 13px;
+  list-style: none;
+}
+
+.network-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.network-legend b {
+  min-width: 24px;
+  padding: 0 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.network-legend__note {
+  margin-left: auto;
+  color: var(--ink-subtle);
+}
+
+.network-legend__swatch {
+  width: 12px;
+  height: 12px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.network-legend__swatch--affected { background: #fff0ee; border-color: #b91c1c; }
+.network-legend__swatch--via { background: #fff6e8; border-color: #c46b0b; }
+.network-legend__swatch--confirmed { background: #edf0f2; border-color: #66717c; }
+.network-legend__swatch--neutral { background: #fff; border-color: #aab3bd; }
+
+/* Bingkai: tinggi diatur dari kode agar graf mengisi lebar tanpa area kosong. Scroll halaman tetap jalan di atas graf. */
+.network-flow-frame {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fbfcfe;
+}
+
+.network-flow-frame .react-flow {
+  background: transparent;
+}
+
+/* Kolom (lane): header ikut ter-zoom bersama node sehingga selalu sejajar */
+.network-lane {
+  --lane-accent: var(--accent);
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #e1e7ee;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #f3f7fb 0%, rgba(255, 255, 255, 0.55) 70%);
+}
+
+.network-lane__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 56px;
+  padding: 0 12px;
+  border-bottom: 1px solid #e1e7ee;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.network-lane__step {
+  display: grid;
+  flex: none;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lane-accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.network-lane__titles {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.network-lane__titles strong {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.network-lane__titles span {
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.network-lane__count {
+  min-width: 30px;
+  padding: 2px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Node */
+.network-flow-node {
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-sans);
+}
+
+.network-flow-card {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 9px 11px;
+  overflow: hidden;
+  border: 1.5px solid #c5ced8;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  text-align: left;
+  box-shadow: 0 3px 8px rgba(24, 44, 66, 0.06);
+  /* Node muncul per kolom (kiri → kanan); hanya `from` agar tampilan redup (is-dim) tidak tertimpa */
+  animation: network-node-in 520ms var(--ease-out) backwards;
+  animation-delay: calc(var(--lane, 0) * 130ms + 120ms);
+  transition:
+    border-color var(--dur-fast) var(--ease-standard),
+    box-shadow var(--dur-fast) var(--ease-standard),
+    opacity var(--dur-base) var(--ease-standard);
+}
+
+@keyframes network-node-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+}
+
+button.network-flow-card {
+  cursor: pointer;
+  font: inherit;
+}
+
+button.network-flow-card:hover,
+button.network-flow-card.is-active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(10, 110, 209, 0.16), 0 4px 10px rgba(24, 24, 27, 0.1);
+}
+
+.network-flow-card--affected { border-color: #b91c1c; background: #fff4f2; }
+.network-flow-card--via-tier2 { border-color: #c46b0b; background: #fff8ee; }
+.network-flow-card--confirmed { border-color: #66717c; background: #f0f2f4; }
+.network-flow-card--path { border-color: #d18a2c; background: #fffaf1; }
+.network-flow-card--neutral { border-color: #b8c0c8; background: #fff; }
+
+/* Saat kasus dipilih, node tanpa dampak diredupkan agar jalur dampak menonjol (teks status tetap ada) */
+.network-flow-card.is-dim {
+  opacity: 0.6;
+}
+
+.network-flow-card.is-dim:hover {
+  opacity: 1;
+}
+
+/* Part = baris ringkas satu garis */
+.network-flow-card--part {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 0 10px;
+  border-radius: 9px;
+  box-shadow: none;
+  font-size: 13px;
+}
+
+.network-flow-card__part-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ink);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.network-flow-card__top,
+.network-flow-card__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  min-width: 0;
+  color: var(--ink-muted);
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.network-flow-card__top > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.network-flow-card__id {
+  flex: 0 0 auto;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.network-flow-card__title {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.28;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.network-flow-card__bottom > span:first-child {
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.network-state {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 2px 7px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.network-state--affected { border-color: #e6a29d; background: #ffe9e6; color: #8e1c1b; }
+.network-state--via-tier2 { border-color: #e4bc82; background: #fff0d8; color: #854800; }
+.network-state--confirmed { border-color: #b5bdc5; background: #e2e6e9; color: #454d55; }
+.network-state--path { border-color: #e4c185; background: #fff2d9; color: #76470d; }
+.network-state--neutral { border-color: #d6dbe0; background: #f2f4f6; color: #59616a; }
+
+.network-flow-node .react-flow__handle {
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid #748395;
+  background: #fff;
+}
+
+.network-flow-frame .react-flow__edge-text {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.network-flow-frame .react-flow__edge-textbg {
+  fill: #fff;
+  fill-opacity: 0.97;
+}
+
+.network-flow-frame .react-flow__controls {
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(24, 24, 27, 0.08);
+}
+
+.network-flow-frame .react-flow__controls button {
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+  fill: #475569;
+}
+
+.network-flow-frame .react-flow__controls button:hover { background: #f0f5fa; }
+
+.network-state-message {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink-muted);
+}
+
+.network-state-message p { margin: 0; }
+.network-state-message--error { border-color: #e7b5b0; color: #8e1c1b; }
+
+.network-table-view {
+  display: grid;
+  gap: 18px;
+}
+
+.network-table-section {
+  display: grid;
+  gap: 9px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.network-table-section h3 {
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.network-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.network-table-scroll table {
+  width: 100%;
+  min-width: 1060px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.network-table-scroll th,
+.network-table-scroll td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+.network-table-scroll th {
+  color: var(--ink-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.network-table-scroll tbody tr:last-child td { border-bottom: 0; }
+.network-table-scroll .btn { min-height: 34px; padding: 5px 9px; font-size: 12px; }
+
+/* ---------- 5 · Laci profil supplier (EP-06) ---------- */
+.network-profile {
+  position: fixed;
+  z-index: 40;
+  top: var(--header-height, 56px);
+  right: 0;
+  bottom: 0;
+  display: grid;
+  width: min(440px, 100vw);
+  grid-template-rows: auto minmax(0, 1fr);
+  overflow: hidden;
+  border-left: 1px solid var(--line-strong);
+  background: var(--surface);
+  box-shadow: -14px 0 34px rgba(24, 24, 27, 0.14);
+  animation: network-drawer-in var(--dur-slow, 400ms) var(--ease-out, ease-out);
+}
+
+@keyframes network-drawer-in {
+  from { opacity: 0; transform: translateX(36px); }
+}
+
+.network-profile__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.network-profile__header .eyebrow { margin-bottom: 2px; }
+.network-profile__header h2 { font-size: 18px; font-weight: 650; }
+
+.network-profile__close {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink-muted);
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.network-profile__content {
+  display: grid;
+  gap: 14px;
+  padding: 15px 18px 20px;
+  overflow-y: auto;
+}
+
+.network-profile__identity {
+  display: grid;
+  gap: 5px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.network-profile__identity-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.network-profile__identity h3 { font-size: 16px; font-weight: 650; line-height: 1.3; }
+.network-profile__identity p { margin: 0; color: var(--ink-muted); font-size: 12px; }
+
+.network-profile__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.network-profile__metrics > div {
+  display: grid;
+  gap: 3px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.network-profile__metrics span { color: var(--ink-muted); font-size: 11px; }
+.network-profile__metrics strong { font-size: 14px; font-weight: 650; }
+
+.network-profile__section {
+  display: grid;
+  gap: 8px;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+}
+
+.network-profile__section h3 { font-size: 14px; font-weight: 650; }
+.network-profile__muted { margin: 0; color: var(--ink-muted); font-size: 12px; }
+
+.network-profile__checklist,
+.network-profile__related-list,
+.network-profile__messages {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.network-profile__checklist li,
+.network-profile__related-list li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.network-profile__checklist strong,
+.network-profile__related-list strong { color: var(--ink); font-weight: 600; }
+.network-profile__related-list li { display: grid; gap: 2px; }
+.network-profile__related-list span { color: var(--ink-muted); }
+
+.network-profile__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.network-chip { padding: 3px 7px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-raised); font-size: 11px; }
+
+.network-profile__messages { gap: 10px; }
+.network-profile__messages li { display: grid; gap: 6px; padding: 10px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: #fff; }
+.network-profile__message-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.network-profile__message-meta strong { font-size: 11px; }
+.network-profile__message-meta time { width: 100%; color: var(--ink-muted); font-size: 11px; }
+.network-profile__messages p { margin: 0; font-size: 12px; }
+.network-profile__message-structured { color: var(--ink-muted); }
+
+.network-profile__bcp-heading {
+  display: grid;
+  gap: 8px;
+}
+
+.network-profile__bcp-score {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.network-profile__bcp-score > span:first-child {
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.network-profile__bcp-score strong {
+  color: var(--ink);
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+}
+
+.network-profile__bcp-band {
+  padding: 3px 8px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.network-profile__bcp-band--high { border-color: #e6a29d; background: #ffe9e6; color: #8e1c1b; }
+.network-profile__bcp-band--medium { border-color: #e4bc82; background: #fff0d8; color: #854800; }
+.network-profile__bcp-band--low { border-color: #b5bdc5; background: #e2e6e9; color: #454d55; }
+
+.network-profile__bcp-categories {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.network-profile__bcp-categories li {
+  display: grid;
+  gap: 5px;
+}
+
+.network-profile__bcp-category {
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+
+.network-profile__bcp-meter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.network-profile__bcp-track {
+  display: block;
+  flex: 1;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e8edf2;
+}
+
+.network-profile__bcp-track > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+}
+
+.network-profile__bcp-meter strong {
+  min-width: 38px;
+  color: var(--ink);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.network-profile__bcp-rto { margin: 0; color: var(--ink); font-size: 13px; font-weight: 600; }
+
+.network-profile__backup {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #c8d8e8;
+  border-radius: var(--radius-sm);
+  background: #f4f8fc;
+}
+
+.network-profile__backup h3 { margin: 0; color: var(--ink-muted); font-size: 12px; font-weight: 650; }
+.network-profile__backup > strong { color: var(--ink); font-size: 15px; }
+.network-profile__backup dl { display: flex; flex-wrap: wrap; gap: 12px 22px; margin: 0; }
+.network-profile__backup dl div { display: grid; gap: 3px; }
+.network-profile__backup dt { color: var(--ink-muted); font-size: 11px; }
+.network-profile__backup dd { margin: 0; color: var(--ink); font-size: 12px; font-weight: 600; }
+
+.network-profile__state {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  margin: 0;
+  padding: 20px;
+  overflow-y: auto;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.network-profile__state p { margin: 0; }
+.network-profile__state--error { color: #8e1c1b; }
+
+@media (max-width: 1280px) {
+  .network-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .network-overview__tile:not(:last-child)::after { display: none; }
+  .network-legend__note { margin-left: 0; }
+}
+
+@media (max-width: 640px) {
+  .network-header { flex-direction: column; }
+  .network-overview { grid-template-columns: minmax(0, 1fr); }
+  .network-toolbar { align-items: stretch; flex-direction: column; }
+  .network-filter,
+  .network-filter--case { min-width: 0; }
+  .network-view-toggle button { flex: 1; }
+}
+
+@media print {
+  .network-profile { display: none; }
+  .network-flow-card { animation: none; }
+}

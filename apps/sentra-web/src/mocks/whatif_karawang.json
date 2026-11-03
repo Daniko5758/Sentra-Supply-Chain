@@ -1,0 +1,293 @@
+{
+  "location": "Karawang",
+  "banner": "What-if only — no case, no email, no ERP change.",
+  "sites_t1": [
+    "S01",
+    "S02"
+  ],
+  "sites_t2": [
+    "S09",
+    "S10"
+  ],
+  "kpi": {
+    "parts_affected": 5,
+    "pos_affected": 4,
+    "po_lines_affected": 7,
+    "products_affected": [
+      "LX1",
+      "LX2"
+    ],
+    "units_blocked": 75,
+    "orders_blocked": 3,
+    "max_delay_days": 14,
+    "max_po_slip_days": 11,
+    "output_value": 2080000000,
+    "po_value": 1206000000,
+    "rar": 3286000000
+  },
+  "impact": {
+    "version": 1,
+    "scope": "LOCATION",
+    "part_delays": [
+      {
+        "part_id": "BAT-48",
+        "days": 14,
+        "cause_site": "S01",
+        "via_site": null
+      },
+      {
+        "part_id": "BAT-60",
+        "days": 14,
+        "cause_site": "S01",
+        "via_site": null
+      },
+      {
+        "part_id": "HRN-1",
+        "days": 4,
+        "cause_site": "S02",
+        "via_site": null
+      },
+      {
+        "part_id": "HRN-2",
+        "days": 4,
+        "cause_site": "S02",
+        "via_site": null
+      },
+      {
+        "part_id": "LMP-HD",
+        "days": 9,
+        "cause_site": "S10",
+        "via_site": "S07"
+      }
+    ],
+    "po_lines": [
+      {
+        "po_id": "4500001001",
+        "item_no": 10,
+        "material_id": "BAT-48",
+        "supplier_id": "S01",
+        "qty": 40,
+        "confirmed_date": "2026-11-04",
+        "new_eta": "2026-11-14",
+        "slip_days": 10,
+        "value": 260000000,
+        "cause_site": "S01",
+        "via_site": null
+      },
+      {
+        "po_id": "4500001001",
+        "item_no": 20,
+        "material_id": "BAT-48",
+        "supplier_id": "S01",
+        "qty": 50,
+        "confirmed_date": "2026-11-09",
+        "new_eta": "2026-11-14",
+        "slip_days": 5,
+        "value": 325000000,
+        "cause_site": "S01",
+        "via_site": null
+      },
+      {
+        "po_id": "4500001002",
+        "item_no": 10,
+        "material_id": "BAT-60",
+        "supplier_id": "S01",
+        "qty": 30,
+        "confirmed_date": "2026-11-03",
+        "new_eta": "2026-11-14",
+        "slip_days": 11,
+        "value": 270000000,
+        "cause_site": "S01",
+        "via_site": null
+      },
+      {
+        "po_id": "4500001002",
+        "item_no": 20,
+        "material_id": "BAT-60",
+        "supplier_id": "S01",
+        "qty": 30,
+        "confirmed_date": "2026-11-11",
+        "new_eta": "2026-11-14",
+        "slip_days": 3,
+        "value": 270000000,
+        "cause_site": "S01",
+        "via_site": null
+      },
+      {
+        "po_id": "4500001004",
+        "item_no": 10,
+        "material_id": "HRN-1",
+        "supplier_id": "S02",
+        "qty": 60,
+        "confirmed_date": "2026-11-02",
+        "new_eta": "2026-11-04",
+        "slip_days": 2,
+        "value": 27000000,
+        "cause_site": "S02",
+        "via_site": null
+      },
+      {
+        "po_id": "4500001004",
+        "item_no": 20,
+        "material_id": "HRN-2",
+        "supplier_id": "S02",
+        "qty": 60,
+        "confirmed_date": "2026-11-03",
+        "new_eta": "2026-11-04",
+        "slip_days": 1,
+        "value": 31200000,
+        "cause_site": "S02",
+        "via_site": null
+      },
+      {
+        "po_id": "4500001011",
+        "item_no": 10,
+        "material_id": "LMP-HD",
+        "supplier_id": "S07",
+        "qty": 60,
+        "confirmed_date": "2026-11-04",
+        "new_eta": "2026-11-09",
+        "slip_days": 5,
+        "value": 22800000,
+        "cause_site": "S10",
+        "via_site": "S07"
+      }
+    ],
+    "production_orders": [
+      {
+        "order_id": "PRD-02",
+        "product_id": "LX2",
+        "qty": 25,
+        "start_date": "2026-11-05",
+        "units_blocked": 15,
+        "blocking_parts": [
+          "LMP-HD"
+        ],
+        "ready_date": "2026-11-09",
+        "output_value": 465000000,
+        "sales_order_id": "SO-02"
+      },
+      {
+        "order_id": "PRD-03",
+        "product_id": "LX1",
+        "qty": 40,
+        "start_date": "2026-11-10",
+        "units_blocked": 35,
+        "blocking_parts": [
+          "BAT-48"
+        ],
+        "ready_date": "2026-11-14",
+        "output_value": 840000000,
+        "sales_order_id": "SO-03"
+      },
+      {
+        "order_id": "PRD-04",
+        "product_id": "LX2",
+        "qty": 30,
+        "start_date": "2026-11-12",
+        "units_blocked": 25,
+        "blocking_parts": [
+          "BAT-60"
+        ],
+        "ready_date": "2026-11-14",
+        "output_value": 775000000,
+        "sales_order_id": "SO-04"
+      }
+    ],
+    "sales_orders": [
+      {
+        "so_id": "SO-02",
+        "customer": "Koperasi Ojek Daring (fiktif)",
+        "old_date": "2026-11-08",
+        "new_date": "2026-11-12",
+        "units_at_risk": 15
+      },
+      {
+        "so_id": "SO-03",
+        "customer": "PT Armada Kurir (fiktif)",
+        "old_date": "2026-11-13",
+        "new_date": "2026-11-17",
+        "units_at_risk": 35
+      },
+      {
+        "so_id": "SO-04",
+        "customer": "Dealer Mitra Jaya (fiktif)",
+        "old_date": "2026-11-15",
+        "new_date": "2026-11-17",
+        "units_at_risk": 25
+      }
+    ],
+    "totals": {
+      "units_blocked": 75,
+      "output_value": 2080000000,
+      "po_value": 1206000000,
+      "rar": 3286000000,
+      "parts_affected": 5,
+      "pos_affected": 4,
+      "po_lines_affected": 7,
+      "products_affected": [
+        "LX1",
+        "LX2"
+      ],
+      "orders_blocked": 3,
+      "max_delay_days": 14,
+      "max_po_slip_days": 11
+    },
+    "tariff": null,
+    "exposure": null,
+    "baseline_short": [],
+    "disruption": null
+  },
+  "charts": {
+    "rar_by_site": [
+      {
+        "site_id": "S01",
+        "rar": 2740000000
+      },
+      {
+        "site_id": "S10",
+        "rar": 487800000
+      },
+      {
+        "site_id": "S09",
+        "rar": 530000000
+      },
+      {
+        "site_id": "S02",
+        "rar": 58200000
+      }
+    ],
+    "delay_by_part": [
+      {
+        "part_id": "BAT-48",
+        "days": 14
+      },
+      {
+        "part_id": "BAT-60",
+        "days": 14
+      },
+      {
+        "part_id": "LMP-HD",
+        "days": 9
+      },
+      {
+        "part_id": "HRN-1",
+        "days": 4
+      },
+      {
+        "part_id": "HRN-2",
+        "days": 4
+      }
+    ],
+    "units_by_product": [
+      {
+        "product_id": "LX1",
+        "units": 35
+      },
+      {
+        "product_id": "LX2",
+        "units": 40
+      }
+    ]
+  }
+}

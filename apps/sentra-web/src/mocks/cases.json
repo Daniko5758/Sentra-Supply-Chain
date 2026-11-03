@@ -1,0 +1,34 @@
+[
+  {
+    "case_id": "CASE-0001",
+    "title": "Flood – Karawang",
+    "risk_type": "FLOOD",
+    "scope": "LOCATION",
+    "location": "Karawang",
+    "country": "ID",
+    "mode": "DEMO",
+    "simulated": true,
+    "status": "AWAITING_SUPPLIER",
+    "score": 79.7,
+    "level": "HIGH",
+    "units_at_risk": 75,
+    "revenue_at_risk": 3286000000,
+    "updated_at": "2026-10-31T10:42:40+07:00"
+  },
+  {
+    "case_id": "CASE-0002",
+    "title": "Tariff – China",
+    "risk_type": "TARIFF",
+    "scope": "COUNTRY",
+    "location": "China",
+    "country": "CN",
+    "mode": "DEMO",
+    "simulated": true,
+    "status": "READY_FOR_DECISION",
+    "score": 33.4,
+    "level": "LOW",
+    "units_at_risk": 0,
+    "revenue_at_risk": 185000000,
+    "updated_at": "2026-10-31T10:43:10+07:00"
+  }
+]

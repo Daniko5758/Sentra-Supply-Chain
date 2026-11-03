@@ -1,0 +1,13 @@
+{
+  "status": "SENT",
+  "recipients": [
+    "BUYER",
+    "PPIC",
+    "SALES",
+    "SCM_MANAGER"
+  ],
+  "sent_at": "2026-10-31T10:41:59+07:00",
+  "error": null,
+  "kind": "MEETING_ROOM",
+  "meeting_id": "MTG-0001"
+}

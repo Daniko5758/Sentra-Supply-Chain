@@ -1,0 +1,231 @@
+{
+  "case_id": "CASE-0003",
+  "version": 1,
+  "preliminary": true,
+  "recommended_option": "C",
+  "rule_reason": "Option C: premium IDR 53.8M = 1.5% of protected output (≤ 10%) — pending supplier confirmation",
+  "execution_enabled": false,
+  "confirmations_needed": [
+    {
+      "site_id": "S06",
+      "request_type": "BACKUP_ACTIVATION"
+    }
+  ],
+  "escalation_tier": 0,
+  "executive_decision_required": false,
+  "decision": null,
+  "options": [
+    {
+      "option": "A",
+      "title": "Protect production",
+      "available": false,
+      "unavailable_reason": "No approved alternate source for BRK-DS",
+      "label": null,
+      "pending_confirmation": false,
+      "confirmation": null,
+      "saving": null,
+      "before": {
+        "units_blocked": 135,
+        "output_value": 3625000000,
+        "po_value": 896000000,
+        "rar": 4521000000,
+        "so_delayed": 4,
+        "premium": 0,
+        "extra_duty": null
+      },
+      "after": null,
+      "actions": [],
+      "rationale": "Reference recommendation for Option A.",
+      "rationale_source": "template"
+    },
+    {
+      "option": "B",
+      "title": "Reschedule",
+      "available": true,
+      "unavailable_reason": null,
+      "label": null,
+      "pending_confirmation": false,
+      "confirmation": null,
+      "saving": null,
+      "before": {
+        "units_blocked": 135,
+        "output_value": 3625000000,
+        "po_value": 896000000,
+        "rar": 4521000000,
+        "so_delayed": 4,
+        "premium": 0,
+        "extra_duty": null
+      },
+      "after": {
+        "units_blocked": 0,
+        "output_value": 0,
+        "po_value": 896000000,
+        "rar": 896000000,
+        "so_delayed": 4,
+        "premium": 0,
+        "extra_duty": null
+      },
+      "actions": [
+        {
+          "seq": 1,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001010/10",
+          "payload": {
+            "po_id": "4500001010",
+            "item_no": 10,
+            "old_date": "2026-11-09",
+            "new_date": "2026-11-21"
+          }
+        },
+        {
+          "seq": 2,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001010/20",
+          "payload": {
+            "po_id": "4500001010",
+            "item_no": 20,
+            "old_date": "2026-11-10",
+            "new_date": "2026-11-21"
+          }
+        },
+        {
+          "seq": 3,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001013/10",
+          "payload": {
+            "po_id": "4500001013",
+            "item_no": 10,
+            "old_date": "2026-11-08",
+            "new_date": "2026-11-21"
+          }
+        },
+        {
+          "seq": 4,
+          "type": "RESCHEDULE_PRODUCTION_ORDER",
+          "object": "PRD-03",
+          "payload": {
+            "order_id": "PRD-03",
+            "old_date": "2026-11-10",
+            "new_date": "2026-11-21"
+          }
+        },
+        {
+          "seq": 5,
+          "type": "RESCHEDULE_PRODUCTION_ORDER",
+          "object": "PRD-04",
+          "payload": {
+            "order_id": "PRD-04",
+            "old_date": "2026-11-12",
+            "new_date": "2026-11-21"
+          }
+        },
+        {
+          "seq": 6,
+          "type": "RESCHEDULE_PRODUCTION_ORDER",
+          "object": "PRD-05",
+          "payload": {
+            "order_id": "PRD-05",
+            "old_date": "2026-11-17",
+            "new_date": "2026-11-21"
+          }
+        },
+        {
+          "seq": 7,
+          "type": "RESCHEDULE_PRODUCTION_ORDER",
+          "object": "PRD-06",
+          "payload": {
+            "order_id": "PRD-06",
+            "old_date": "2026-11-19",
+            "new_date": "2026-11-21"
+          }
+        },
+        {
+          "seq": 8,
+          "type": "RESCHEDULE_SALES_ORDER",
+          "object": "SO-03",
+          "payload": {
+            "so_id": "SO-03",
+            "old_date": "2026-11-13",
+            "new_date": "2026-11-24"
+          }
+        },
+        {
+          "seq": 9,
+          "type": "RESCHEDULE_SALES_ORDER",
+          "object": "SO-04",
+          "payload": {
+            "so_id": "SO-04",
+            "old_date": "2026-11-15",
+            "new_date": "2026-11-24"
+          }
+        },
+        {
+          "seq": 10,
+          "type": "RESCHEDULE_SALES_ORDER",
+          "object": "SO-05",
+          "payload": {
+            "so_id": "SO-05",
+            "old_date": "2026-11-20",
+            "new_date": "2026-11-24"
+          }
+        },
+        {
+          "seq": 11,
+          "type": "RESCHEDULE_SALES_ORDER",
+          "object": "SO-06",
+          "payload": {
+            "so_id": "SO-06",
+            "old_date": "2026-11-22",
+            "new_date": "2026-11-24"
+          }
+        }
+      ],
+      "rationale": "Reference recommendation for Option B.",
+      "rationale_source": "template"
+    },
+    {
+      "option": "C",
+      "title": "Activate supplier backup site",
+      "available": true,
+      "unavailable_reason": null,
+      "label": "Pending supplier confirmation",
+      "pending_confirmation": true,
+      "confirmation": {
+        "request_type": "BACKUP_ACTIVATION",
+        "sites": [
+          {
+            "site_id": "S06",
+            "status": "REQUESTED",
+            "answer": null
+          }
+        ]
+      },
+      "saving": null,
+      "before": {
+        "units_blocked": 135,
+        "output_value": 3625000000,
+        "po_value": 896000000,
+        "rar": 4521000000,
+        "so_delayed": 4,
+        "premium": 0,
+        "extra_duty": null
+      },
+      "after": {
+        "units_blocked": 0,
+        "output_value": 0,
+        "po_value": 0,
+        "rar": 0,
+        "so_delayed": 0,
+        "premium": 53760000,
+        "extra_duty": null
+      },
+      "actions": [],
+      "rationale": "Reference recommendation for Option C.",
+      "rationale_source": "template"
+    }
+  ],
+  "non_erp_steps": [
+    "Confirm recovery dates with S06",
+    "Inform customers of SO-03, SO-04, SO-05, SO-06"
+  ]
+}

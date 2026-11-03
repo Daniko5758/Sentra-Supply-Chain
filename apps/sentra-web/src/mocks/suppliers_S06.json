@@ -1,0 +1,50 @@
+{
+  "site_id": "S06",
+  "supplier_name": "PT Dinamo Presisi",
+  "tier": "1",
+  "kabupaten": "Tangerang",
+  "kecamatan": "Cikupa",
+  "country": "ID",
+  "hazard_zone_flood": false,
+  "ttr_days": 8,
+  "otd_12m": 0.9,
+  "backup_site": "Serang",
+  "bcp": {
+    "score": 65,
+    "band": "MEDIUM_RISK",
+    "categories": {
+      "governance": 62.5,
+      "resilience": 50,
+      "supply_chain": 87.5,
+      "testing": 62.5
+    },
+    "answers": {
+      "G1": 3,
+      "G2": 4,
+      "R1": 4,
+      "R2": 2,
+      "S1": 4,
+      "S2": 5,
+      "T1": 3,
+      "T2": 4
+    },
+    "stated_rto_days": 7,
+    "backup_site": true,
+    "emergency_plan": true,
+    "safety_stock": false,
+    "insurance": false
+  },
+  "parts_supplied": [
+    "BRK-DS",
+    "HUB-15",
+    "HUB-30"
+  ],
+  "tier2_suppliers": [],
+  "alternate_sources_for_parts": [],
+  "messages": [],
+  "backup": {
+    "site": "Serang",
+    "ramp_days": 7,
+    "surcharge_pct": 6
+  }
+}

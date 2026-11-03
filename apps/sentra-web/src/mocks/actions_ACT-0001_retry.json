@@ -1,0 +1,26 @@
+{
+  "action_id": "ACT-0001",
+  "seq": 1,
+  "type": "CHANGE_PO_DATE",
+  "object": "4500001001/10",
+  "payload": {
+    "po_id": "4500001001",
+    "item_no": 10,
+    "old_date": "2026-11-04",
+    "new_date": "2026-11-14"
+  },
+  "status": "EXECUTED",
+  "idempotency_key": "CASE-0001:A:1:v2",
+  "erp_result": {
+    "document": "PO 4500001001/10 delivery 2026-11-04→2026-11-14",
+    "messages": [
+      {
+        "type": "S",
+        "id": "06",
+        "number": "023",
+        "message": "Standard PO 4500001001 changed"
+      }
+    ]
+  },
+  "error": null
+}

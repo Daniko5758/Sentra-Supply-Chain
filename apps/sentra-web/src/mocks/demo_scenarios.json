@@ -1,0 +1,27 @@
+{
+  "seed": {
+    "file": "sentra_v2_1_1_seed.json",
+    "version": "2.1.1",
+    "dataset": "DEMO"
+  },
+  "scenarios": [
+    {
+      "key": "flood_karawang",
+      "risk_type": "FLOOD",
+      "scope": "LOCATION",
+      "country": "ID",
+      "location": "Karawang",
+      "downtime_days": null,
+      "summary": "SIMULATED: Citarum river overflow floods several districts of Karawang; access roads to industrial areas are cut."
+    },
+    {
+      "key": "tariff_cn",
+      "risk_type": "TARIFF",
+      "scope": "COUNTRY",
+      "country": "CN",
+      "location": "China",
+      "downtime_days": null,
+      "summary": "SIMULATED: Import duty on electronic components from China rises by 10 percentage points from D+14."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "mode": "DEMO",
+  "d0_date": "2026-10-31",
+  "integrations": [
+    {
+      "name": "claude-4.6-sonnet",
+      "status": "OK",
+      "last_call_at": "2026-10-31T10:41:40+07:00",
+      "duration_ms": 2140,
+      "message": null
+    },
+    {
+      "name": "sap-rpt-1.6",
+      "status": "OK",
+      "last_call_at": null,
+      "duration_ms": 950,
+      "message": null
+    },
+    {
+      "name": "sonar",
+      "status": "OK",
+      "last_call_at": null,
+      "duration_ms": 6100,
+      "message": null
+    },
+    {
+      "name": "brave",
+      "status": "OK",
+      "last_call_at": null,
+      "duration_ms": 900,
+      "message": null
+    },
+    {
+      "name": "agentcore",
+      "status": "OK",
+      "last_call_at": null,
+      "duration_ms": 18400,
+      "message": null
+    }
+  ],
+  "feature_flags": {
+    "erp_execution": false,
+    "meeting_room": false,
+    "whatif": false
+  },
+  "scheduler": null,
+  "seed": {
+    "file": "sentra_v2_1_1_seed.json",
+    "version": "2.1.1",
+    "dataset": "DEMO"
+  }
+}

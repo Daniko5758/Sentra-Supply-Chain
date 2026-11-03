@@ -1,0 +1,349 @@
+{
+  "case_id": "CASE-0004",
+  "title": "Export control ? China",
+  "risk_type": "POLITICAL",
+  "scope": "COUNTRY",
+  "location": "China",
+  "country": "CN",
+  "mode": "DEMO",
+  "simulated": true,
+  "status": "READY_FOR_DECISION",
+  "d0_date": "2026-10-31",
+  "created_at": "2026-10-31T10:40:00+07:00",
+  "updated_at": "2026-10-31T10:52:00+07:00",
+  "version": 1,
+  "versions": [
+    {
+      "version": 1,
+      "trigger": "initial",
+      "created_at": "2026-10-31T10:40:00+07:00"
+    }
+  ],
+  "signal": {
+    "signal_id": "SIG-0004",
+    "summary": "SIMULATED: China suspends export licences for rare-earth permanent magnets; reviews take about 45 days.",
+    "severity": null,
+    "source_urls": [],
+    "source_label": "SENTRA demo scenario (SIMULATED)"
+  },
+  "kpi": {
+    "units_at_risk": 195,
+    "delayed_output_value": 5205000000,
+    "affected_po_value": 752000000,
+    "revenue_at_risk": 5957000000,
+    "priority_score": 87.4,
+    "level": "HIGH",
+    "status": "READY_FOR_DECISION"
+  },
+  "impact": {
+    "version": 1,
+    "scope": "COUNTRY",
+    "part_delays": [
+      {
+        "part_id": "HUB-15",
+        "days": 45,
+        "cause_site": "S18",
+        "via_site": "S06"
+      },
+      {
+        "part_id": "HUB-30",
+        "days": 45,
+        "cause_site": "S18",
+        "via_site": "S06"
+      }
+    ],
+    "po_lines": [
+      {
+        "po_id": "4500001010",
+        "item_no": 10,
+        "material_id": "HUB-15",
+        "supplier_id": "S06",
+        "qty": 120,
+        "confirmed_date": "2026-11-09",
+        "new_eta": "2026-12-05",
+        "slip_days": 26,
+        "value": 384000000,
+        "cause_site": "S18",
+        "via_site": "S06"
+      },
+      {
+        "po_id": "4500001010",
+        "item_no": 20,
+        "material_id": "HUB-30",
+        "supplier_id": "S06",
+        "qty": 80,
+        "confirmed_date": "2026-11-10",
+        "new_eta": "2026-12-05",
+        "slip_days": 25,
+        "value": 368000000,
+        "cause_site": "S18",
+        "via_site": "S06"
+      }
+    ],
+    "production_orders": [
+      {
+        "order_id": "PRD-03",
+        "product_id": "LX1",
+        "qty": 40,
+        "start_date": "2026-11-10",
+        "units_blocked": 30,
+        "blocking_parts": [
+          "HUB-15"
+        ],
+        "ready_date": null,
+        "output_value": 720000000,
+        "sales_order_id": "SO-03"
+      },
+      {
+        "order_id": "PRD-04",
+        "product_id": "LX2",
+        "qty": 30,
+        "start_date": "2026-11-12",
+        "units_blocked": 20,
+        "blocking_parts": [
+          "HUB-30"
+        ],
+        "ready_date": null,
+        "output_value": 620000000,
+        "sales_order_id": "SO-04"
+      },
+      {
+        "order_id": "PRD-05",
+        "product_id": "LX1",
+        "qty": 50,
+        "start_date": "2026-11-17",
+        "units_blocked": 50,
+        "blocking_parts": [
+          "HUB-15"
+        ],
+        "ready_date": null,
+        "output_value": 1200000000,
+        "sales_order_id": "SO-05"
+      },
+      {
+        "order_id": "PRD-06",
+        "product_id": "LX2",
+        "qty": 30,
+        "start_date": "2026-11-19",
+        "units_blocked": 30,
+        "blocking_parts": [
+          "HUB-30"
+        ],
+        "ready_date": null,
+        "output_value": 930000000,
+        "sales_order_id": "SO-06"
+      },
+      {
+        "order_id": "PRD-07",
+        "product_id": "LX1",
+        "qty": 40,
+        "start_date": "2026-11-24",
+        "units_blocked": 40,
+        "blocking_parts": [
+          "HUB-15"
+        ],
+        "ready_date": null,
+        "output_value": 960000000,
+        "sales_order_id": null
+      },
+      {
+        "order_id": "PRD-08",
+        "product_id": "LX2",
+        "qty": 25,
+        "start_date": "2026-11-26",
+        "units_blocked": 25,
+        "blocking_parts": [
+          "HUB-30"
+        ],
+        "ready_date": null,
+        "output_value": 775000000,
+        "sales_order_id": null
+      }
+    ],
+    "sales_orders": [
+      {
+        "so_id": "SO-03",
+        "customer": "PT Armada Kurir (fiktif)",
+        "old_date": "2026-11-13",
+        "new_date": null,
+        "units_at_risk": 30
+      },
+      {
+        "so_id": "SO-04",
+        "customer": "Dealer Mitra Jaya (fiktif)",
+        "old_date": "2026-11-15",
+        "new_date": null,
+        "units_at_risk": 20
+      },
+      {
+        "so_id": "SO-05",
+        "customer": "PT Armada Kurir (fiktif)",
+        "old_date": "2026-11-20",
+        "new_date": null,
+        "units_at_risk": 50
+      },
+      {
+        "so_id": "SO-06",
+        "customer": "Koperasi Ojek Daring (fiktif)",
+        "old_date": "2026-11-22",
+        "new_date": null,
+        "units_at_risk": 30
+      }
+    ],
+    "totals": {
+      "units_blocked": 195,
+      "output_value": 5205000000,
+      "po_value": 752000000,
+      "rar": 5957000000,
+      "parts_affected": 2,
+      "pos_affected": 6,
+      "po_lines_affected": 2,
+      "products_affected": [
+        "LX1",
+        "LX2"
+      ],
+      "orders_blocked": 6,
+      "max_delay_days": 45,
+      "max_po_slip_days": 26
+    },
+    "tariff": null,
+    "exposure": null,
+    "disruption": {
+      "country": "CN",
+      "category": "rare-earth magnets",
+      "downtime_days": 45,
+      "sites": [
+        "S18"
+      ]
+    },
+    "baseline_short": []
+  },
+  "sites": [
+    {
+      "site_id": "S18",
+      "supplier_name": "Ganzhou RE Magnet Co., Ltd. (fiktif)",
+      "tier": "2",
+      "path": "S18 ? HUB-15, HUB-30",
+      "recovery_days": 45,
+      "k_a_formula": null,
+      "p_rpt_a": null,
+      "k_a": null,
+      "k_b_formula": null,
+      "p_rpt_b": null,
+      "k_b": null,
+      "rpt_status": "UNAVAILABLE",
+      "verification_status": "REQUESTED",
+      "delay_override_days": null,
+      "backup_ramp_confirmed": null,
+      "backup_declined": false,
+      "backup_site": null,
+      "requests": [],
+      "excluded": false
+    }
+  ],
+  "priority": [
+    {
+      "site_id": "S18",
+      "supplier_name": "Ganzhou RE Magnet Co., Ltd. (fiktif)",
+      "tier": "2",
+      "recovery_days": 45,
+      "rar": 5957000000,
+      "output_value": 5205000000,
+      "po_value": 752000000,
+      "bcp_score": 33,
+      "bcp_band": "HIGH_RISK",
+      "components": {
+        "n_rar": 100,
+        "n_ttr": 100,
+        "n_bcp": 67,
+        "n_tier": 60
+      },
+      "score": 87.4
+    }
+  ],
+  "preliminary": false,
+  "escalation": {
+    "case_id": "CASE-0004",
+    "version": 1,
+    "tier": 2,
+    "kind": "EXECUTIVE_MEETING_ROOM",
+    "reasons": [
+      {
+        "code": "W1",
+        "text": "Extra cost of Option A IDR 117.6M is above the SCM Manager approval limit IDR 100.0M"
+      },
+      {
+        "code": "W3",
+        "text": "Geopolitical or compliance event with revenue at risk"
+      }
+    ],
+    "participants": [
+      "BUYER",
+      "PPIC",
+      "SALES",
+      "SCM_MANAGER",
+      "CFO",
+      "CEO",
+      "LEGAL"
+    ],
+    "required_approvers": [
+      "CFO",
+      "CEO",
+      "LEGAL"
+    ],
+    "recommended_option": "A",
+    "premium": 117600000,
+    "extra_duty": null,
+    "limits": {
+      "scm_approval_limit": 100000000,
+      "tariff_escalation_duty": 250000000,
+      "close_call_band_pp": 2,
+      "premium_max_pct": 10
+    },
+    "meeting_tier": 0,
+    "needs_meeting": true,
+    "decision_required": true,
+    "meeting": {
+      "meeting_id": "MTG-0004",
+      "case_id": "CASE-0004",
+      "tier": 2,
+      "kind": "EXECUTIVE_MEETING_ROOM",
+      "provider": "ZOOM",
+      "status": "FAILED",
+      "join_url": null,
+      "start_time": null,
+      "duration_min": 40,
+      "topic": "SENTRA Executive Meeting Room ? CASE-0004",
+      "agenda": "Review the disruption, options, supplier recovery, and required decision.",
+      "agenda_source": "template",
+      "participants": [
+        "BUYER",
+        "PPIC",
+        "SALES",
+        "SCM_MANAGER",
+        "CFO",
+        "CEO",
+        "LEGAL"
+      ],
+      "required_approvers": [
+        "CFO",
+        "CEO",
+        "LEGAL"
+      ],
+      "reasons": [
+        {
+          "code": "W1",
+          "text": "Extra cost of Option A IDR 117.6M is above the SCM Manager approval limit IDR 100.0M"
+        },
+        {
+          "code": "W3",
+          "text": "Geopolitical or compliance event with revenue at risk"
+        }
+      ],
+      "case_version": 1,
+      "error": "Zoom meeting was not created in this fixture.",
+      "created_at": "2026-10-31T10:52:00+07:00"
+    },
+    "decision": null
+  }
+}

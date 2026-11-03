@@ -1,0 +1,50 @@
+{
+  "site_id": "S08",
+  "supplier_name": "PT Plastindo Body",
+  "tier": "1",
+  "kabupaten": "Purwakarta",
+  "kecamatan": "Bungursari",
+  "country": "ID",
+  "hazard_zone_flood": false,
+  "ttr_days": 9,
+  "otd_12m": 0.85,
+  "backup_site": null,
+  "bcp": {
+    "score": 45,
+    "band": "HIGH_RISK",
+    "categories": {
+      "governance": 62.5,
+      "resilience": 37.5,
+      "supply_chain": 37.5,
+      "testing": 50
+    },
+    "answers": {
+      "G1": 3,
+      "G2": 4,
+      "R1": 2,
+      "R2": 3,
+      "S1": 2,
+      "S2": 3,
+      "T1": 3,
+      "T2": 3
+    },
+    "stated_rto_days": 14,
+    "backup_site": false,
+    "emergency_plan": true,
+    "safety_stock": true,
+    "insurance": false
+  },
+  "parts_supplied": [
+    "PNL-1",
+    "PNL-2",
+    "SEAT"
+  ],
+  "tier2_suppliers": [],
+  "alternate_sources_for_parts": [],
+  "messages": [],
+  "backup": {
+    "site": null,
+    "ramp_days": null,
+    "surcharge_pct": null
+  }
+}

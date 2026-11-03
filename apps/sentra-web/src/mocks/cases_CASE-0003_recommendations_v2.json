@@ -1,0 +1,14 @@
+{
+  "case_id": "CASE-0003",
+  "version": 2,
+  "preliminary": false,
+  "recommended_option": null,
+  "rule_reason": "No option: no production units are blocked, so there is nothing to protect or reschedule",
+  "execution_enabled": false,
+  "confirmations_needed": [],
+  "escalation_tier": 0,
+  "executive_decision_required": false,
+  "decision": null,
+  "options": [],
+  "non_erp_steps": []
+}

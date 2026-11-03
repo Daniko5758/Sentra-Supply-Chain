@@ -1,0 +1,48 @@
+{
+  "site_id": "S14",
+  "supplier_name": "Hamamatsu Bearing K.K. (fiktif)",
+  "tier": "1",
+  "kabupaten": "Hamamatsu",
+  "kecamatan": null,
+  "country": "JP",
+  "hazard_zone_flood": false,
+  "ttr_days": 7,
+  "otd_12m": 0.96,
+  "backup_site": "Kosai",
+  "bcp": {
+    "score": 100,
+    "band": "LOW_RISK",
+    "categories": {
+      "governance": 100,
+      "resilience": 100,
+      "supply_chain": 100,
+      "testing": 100
+    },
+    "answers": {
+      "G1": 5,
+      "G2": 5,
+      "R1": 5,
+      "R2": 5,
+      "S1": 5,
+      "S2": 5,
+      "T1": 5,
+      "T2": 5
+    },
+    "stated_rto_days": 3,
+    "backup_site": true,
+    "emergency_plan": true,
+    "safety_stock": true,
+    "insurance": true
+  },
+  "parts_supplied": [
+    "BRG-W"
+  ],
+  "tier2_suppliers": [],
+  "alternate_sources_for_parts": [],
+  "messages": [],
+  "backup": {
+    "site": "Kosai",
+    "ramp_days": 3,
+    "surcharge_pct": 3
+  }
+}

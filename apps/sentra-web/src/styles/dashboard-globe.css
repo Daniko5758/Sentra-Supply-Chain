@@ -1,0 +1,227 @@
+/* Kartu "Global risk view" (globe 3D) di Dashboard. Gerak mengikuti animation.md; dimatikan oleh reduced-motion. */
+.dashboard-globe {
+  position: relative;
+  overflow: hidden;
+}
+.dashboard-globe__heading-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.dashboard-globe__body {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.4fr);
+  gap: 20px;
+  margin-top: 12px;
+}
+
+/* ---------- Panel kiri ---------- */
+.dashboard-globe__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+.globe-country-list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between; /* daftar mengisi tinggi panel, sejajar dengan globe */
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.globe-country {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform var(--dur-base) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-standard),
+    box-shadow var(--dur-base) var(--ease-standard);
+}
+.globe-country:hover {
+  transform: translateX(4px);
+  border-color: var(--line-strong);
+  box-shadow: 0 8px 20px rgba(24, 24, 27, 0.06);
+}
+.globe-country[aria-pressed='true'] {
+  border-color: var(--accent);
+  box-shadow: none;
+  outline: none;
+}
+.globe-country__swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(24, 24, 27, 0.04);
+}
+.globe-country__main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.globe-country__name {
+  font-weight: 600;
+}
+.globe-country__meta {
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+  font-variant-numeric: tabular-nums;
+}
+.globe-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+}
+.globe-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.globe-legend__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.globe-hint {
+  margin: 0;
+  color: var(--ink-subtle);
+  font-size: var(--text-small);
+}
+
+/* ---------- Panggung globe ---------- */
+.dashboard-globe__stage {
+  position: relative;
+  min-height: 440px;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(60% 60% at 50% 45%, rgba(10, 110, 209, 0.1), transparent 70%),
+    linear-gradient(180deg, rgba(238, 243, 250, 0.6), rgba(255, 255, 255, 0));
+}
+.globe-canvas {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+}
+.globe-canvas:active {
+  cursor: grabbing;
+}
+.globe-zoom-controls {
+  position: absolute;
+  z-index: 5;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid rgba(201, 216, 234, 0.9);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 18px rgba(24, 24, 27, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.globe-zoom-controls .globe-zoom-button {
+  display: grid;
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0;
+  place-items: center;
+  font-size: 20px;
+  line-height: 1;
+}
+.globe-zoom-controls .globe-zoom-reset {
+  min-height: 36px;
+  padding-inline: 12px;
+  font-size: var(--text-small);
+}
+.globe-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.globe-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px rgba(24, 24, 27, 0.1);
+  color: var(--ink);
+  font-size: var(--text-small);
+  font-family: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  will-change: transform, opacity;
+  transition: box-shadow var(--dur-fast) var(--ease-standard);
+}
+.globe-label:hover {
+  color: var(--ink);
+  box-shadow: 0 8px 22px rgba(10, 110, 209, 0.22);
+}
+.globe-label__name {
+  font-weight: 600;
+}
+.globe-loading,
+.globe-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--ink-muted);
+  font-size: var(--text-small);
+  text-align: center;
+}
+.globe-fallback p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .globe-zoom-controls {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .dashboard-globe__body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .dashboard-globe__stage {
+    display: none;
+  }
+}

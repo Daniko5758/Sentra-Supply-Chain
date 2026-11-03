@@ -1,0 +1,203 @@
+{
+  "case_id": "CASE-0005",
+  "title": "Port strike ? Thailand",
+  "risk_type": "LOGISTICS",
+  "scope": "COUNTRY",
+  "location": "Thailand",
+  "country": "TH",
+  "mode": "DEMO",
+  "simulated": true,
+  "status": "READY_FOR_DECISION",
+  "d0_date": "2026-10-31",
+  "created_at": "2026-10-31T10:40:00+07:00",
+  "updated_at": "2026-10-31T10:52:00+07:00",
+  "version": 1,
+  "versions": [
+    {
+      "version": 1,
+      "trigger": "initial",
+      "created_at": "2026-10-31T10:40:00+07:00"
+    }
+  ],
+  "signal": {
+    "signal_id": "SIG-0005",
+    "summary": "SIMULATED: Strike at Laem Chabang port stops sea exports from Thailand for about two weeks.",
+    "severity": null,
+    "source_urls": [],
+    "source_label": "SENTRA demo scenario (SIMULATED)"
+  },
+  "kpi": {
+    "units_at_risk": 45,
+    "delayed_output_value": 1290000000,
+    "affected_po_value": 44200000,
+    "revenue_at_risk": 1334200000,
+    "priority_score": 78.7,
+    "level": "HIGH",
+    "status": "READY_FOR_DECISION"
+  },
+  "impact": {
+    "version": 1,
+    "scope": "COUNTRY",
+    "part_delays": [
+      {
+        "part_id": "HSW-ST",
+        "days": 14,
+        "cause_site": "S15",
+        "via_site": null
+      }
+    ],
+    "po_lines": [
+      {
+        "po_id": "4500001018",
+        "item_no": 10,
+        "material_id": "HSW-ST",
+        "supplier_id": "S15",
+        "qty": 130,
+        "confirmed_date": "2026-11-08",
+        "new_eta": "2026-11-14",
+        "slip_days": 6,
+        "value": 44200000,
+        "cause_site": "S15",
+        "via_site": null
+      }
+    ],
+    "production_orders": [
+      {
+        "order_id": "PRD-03",
+        "product_id": "LX1",
+        "qty": 40,
+        "start_date": "2026-11-10",
+        "units_blocked": 15,
+        "blocking_parts": [
+          "HSW-ST"
+        ],
+        "ready_date": "2026-11-14",
+        "output_value": 360000000,
+        "sales_order_id": "SO-03"
+      },
+      {
+        "order_id": "PRD-04",
+        "product_id": "LX2",
+        "qty": 30,
+        "start_date": "2026-11-12",
+        "units_blocked": 30,
+        "blocking_parts": [
+          "HSW-ST"
+        ],
+        "ready_date": "2026-11-14",
+        "output_value": 930000000,
+        "sales_order_id": "SO-04"
+      }
+    ],
+    "sales_orders": [
+      {
+        "so_id": "SO-03",
+        "customer": "PT Armada Kurir (fiktif)",
+        "old_date": "2026-11-13",
+        "new_date": "2026-11-17",
+        "units_at_risk": 15
+      },
+      {
+        "so_id": "SO-04",
+        "customer": "Dealer Mitra Jaya (fiktif)",
+        "old_date": "2026-11-15",
+        "new_date": "2026-11-17",
+        "units_at_risk": 30
+      }
+    ],
+    "totals": {
+      "units_blocked": 45,
+      "output_value": 1290000000,
+      "po_value": 44200000,
+      "rar": 1334200000,
+      "parts_affected": 1,
+      "pos_affected": 2,
+      "po_lines_affected": 1,
+      "products_affected": [
+        "LX1",
+        "LX2"
+      ],
+      "orders_blocked": 2,
+      "max_delay_days": 14,
+      "max_po_slip_days": 6
+    },
+    "tariff": null,
+    "exposure": null,
+    "disruption": {
+      "country": "TH",
+      "category": "logistics",
+      "downtime_days": 14,
+      "sites": [
+        "S15"
+      ]
+    },
+    "baseline_short": []
+  },
+  "sites": [
+    {
+      "site_id": "S15",
+      "supplier_name": "Rayong Switch Co., Ltd. (fiktif)",
+      "tier": "1",
+      "path": "S15 ? HSW-ST",
+      "recovery_days": 14,
+      "k_a_formula": null,
+      "p_rpt_a": null,
+      "k_a": null,
+      "k_b_formula": null,
+      "p_rpt_b": null,
+      "k_b": null,
+      "rpt_status": "UNAVAILABLE",
+      "verification_status": "REQUESTED",
+      "delay_override_days": null,
+      "backup_ramp_confirmed": null,
+      "backup_declined": false,
+      "backup_site": null,
+      "requests": [],
+      "excluded": false
+    }
+  ],
+  "priority": [
+    {
+      "site_id": "S15",
+      "supplier_name": "Rayong Switch Co., Ltd. (fiktif)",
+      "tier": "1",
+      "recovery_days": 14,
+      "rar": 1334200000,
+      "output_value": 1290000000,
+      "po_value": 44200000,
+      "bcp_score": 40,
+      "bcp_band": "HIGH_RISK",
+      "components": {
+        "n_rar": 100,
+        "n_ttr": 46.7,
+        "n_bcp": 60,
+        "n_tier": 100
+      },
+      "score": 78.7
+    }
+  ],
+  "preliminary": false,
+  "escalation": {
+    "case_id": "CASE-0005",
+    "version": 1,
+    "tier": 0,
+    "kind": null,
+    "reasons": [],
+    "participants": [],
+    "required_approvers": [],
+    "recommended_option": "D",
+    "premium": 2340000,
+    "extra_duty": null,
+    "limits": {
+      "scm_approval_limit": 100000000,
+      "tariff_escalation_duty": 250000000,
+      "close_call_band_pp": 2,
+      "premium_max_pct": 10
+    },
+    "meeting_tier": 0,
+    "needs_meeting": false,
+    "decision_required": false,
+    "meeting": null,
+    "decision": null
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "case_id": "CASE-0001",
+  "title": "Flood – Karawang",
+  "risk_type": "FLOOD",
+  "scope": "LOCATION",
+  "location": "Karawang",
+  "country": "ID",
+  "mode": "DEMO",
+  "simulated": true,
+  "status": "READY_FOR_DECISION",
+  "d0_date": "2026-10-31",
+  "created_at": "2026-10-31T10:41:20+07:00",
+  "updated_at": "2026-10-31T10:43:50+07:00",
+  "version": 2,
+  "versions": [
+    {
+      "version": 1,
+      "trigger": "initial",
+      "created_at": "2026-10-31T10:41:58+07:00"
+    },
+    {
+      "version": 2,
+      "trigger": "supplier_reply",
+      "created_at": "2026-10-31T10:43:50+07:00"
+    }
+  ],
+  "signal": {
+    "signal_id": "SIG-0001",
+    "summary": "SIMULATED: Citarum river overflow floods several districts of Karawang; access roads to industrial areas are cut.",
+    "severity": 4,
+    "source_urls": [],
+    "source_label": "SENTRA demo scenario (SIMULATED)"
+  },
+  "kpi": {
+    "units_at_risk": 60,
+    "delayed_output_value": 1615000000,
+    "affected_po_value": 1125000000,
+    "revenue_at_risk": 2740000000,
+    "priority_score": 79.7,
+    "level": "HIGH",
+    "status": "READY_FOR_DECISION"
+  },
+  "impact": {
+    "version": 2,
+    "scope": "LOCATION",
+    "part_delays": [
+      {
+        "part_id": "BAT-48",
+        "days": 14,
+        "cause_site": "S01",
+        "via_site": null
+      },
+      {
+        "part_id": "BAT-60",
+        "days": 14,
+        "cause_site": "S01",
+        "via_site": null
+      },
+      {
+        "part_id": "HRN-1",
+        "days": 2,
+        "cause_site": "S02",
+        "via_site": null
+      },
+      {
+        "part_id": "HRN-2",
+        "days": 2,
+        "cause_site": "S02",
+        "via_site": null
+      },
+      {
+        "part_id": "LMP-HD",
+        "days": 0,
+        "cause_site": "S10",
+        "via_site": "S07"
+      }
+    ],
+    "po_lines": [
+      {
+        "po_id": "4500001001",
+        "item_no": 10,
+        "material_id": "BAT-48",
+        "supplier_id": "S01",
+        "qty": 40,
+        "confirmed_date": "2026-11-04",
+        "new_eta": "2026-11-14",
+        "slip_days": 10,
+        "value": 260000000,
+        "cause_site": "S01",
+        "via_site": null
+      },
+      {
+        "po_id": "4500001001",
+        "item_no": 20,
+        "material_id": "BAT-48",
+        "supplier_id": "S01",
+        "qty": 50,
+        "confirmed_date": "2026-11-09",
+        "new_eta": "2026-11-14",
+        "slip_days": 5,
+        "value": 325000000,
+        "cause_site": "S01",
+        "via_site": null
+      },
+      {
+        "po_id": "4500001002",
+        "item_no": 10,
+        "material_id": "BAT-60",
+        "supplier_id": "S01",
+        "qty": 30,
+        "confirmed_date": "2026-11-03",
+        "new_eta": "2026-11-14",
+        "slip_days": 11,
+        "value": 270000000,
+        "cause_site": "S01",
+        "via_site": null
+      },
+      {
+        "po_id": "4500001002",
+        "item_no": 20,
+        "material_id": "BAT-60",
+        "supplier_id": "S01",
+        "qty": 30,
+        "confirmed_date": "2026-11-11",
+        "new_eta": "2026-11-14",
+        "slip_days": 3,
+        "value": 270000000,
+        "cause_site": "S01",
+        "via_site": null
+      }
+    ],
+    "production_orders": [
+      {
+        "order_id": "PRD-03",
+        "product_id": "LX1",
+        "qty": 40,
+        "start_date": "2026-11-10",
+        "units_blocked": 35,
+        "blocking_parts": [
+          "BAT-48"
+        ],
+        "ready_date": "2026-11-14",
+        "output_value": 840000000,
+        "sales_order_id": "SO-03"
+      },
+      {
+        "order_id": "PRD-04",
+        "product_id": "LX2",
+        "qty": 30,
+        "start_date": "2026-11-12",
+        "units_blocked": 25,
+        "blocking_parts": [
+          "BAT-60"
+        ],
+        "ready_date": "2026-11-14",
+        "output_value": 775000000,
+        "sales_order_id": "SO-04"
+      }
+    ],
+    "sales_orders": [
+      {
+        "so_id": "SO-03",
+        "customer": "PT Armada Kurir (fiktif)",
+        "old_date": "2026-11-13",
+        "new_date": "2026-11-17",
+        "units_at_risk": 35
+      },
+      {
+        "so_id": "SO-04",
+        "customer": "Dealer Mitra Jaya (fiktif)",
+        "old_date": "2026-11-15",
+        "new_date": "2026-11-17",
+        "units_at_risk": 25
+      }
+    ],
+    "totals": {
+      "units_blocked": 60,
+      "output_value": 1615000000,
+      "po_value": 1125000000,
+      "rar": 2740000000,
+      "parts_affected": 4,
+      "pos_affected": 2,
+      "po_lines_affected": 4,
+      "products_affected": [
+        "LX1",
+        "LX2"
+      ],
+      "orders_blocked": 2,
+      "max_delay_days": 14,
+      "max_po_slip_days": 11
+    },
+    "tariff": null,
+    "exposure": null,
+    "baseline_short": [],
+    "disruption": null
+  },
+  "sites": [
+    {
+      "site_id": "S01",
+      "supplier_name": "PT Karya Baterai Karawang",
+      "tier": "1",
+      "path": "S01 → BAT-48, BAT-60",
+      "recovery_days": 14,
+      "k_a_formula": 94,
+      "p_rpt_a": 0.9,
+      "k_a": 92,
+      "k_b_formula": 42.1,
+      "p_rpt_b": 0.15,
+      "k_b": 28.6,
+      "rpt_status": "OK",
+      "verification_status": "CONFIRMED_BY_SUPPLIER",
+      "delay_override_days": 14,
+      "excluded": false,
+      "backup_ramp_confirmed": null,
+      "backup_declined": false,
+      "backup_site": null,
+      "requests": []
+    },
+    {
+      "site_id": "S02",
+      "supplier_name": "PT Harness Prima",
+      "tier": "1",
+      "path": "S02 → HRN-1, HRN-2",
+      "recovery_days": 2,
+      "k_a_formula": 49,
+      "p_rpt_a": 0.2,
+      "k_a": 34.5,
+      "k_b_formula": 78.9,
+      "p_rpt_b": 0.6,
+      "k_b": 69.5,
+      "rpt_status": "OK",
+      "verification_status": "CONFIRMED_BY_SUPPLIER",
+      "delay_override_days": 2,
+      "excluded": false,
+      "backup_ramp_confirmed": null,
+      "backup_declined": false,
+      "backup_site": "Purwakarta",
+      "requests": []
+    },
+    {
+      "site_id": "S09",
+      "supplier_name": "PT Sel Energi",
+      "tier": "2",
+      "path": "S09 → S01 → BAT-48, BAT-60",
+      "recovery_days": 10,
+      "k_a_formula": 94,
+      "p_rpt_a": 0.9,
+      "k_a": 92,
+      "k_b_formula": null,
+      "p_rpt_b": null,
+      "k_b": null,
+      "rpt_status": "OK",
+      "verification_status": "NOT_NEEDED",
+      "delay_override_days": null,
+      "excluded": false,
+      "backup_ramp_confirmed": null,
+      "backup_declined": false,
+      "backup_site": null,
+      "requests": []
+    },
+    {
+      "site_id": "S10",
+      "supplier_name": "CV Cetak Plastik",
+      "tier": "2",
+      "path": "S10 → S07 → LMP-HD",
+      "recovery_days": 3,
+      "k_a_formula": 49,
+      "p_rpt_a": 0.2,
+      "k_a": 34.5,
+      "k_b_formula": null,
+      "p_rpt_b": null,
+      "k_b": null,
+      "rpt_status": "OK",
+      "verification_status": "CONFIRMED_BY_SUPPLIER",
+      "delay_override_days": 3,
+      "excluded": false,
+      "backup_ramp_confirmed": null,
+      "backup_declined": false,
+      "backup_site": null,
+      "requests": []
+    }
+  ],
+  "priority": [
+    {
+      "site_id": "S01",
+      "supplier_name": "PT Karya Baterai Karawang",
+      "tier": "1",
+      "recovery_days": 14,
+      "rar": 2740000000,
+      "output_value": 1615000000,
+      "po_value": 1125000000,
+      "bcp_score": 35,
+      "components": {
+        "n_rar": 100,
+        "n_ttr": 46.7,
+        "n_bcp": 65,
+        "n_tier": 100
+      },
+      "score": 79.7,
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "site_id": "S09",
+      "supplier_name": "PT Sel Energi",
+      "tier": "2",
+      "recovery_days": 10,
+      "rar": 530000000,
+      "output_value": 0,
+      "po_value": 530000000,
+      "bcp_score": 35,
+      "components": {
+        "n_rar": 53,
+        "n_ttr": 33.3,
+        "n_bcp": 65,
+        "n_tier": 60
+      },
+      "score": 51.5,
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "site_id": "S10",
+      "supplier_name": "CV Cetak Plastik",
+      "tier": "2",
+      "recovery_days": 3,
+      "rar": 0,
+      "output_value": 0,
+      "po_value": 0,
+      "bcp_score": 25,
+      "components": {
+        "n_rar": 0,
+        "n_ttr": 10,
+        "n_bcp": 75,
+        "n_tier": 60
+      },
+      "score": 26.5,
+      "bcp_band": "HIGH_RISK"
+    },
+    {
+      "site_id": "S02",
+      "supplier_name": "PT Harness Prima",
+      "tier": "1",
+      "recovery_days": 2,
+      "rar": 0,
+      "output_value": 0,
+      "po_value": 0,
+      "bcp_score": 80,
+      "components": {
+        "n_rar": 0,
+        "n_ttr": 6.7,
+        "n_bcp": 20,
+        "n_tier": 100
+      },
+      "score": 20.7,
+      "bcp_band": "MEDIUM_RISK"
+    }
+  ],
+  "preliminary": false,
+  "escalation": {
+    "case_id": "CASE-0001",
+    "version": 2,
+    "tier": 0,
+    "kind": null,
+    "reasons": [],
+    "participants": [],
+    "required_approvers": [],
+    "recommended_option": "A",
+    "premium": null,
+    "extra_duty": null,
+    "limits": {
+      "scm_approval_limit": 100000000,
+      "tariff_escalation_duty": 250000000,
+      "close_call_band_pp": 2,
+      "premium_max_pct": 10
+    },
+    "meeting_tier": 0,
+    "needs_meeting": false,
+    "decision_required": false,
+    "meeting": {
+      "meeting_id": "MTG-0001",
+      "case_id": "CASE-0001",
+      "tier": 1,
+      "kind": "MEETING_ROOM",
+      "provider": "ZOOM",
+      "status": "FAILED",
+      "join_url": null,
+      "start_time": null,
+      "duration_min": 30,
+      "topic": "SENTRA Meeting Room ? Flood ? Karawang (CASE-0001)",
+      "agenda": "Review the supplier impact, recovery timing, and next actions.",
+      "agenda_source": "template",
+      "participants": [
+        "BUYER",
+        "PPIC",
+        "SALES",
+        "SCM_MANAGER"
+      ],
+      "required_approvers": [],
+      "reasons": [
+        {
+          "code": "M1",
+          "text": "Score 79.7 is HIGH and the recommended Option B delays 3 sales order(s)"
+        }
+      ],
+      "case_version": 1,
+      "error": "Zoom meeting could not be scheduled in this demo fixture.",
+      "created_at": "2026-10-31T10:42:41+07:00"
+    },
+    "decision": null
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "case_id": "CASE-0003",
+  "title": "Fire ? Tangerang",
+  "risk_type": "FIRE",
+  "scope": "LOCATION",
+  "location": "Tangerang",
+  "country": "ID",
+  "mode": "DEMO",
+  "simulated": true,
+  "status": "AWAITING_SUPPLIER",
+  "d0_date": "2026-10-31",
+  "created_at": "2026-10-31T10:40:00+07:00",
+  "updated_at": "2026-10-31T10:52:00+07:00",
+  "version": 1,
+  "versions": [
+    {
+      "version": 1,
+      "trigger": "initial",
+      "created_at": "2026-10-31T10:40:00+07:00"
+    }
+  ],
+  "signal": {
+    "signal_id": "SIG-0003",
+    "summary": "SIMULATED: Fire at a motor plant in Cikupa, Tangerang; operations halted for about three weeks.",
+    "severity": 5,
+    "source_urls": [],
+    "source_label": "SENTRA demo scenario (SIMULATED)"
+  },
+  "kpi": {
+    "units_at_risk": 135,
+    "delayed_output_value": 3625000000,
+    "affected_po_value": 896000000,
+    "revenue_at_risk": 4521000000,
+    "priority_score": 79.5,
+    "level": "HIGH",
+    "status": "AWAITING_SUPPLIER"
+  },
+  "impact": {
+    "version": 1,
+    "scope": "LOCATION",
+    "part_delays": [
+      {
+        "part_id": "HUB-15",
+        "days": 21,
+        "cause_site": "S06",
+        "via_site": null
+      },
+      {
+        "part_id": "HUB-30",
+        "days": 21,
+        "cause_site": "S06",
+        "via_site": null
+      },
+      {
+        "part_id": "BRK-DS",
+        "days": 21,
+        "cause_site": "S06",
+        "via_site": null
+      }
+    ],
+    "po_lines": [
+      {
+        "po_id": "4500001010",
+        "item_no": 10,
+        "material_id": "HUB-15",
+        "supplier_id": "S06",
+        "qty": 120,
+        "confirmed_date": "2026-11-09",
+        "new_eta": "2026-11-21",
+        "slip_days": 12,
+        "value": 384000000,
+        "cause_site": "S06",
+        "via_site": null
+      },
+      {
+        "po_id": "4500001010",
+        "item_no": 20,
+        "material_id": "HUB-30",
+        "supplier_id": "S06",
+        "qty": 80,
+        "confirmed_date": "2026-11-10",
+        "new_eta": "2026-11-21",
+        "slip_days": 11,
+        "value": 368000000,
+        "cause_site": "S06",
+        "via_site": null
+      },
+      {
+        "po_id": "4500001013",
+        "item_no": 10,
+        "material_id": "BRK-DS",
+        "supplier_id": "S06",
+        "qty": 300,
+        "confirmed_date": "2026-11-08",
+        "new_eta": "2026-11-21",
+        "slip_days": 13,
+        "value": 144000000,
+        "cause_site": "S06",
+        "via_site": null
+      }
+    ],
+    "production_orders": [
+      {
+        "order_id": "PRD-03",
+        "product_id": "LX1",
+        "qty": 40,
+        "start_date": "2026-11-10",
+        "units_blocked": 30,
+        "blocking_parts": [
+          "HUB-15"
+        ],
+        "ready_date": "2026-11-21",
+        "output_value": 720000000,
+        "sales_order_id": "SO-03"
+      },
+      {
+        "order_id": "PRD-04",
+        "product_id": "LX2",
+        "qty": 30,
+        "start_date": "2026-11-12",
+        "units_blocked": 25,
+        "blocking_parts": [
+          "BRK-DS",
+          "HUB-30"
+        ],
+        "ready_date": "2026-11-21",
+        "output_value": 775000000,
+        "sales_order_id": "SO-04"
+      },
+      {
+        "order_id": "PRD-05",
+        "product_id": "LX1",
+        "qty": 50,
+        "start_date": "2026-11-17",
+        "units_blocked": 50,
+        "blocking_parts": [
+          "BRK-DS",
+          "HUB-15"
+        ],
+        "ready_date": "2026-11-21",
+        "output_value": 1200000000,
+        "sales_order_id": "SO-05"
+      },
+      {
+        "order_id": "PRD-06",
+        "product_id": "LX2",
+        "qty": 30,
+        "start_date": "2026-11-19",
+        "units_blocked": 30,
+        "blocking_parts": [
+          "BRK-DS",
+          "HUB-30"
+        ],
+        "ready_date": "2026-11-21",
+        "output_value": 930000000,
+        "sales_order_id": "SO-06"
+      }
+    ],
+    "sales_orders": [
+      {
+        "so_id": "SO-03",
+        "customer": "PT Armada Kurir (fiktif)",
+        "old_date": "2026-11-13",
+        "new_date": "2026-11-24",
+        "units_at_risk": 30
+      },
+      {
+        "so_id": "SO-04",
+        "customer": "Dealer Mitra Jaya (fiktif)",
+        "old_date": "2026-11-15",
+        "new_date": "2026-11-24",
+        "units_at_risk": 25
+      },
+      {
+        "so_id": "SO-05",
+        "customer": "PT Armada Kurir (fiktif)",
+        "old_date": "2026-11-20",
+        "new_date": "2026-11-24",
+        "units_at_risk": 50
+      },
+      {
+        "so_id": "SO-06",
+        "customer": "Koperasi Ojek Daring (fiktif)",
+        "old_date": "2026-11-22",
+        "new_date": "2026-11-24",
+        "units_at_risk": 30
+      }
+    ],
+    "totals": {
+      "units_blocked": 135,
+      "output_value": 3625000000,
+      "po_value": 896000000,
+      "rar": 4521000000,
+      "parts_affected": 3,
+      "pos_affected": 4,
+      "po_lines_affected": 3,
+      "products_affected": [
+        "LX1",
+        "LX2"
+      ],
+      "orders_blocked": 4,
+      "max_delay_days": 21,
+      "max_po_slip_days": 13
+    },
+    "tariff": null,
+    "exposure": null,
+    "disruption": null,
+    "baseline_short": []
+  },
+  "sites": [
+    {
+      "site_id": "S06",
+      "supplier_name": "PT Dinamo Presisi",
+      "tier": "1",
+      "path": "S06 ? HUB-15, HUB-30, BRK-DS",
+      "recovery_days": 21,
+      "k_a_formula": null,
+      "p_rpt_a": null,
+      "k_a": null,
+      "k_b_formula": null,
+      "p_rpt_b": null,
+      "k_b": null,
+      "rpt_status": "UNAVAILABLE",
+      "verification_status": "REQUESTED",
+      "delay_override_days": null,
+      "backup_ramp_confirmed": null,
+      "backup_declined": false,
+      "backup_site": "Serang",
+      "requests": [],
+      "excluded": false
+    }
+  ],
+  "priority": [
+    {
+      "site_id": "S06",
+      "supplier_name": "PT Dinamo Presisi",
+      "tier": "1",
+      "recovery_days": 21,
+      "rar": 4521000000,
+      "output_value": 3625000000,
+      "po_value": 896000000,
+      "bcp_score": 65,
+      "bcp_band": "MEDIUM_RISK",
+      "components": {
+        "n_rar": 100,
+        "n_ttr": 70,
+        "n_bcp": 35,
+        "n_tier": 100
+      },
+      "score": 79.5
+    }
+  ],
+  "preliminary": true,
+  "escalation": {
+    "case_id": "CASE-0003",
+    "version": 1,
+    "tier": 0,
+    "kind": null,
+    "reasons": [],
+    "participants": [],
+    "required_approvers": [],
+    "recommended_option": "C",
+    "premium": 53760000,
+    "extra_duty": null,
+    "limits": {
+      "scm_approval_limit": 100000000,
+      "tariff_escalation_duty": 250000000,
+      "close_call_band_pp": 2,
+      "premium_max_pct": 10
+    },
+    "meeting_tier": 0,
+    "needs_meeting": false,
+    "decision_required": false,
+    "meeting": null,
+    "decision": null
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "username": "scm",
+  "role": "SCM_MANAGER",
+  "mode": "DEMO",
+  "d0_date": "2026-10-31",
+  "feature_flags": {
+    "erp_execution": true,
+    "meeting_room": true,
+    "whatif": true
+  },
+  "seed": {
+    "file": "sentra_v2_1_1_seed.json",
+    "version": "2.1.1",
+    "dataset": "DEMO"
+  }
+}

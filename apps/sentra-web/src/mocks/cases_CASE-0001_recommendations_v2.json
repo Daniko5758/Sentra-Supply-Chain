@@ -1,0 +1,305 @@
+{
+  "case_id": "CASE-0001",
+  "version": 2,
+  "preliminary": false,
+  "recommended_option": "A",
+  "rule_reason": "Option A: premium IDR 41.0M = 2.5% of protected output (? 10%)",
+  "execution_enabled": false,
+  "options": [
+    {
+      "option": "A",
+      "title": "Protect production",
+      "available": true,
+      "unavailable_reason": null,
+      "label": null,
+      "before": {
+        "units_blocked": 60,
+        "output_value": 1615000000,
+        "po_value": 1125000000,
+        "rar": 2740000000,
+        "so_delayed": 2,
+        "premium": 0,
+        "extra_duty": null
+      },
+      "after": {
+        "units_blocked": 0,
+        "output_value": 0,
+        "po_value": 672500000,
+        "rar": 672500000,
+        "so_delayed": 0,
+        "premium": 41000000,
+        "extra_duty": null
+      },
+      "actions": [
+        {
+          "seq": 1,
+          "type": "CREATE_PR_PO",
+          "object": "BAT-48 @ S12",
+          "payload": {
+            "material_id": "BAT-48",
+            "supplier_id": "S12",
+            "qty": 35,
+            "price": 7100000,
+            "delivery_date": "2026-11-05",
+            "shipping_condition": "ROAD",
+            "incoterms": "FCA",
+            "freight_per_unit": 0
+          }
+        },
+        {
+          "seq": 2,
+          "type": "CREATE_PR_PO",
+          "object": "BAT-60 @ S12",
+          "payload": {
+            "material_id": "BAT-60",
+            "supplier_id": "S12",
+            "qty": 25,
+            "price": 9800000,
+            "delivery_date": "2026-11-05",
+            "shipping_condition": "ROAD",
+            "incoterms": "FCA",
+            "freight_per_unit": 0
+          }
+        },
+        {
+          "seq": 3,
+          "type": "REDUCE_OR_CANCEL_PO",
+          "object": "4500001001/10",
+          "payload": {
+            "po_id": "4500001001",
+            "item_no": 10,
+            "old_qty": 40,
+            "new_qty": 5
+          }
+        },
+        {
+          "seq": 4,
+          "type": "REDUCE_OR_CANCEL_PO",
+          "object": "4500001002/10",
+          "payload": {
+            "po_id": "4500001002",
+            "item_no": 10,
+            "old_qty": 30,
+            "new_qty": 5
+          }
+        },
+        {
+          "seq": 5,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001001/10",
+          "payload": {
+            "po_id": "4500001001",
+            "item_no": 10,
+            "old_date": "2026-11-04",
+            "new_date": "2026-11-14"
+          }
+        },
+        {
+          "seq": 6,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001001/20",
+          "payload": {
+            "po_id": "4500001001",
+            "item_no": 20,
+            "old_date": "2026-11-09",
+            "new_date": "2026-11-14"
+          }
+        },
+        {
+          "seq": 7,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001002/10",
+          "payload": {
+            "po_id": "4500001002",
+            "item_no": 10,
+            "old_date": "2026-11-03",
+            "new_date": "2026-11-14"
+          }
+        },
+        {
+          "seq": 8,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001002/20",
+          "payload": {
+            "po_id": "4500001002",
+            "item_no": 20,
+            "old_date": "2026-11-11",
+            "new_date": "2026-11-14"
+          }
+        }
+      ],
+      "rationale": "Buying 60 battery packs from S12 keeps PRD-03 and PRD-04 on schedule for a premium of IDR 41.0M.",
+      "rationale_source": "llm",
+      "pending_confirmation": false,
+      "confirmation": null,
+      "saving": null
+    },
+    {
+      "option": "B",
+      "title": "Reschedule",
+      "available": true,
+      "unavailable_reason": null,
+      "label": null,
+      "before": {
+        "units_blocked": 60,
+        "output_value": 1615000000,
+        "po_value": 1125000000,
+        "rar": 2740000000,
+        "so_delayed": 2,
+        "premium": 0,
+        "extra_duty": null
+      },
+      "after": {
+        "units_blocked": 0,
+        "output_value": 0,
+        "po_value": 1125000000,
+        "rar": 1125000000,
+        "so_delayed": 2,
+        "premium": 0,
+        "extra_duty": null
+      },
+      "actions": [
+        {
+          "seq": 1,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001001/10",
+          "payload": {
+            "po_id": "4500001001",
+            "item_no": 10,
+            "old_date": "2026-11-04",
+            "new_date": "2026-11-14"
+          }
+        },
+        {
+          "seq": 2,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001001/20",
+          "payload": {
+            "po_id": "4500001001",
+            "item_no": 20,
+            "old_date": "2026-11-09",
+            "new_date": "2026-11-14"
+          }
+        },
+        {
+          "seq": 3,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001002/10",
+          "payload": {
+            "po_id": "4500001002",
+            "item_no": 10,
+            "old_date": "2026-11-03",
+            "new_date": "2026-11-14"
+          }
+        },
+        {
+          "seq": 4,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001002/20",
+          "payload": {
+            "po_id": "4500001002",
+            "item_no": 20,
+            "old_date": "2026-11-11",
+            "new_date": "2026-11-14"
+          }
+        },
+        {
+          "seq": 5,
+          "type": "RESCHEDULE_PRODUCTION_ORDER",
+          "object": "PRD-03",
+          "payload": {
+            "order_id": "PRD-03",
+            "old_date": "2026-11-10",
+            "new_date": "2026-11-14"
+          }
+        },
+        {
+          "seq": 6,
+          "type": "RESCHEDULE_PRODUCTION_ORDER",
+          "object": "PRD-04",
+          "payload": {
+            "order_id": "PRD-04",
+            "old_date": "2026-11-12",
+            "new_date": "2026-11-14"
+          }
+        },
+        {
+          "seq": 7,
+          "type": "RESCHEDULE_SALES_ORDER",
+          "object": "SO-03",
+          "payload": {
+            "so_id": "SO-03",
+            "old_date": "2026-11-13",
+            "new_date": "2026-11-17"
+          }
+        },
+        {
+          "seq": 8,
+          "type": "RESCHEDULE_SALES_ORDER",
+          "object": "SO-04",
+          "payload": {
+            "so_id": "SO-04",
+            "old_date": "2026-11-15",
+            "new_date": "2026-11-17"
+          }
+        }
+      ],
+      "rationale": "Rescheduling clears blocked production while the four affected purchase order lines remain late.",
+      "rationale_source": "template",
+      "pending_confirmation": false,
+      "confirmation": null,
+      "saving": null
+    },
+    {
+      "option": "C",
+      "title": "Activate supplier backup site",
+      "available": false,
+      "unavailable_reason": "No qualified backup site for S01",
+      "label": null,
+      "pending_confirmation": true,
+      "confirmation": {
+        "request_type": "BACKUP_ACTIVATION",
+        "sites": [
+          {
+            "site_id": "S01",
+            "status": null,
+            "answer": null
+          }
+        ]
+      },
+      "saving": null,
+      "before": {
+        "units_blocked": 60,
+        "output_value": 1615000000,
+        "po_value": 1125000000,
+        "rar": 2740000000,
+        "so_delayed": 2,
+        "premium": 0,
+        "extra_duty": null
+      },
+      "after": {
+        "units_blocked": 60,
+        "output_value": 1615000000,
+        "po_value": 1125000000,
+        "rar": 2740000000,
+        "so_delayed": 2,
+        "premium": 0,
+        "extra_duty": null
+      },
+      "actions": [],
+      "rationale": "No qualified backup site is available for the affected supplier.",
+      "rationale_source": "template"
+    }
+  ],
+  "non_erp_steps": [
+    "Confirm recovery dates with S01, S09",
+    "Inform customers of SO-03, SO-04",
+    "Monitor tier-2 site S09 until recovered",
+    "Start qualifying a second source for BAT-48, BAT-60 ? S01 BCP score 35 (HIGH RISK)",
+    "Start qualifying a second source for 21700 battery cells ? S09 BCP score 35 (HIGH RISK)"
+  ],
+  "confirmations_needed": [],
+  "escalation_tier": 0,
+  "executive_decision_required": false,
+  "decision": null
+}

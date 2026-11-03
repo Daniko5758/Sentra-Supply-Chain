@@ -1,0 +1,432 @@
+.case-report {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+  color: #172b4d;
+}
+
+.case-report__tab-header,
+.case-report__standalone-header,
+.case-report__document-header,
+.case-report__toolbar,
+.case-report__toolbar-actions,
+.case-report__document-badges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.case-report__tab-header h2,
+.case-report__standalone-header h1,
+.case-report__document-header h1,
+.case-report__section h2,
+.case-report__chart-card h3,
+.case-report__option-rationale h3,
+.case-report__subheading {
+  margin: 0;
+}
+
+.case-report__eyebrow {
+  margin: 0 0 6px;
+  color: #52657d;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-report__open-link,
+.case-report__back-link {
+  color: #0a6ed1;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.case-report__open-link:hover,
+.case-report__back-link:hover {
+  text-decoration: underline;
+}
+
+.case-report__toolbar {
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  border: 1px solid #d7e1ed;
+  border-radius: 12px;
+  background: #f7faff;
+}
+
+.case-report__toolbar-status:empty {
+  display: none;
+}
+
+.case-report__toolbar-status {
+  display: grid;
+  gap: 4px;
+  color: #40536b;
+  font-size: 0.9rem;
+}
+
+.case-report__document {
+  display: grid;
+  gap: 0;
+  min-width: 0;
+  padding: clamp(20px, 3vw, 40px);
+  border: 1px solid #dce4ed;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgb(23 43 77 / 7%);
+}
+
+.case-report__document-header {
+  align-items: flex-start;
+  padding-bottom: 22px;
+  border-bottom: 2px solid #dce4ed;
+}
+
+.case-report__document-header h1 {
+  font-size: clamp(1.55rem, 2.4vw, 2.2rem);
+  line-height: 1.2;
+}
+
+.case-report__meta,
+.case-report__summary-status {
+  margin: 8px 0 0;
+  color: #52657d;
+  font-size: 0.9rem;
+}
+
+.case-report__section {
+  min-width: 0;
+  padding: 22px 0;
+  border-bottom: 1px solid #e3e9f0;
+  break-inside: auto;
+}
+
+.case-report__section:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.case-report__section h2 {
+  margin-bottom: 14px;
+  color: #163451;
+  font-size: 1.2rem;
+}
+
+.case-report__section p {
+  line-height: 1.55;
+}
+
+.case-report__markdown p:first-child,
+.case-report__markdown ul:first-child {
+  margin-top: 0;
+}
+
+.case-report__markdown p:last-child,
+.case-report__markdown ul:last-child {
+  margin-bottom: 0;
+}
+
+.case-report__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin: 16px 0 0;
+}
+
+.case-report__facts > div,
+.case-report__kpi {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #e0e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.case-report__facts dt,
+.case-report__kpi span {
+  display: block;
+  margin-bottom: 6px;
+  color: #52657d;
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.case-report__facts dd {
+  margin: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.case-report__kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.case-report__kpi strong {
+  display: block;
+  font-size: 1.12rem;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.case-report__table-scroll {
+  width: 100%;
+  margin: 12px 0;
+  overflow-x: auto;
+}
+
+.case-report__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.case-report__table caption {
+  padding: 0 0 8px;
+  color: #52657d;
+  font-size: 0.82rem;
+  font-weight: 650;
+  text-align: left;
+}
+
+.case-report__table th,
+.case-report__table td {
+  padding: 9px 10px;
+  border: 1px solid #dce4ed;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.case-report__table thead th {
+  background: #eff4f9;
+  color: #263d57;
+  font-weight: 700;
+}
+
+.case-report__table tbody th {
+  font-weight: 650;
+}
+
+.case-report__table-badge {
+  display: inline-block;
+  margin: 3px 4px 0 0;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #e8eef7;
+  color: #314a67;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.case-report__note,
+.case-report__rule-reason,
+.case-report__non-erp {
+  padding: 10px 12px;
+  border-left: 3px solid #6e8fb3;
+  background: #f3f7fb;
+}
+
+.case-report__option-rationale {
+  margin: 14px 0;
+}
+
+.case-report__option-rationale h3,
+.case-report__subheading {
+  margin: 14px 0 8px;
+  color: #263d57;
+  font-size: 1rem;
+}
+
+.case-report__charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.case-report__chart-card {
+  min-width: 0;
+  padding: 12px 8px 8px;
+  border: 1px solid #dce4ed;
+  border-radius: 12px;
+  background: #fff;
+  break-inside: avoid;
+}
+
+.case-report__chart-card h3 {
+  padding: 0 8px;
+  color: #263d57;
+  font-size: 0.9rem;
+}
+
+.case-report__chart-card .recharts-responsive-container {
+  min-width: 0;
+}
+
+.case-report__source-list {
+  padding-left: 20px;
+}
+
+.case-report__source-list li {
+  margin: 6px 0;
+  overflow-wrap: anywhere;
+}
+
+.case-report__source-list a {
+  color: #0a6ed1;
+}
+
+.case-report__state {
+  padding: 16px;
+}
+
+.case-report__state--error {
+  border: 1px solid #e4b5b5;
+  border-radius: 12px;
+  background: #fff8f7;
+}
+
+.case-report__empty {
+  padding: 24px;
+}
+
+@media (max-width: 760px) {
+  .case-report__charts {
+    grid-template-columns: 1fr;
+  }
+
+  .case-report__document-header {
+    flex-direction: column;
+  }
+
+  .case-report__document-badges {
+    justify-content: flex-start;
+  }
+}
+
+@page {
+  size: A4 portrait;
+  margin: 14mm 12mm;
+}
+
+@media print {
+  html,
+  body,
+  #root {
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    color: #111 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .app-backdrop,
+  .app-header,
+  .app-sidebar,
+  .chat-panel,
+  .case-detail-page > :not(.case-report),
+  .case-report__standalone-header,
+  .case-report__tab-header,
+  .case-report__toolbar,
+  .case-report__back-link {
+    display: none !important;
+  }
+
+  .app-shell,
+  .app-main,
+  .page-transition,
+  .case-detail-page,
+  .case-report,
+  .case-report--standalone {
+    display: block !important;
+    position: static !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+
+  .page-transition {
+    animation: none !important;
+  }
+
+  .case-report__document {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .case-report__document-header {
+    break-after: avoid-page;
+  }
+
+  .case-report__section {
+    overflow: visible !important;
+  }
+
+  .case-report__table-scroll {
+    overflow: visible !important;
+  }
+
+  .case-report__table {
+    width: 100% !important;
+    table-layout: auto;
+    font-size: 8pt;
+  }
+
+  .case-report__table th,
+  .case-report__table td {
+    padding: 5px 6px;
+    overflow-wrap: anywhere;
+  }
+
+  .case-report__charts {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px;
+  }
+
+  .case-report__chart-card {
+    min-width: 0;
+    padding: 4px;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .case-report__chart-card .recharts-responsive-container {
+    width: 100% !important;
+    height: 205px !important;
+  }
+
+  .case-report__chart-card svg,
+  .case-report__chart-card .recharts-surface {
+    overflow: visible !important;
+  }
+
+  .case-report__source-list a {
+    color: #111 !important;
+    text-decoration: none;
+  }
+
+  a[href^='http']::after {
+    content: none !important;
+  }
+}

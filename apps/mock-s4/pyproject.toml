@@ -1,0 +1,27 @@
+[project]
+name = "mock-s4"
+version = "0.1.0"
+description = "SIMULATED SAP S/4HANA API for SENTRA"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "fastapi>=0.115,<1",
+    "pydantic-settings>=2.7,<3",
+    "sqlalchemy>=2.0,<2.1",
+    "starlette>=0.40,<1",
+    "tzdata>=2024.1,<2027",
+    "uvicorn>=0.34,<1",
+]
+
+[dependency-groups]
+dev = ["httpx>=0.28,<1", "pytest>=8.3,<10"]
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["mock_s4*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["golden: numerical acceptance tests from RULES_AND_GOLDEN.md"]

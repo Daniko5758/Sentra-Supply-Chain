@@ -1,0 +1,169 @@
+{
+  "case_id": "CASE-0004",
+  "version": 1,
+  "preliminary": false,
+  "recommended_option": "A",
+  "rule_reason": "Option A: premium IDR 117.6M = 2.3% of protected output (≤ 10%)",
+  "execution_enabled": true,
+  "confirmations_needed": [],
+  "escalation_tier": 2,
+  "executive_decision_required": true,
+  "decision": null,
+  "options": [
+    {
+      "option": "A",
+      "title": "Protect production",
+      "available": true,
+      "unavailable_reason": null,
+      "label": null,
+      "pending_confirmation": false,
+      "confirmation": null,
+      "saving": null,
+      "before": {
+        "units_blocked": 195,
+        "output_value": 5205000000,
+        "po_value": 752000000,
+        "rar": 5957000000,
+        "so_delayed": 4,
+        "premium": 0,
+        "extra_duty": null
+      },
+      "after": {
+        "units_blocked": 0,
+        "output_value": 0,
+        "po_value": 23000000,
+        "rar": 23000000,
+        "so_delayed": 0,
+        "premium": 117600000,
+        "extra_duty": null
+      },
+      "actions": [
+        {
+          "seq": 1,
+          "type": "CREATE_PR_PO",
+          "object": "HUB-15 @ S21",
+          "payload": {
+            "material_id": "HUB-15",
+            "supplier_id": "S21",
+            "qty": 120,
+            "price": 3550000,
+            "delivery_date": "2026-11-05",
+            "shipping_condition": "AIR",
+            "incoterms": "FCA",
+            "freight_per_unit": 180000
+          }
+        },
+        {
+          "seq": 2,
+          "type": "CREATE_PR_PO",
+          "object": "HUB-30 @ S21",
+          "payload": {
+            "material_id": "HUB-30",
+            "supplier_id": "S21",
+            "qty": 75,
+            "price": 5100000,
+            "delivery_date": "2026-11-05",
+            "shipping_condition": "AIR",
+            "incoterms": "FCA",
+            "freight_per_unit": 220000
+          }
+        },
+        {
+          "seq": 3,
+          "type": "REDUCE_OR_CANCEL_PO",
+          "object": "4500001010/10",
+          "payload": {
+            "po_id": "4500001010",
+            "item_no": 10,
+            "old_qty": 120,
+            "new_qty": 0
+          }
+        },
+        {
+          "seq": 4,
+          "type": "REDUCE_OR_CANCEL_PO",
+          "object": "4500001010/20",
+          "payload": {
+            "po_id": "4500001010",
+            "item_no": 20,
+            "old_qty": 80,
+            "new_qty": 5
+          }
+        },
+        {
+          "seq": 5,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001010/20",
+          "payload": {
+            "po_id": "4500001010",
+            "item_no": 20,
+            "old_date": "2026-11-10",
+            "new_date": "2026-12-05"
+          }
+        }
+      ],
+      "rationale": "Reference recommendation for Option A.",
+      "rationale_source": "template"
+    },
+    {
+      "option": "B",
+      "title": "Reschedule",
+      "available": true,
+      "unavailable_reason": null,
+      "label": null,
+      "pending_confirmation": false,
+      "confirmation": null,
+      "saving": null,
+      "before": {
+        "units_blocked": 195,
+        "output_value": 5205000000,
+        "po_value": 752000000,
+        "rar": 5957000000,
+        "so_delayed": 4,
+        "premium": 0,
+        "extra_duty": null
+      },
+      "after": {
+        "units_blocked": 195,
+        "output_value": 5205000000,
+        "po_value": 752000000,
+        "rar": 5957000000,
+        "so_delayed": 4,
+        "premium": 0,
+        "extra_duty": null
+      },
+      "actions": [
+        {
+          "seq": 1,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001010/10",
+          "payload": {
+            "po_id": "4500001010",
+            "item_no": 10,
+            "old_date": "2026-11-09",
+            "new_date": "2026-12-05"
+          }
+        },
+        {
+          "seq": 2,
+          "type": "CHANGE_PO_DATE",
+          "object": "4500001010/20",
+          "payload": {
+            "po_id": "4500001010",
+            "item_no": 20,
+            "old_date": "2026-11-10",
+            "new_date": "2026-12-05"
+          }
+        }
+      ],
+      "rationale": "Reference recommendation for Option B.",
+      "rationale_source": "template"
+    }
+  ],
+  "non_erp_steps": [
+    "Confirm recovery dates with S18",
+    "Inform customers of SO-03, SO-04, SO-05, SO-06",
+    "Monitor tier-2 site S18 until recovered",
+    "Start qualifying a second source for NdFeB permanent magnets — S18 BCP score 33 (HIGH RISK)"
+  ]
+}
