@@ -133,7 +133,9 @@ Sentra runs this flow automatically. Business rules are computed by code; the LL
 
 ## Architecture
 
-[![Sentra architecture and data flow](media/thumbs/sentra_architecture.jpg)](media/sentra_architecture.mp4)
+
+https://github.com/user-attachments/assets/02ddcb97-3c49-4d65-af18-e28e6b064059
+
 
 | Component | Folder | Role |
 |---|---|---|
