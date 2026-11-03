@@ -19,61 +19,77 @@ Click an image to play the video.
 
 A 3D globe on the dashboard colors each supplier country by the risk level of its open cases.
 
-
-
-
 https://github.com/user-attachments/assets/9d73dd33-e47d-490b-bb50-40c5202f3a93
-
-
 
 
 ### 2. Risk heatmap
 
 A country map with PO exposure KPIs that switches between risk level and PO exposure, with a detail panel per country.
 
-[![Risk heatmap](media/thumbs/02_risk_heatmap.jpg)](media/02_risk_heatmap.mp4)
+
+
+https://github.com/user-attachments/assets/b378da9c-1107-4aae-8dee-8bfcb674da66
+
+
 
 ### 3. Supplier network
 
 An interactive Tier-2 → Tier-1 → part → product graph that highlights the impact path of a case and opens each supplier's profile (recovery time, BCP score).
 
-[![Supplier network](media/thumbs/03_supplier_network.jpg)](media/03_supplier_network.mp4)
+
+
+https://github.com/user-attachments/assets/8c3ae3c8-1aae-4545-bb21-d15acb2480a0
+
+
 
 ### 4. LIVE mode
 
 Going LIVE scans real news sources, saves only verified signals, links them to a case, and updates the dashboard and globe.
 
-[![LIVE mode](media/thumbs/04_live_mode_scan.jpg)](media/04_live_mode_scan.mp4)
+
+
+https://github.com/user-attachments/assets/b028e895-5dfb-43a6-976f-b413d87863b6
+
+
 
 ### 5. Case detail
 
 One page per case with KPIs and escalation, impact tables, supplier verification, and recovery options with before/after figures and the rule behind the choice.
 
-[![Case detail](media/thumbs/05_case_detail.jpg)](media/05_case_detail.mp4)
+
+https://github.com/user-attachments/assets/c3f34c8c-a144-42e4-b410-2bb8925ac775
+
 
 ### 6. Agent activity
 
 A timeline of every agent step with the tool it called, its input and output, and the reason for each branch.
 
-[![Agent activity](media/thumbs/06_agent_activity.jpg)](media/06_agent_activity.mp4)
+
+https://github.com/user-attachments/assets/c65a37f8-7b9e-4208-8c45-854bec244fbb
+
 
 ### 7. Approve → ERP execution
 
 The SCM Manager approves an option, its actions are written to mock SAP S/4HANA, the case is recomputed, and the ERP log shows each change document.
 
-[![Approve and ERP execution](media/thumbs/07_approve_erp_execution.jpg)](media/07_approve_erp_execution.mp4)
+
+https://github.com/user-attachments/assets/aed0b835-02f4-4874-ab3b-ba5212f5881b
+
 
 ### 8. Meeting room
 
 High-stakes cases open a Zoom meeting with the right participants and approvers, send email invites, and require a decision note before anything is submitted.
 
-[![Meeting room](media/thumbs/08_meeting_room.jpg)](media/08_meeting_room.mp4)
+
+https://github.com/user-attachments/assets/e9222a63-f5f8-431b-b9fa-02dc64caa4d0
+
 
 ### 9. Ask SENTRA chat
 
 A read-only assistant that answers from the case data with source records and refuses to execute ERP actions.
 
-[![Ask SENTRA chat](media/thumbs/09_ask_sentra_chat.jpg)](media/09_ask_sentra_chat.mp4)
+
+https://github.com/user-attachments/assets/99e476a4-afdc-4b2c-8499-c26ce58e7369
 
 ---
 
